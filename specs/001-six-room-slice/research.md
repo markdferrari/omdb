@@ -71,8 +71,10 @@ would prevent physical settling. Full custom integration and continuously forcin
 transforms would add complexity and hide contact defects.
 
 **Contact decision:** A plate counts unique actors directly supported by its top surface,
-not every body in a tall detection volume. Combine shallow candidate detection with a
-footprint/support test. A corpse resting only on another corpse adds no plate unit. A saw
+plus each released corpse in a stable support chain above a contributing corpse, not every
+body in a tall detection volume. Combine shallow candidate detection with a
+footprint/support test. A corpse resting on a non-contributing or held corpse adds no plate
+unit. A saw
 holds a set of released body IDs at its jam point; it runs only when that set is empty.
 Pickup/removal explicitly invalidates contributions in the same logical transaction.
 Do not wait for an exit signal from a node being disabled or freed. Reconcile actual
@@ -211,7 +213,7 @@ One world unit is one metre. Do not market these as measured minimum hardware re
 | Forgiveness | 0.10 s coyote time, 0.12 s jump buffer, 0.18 m floor snap | Broad landing trials; exclude grace from any bypass calculation only after measuring actual maximum reach. |
 | Player shape | Capsule 1.5 m total height, 0.32 m radius | Fit chosen visual and paths; broad landings at least 1.2 m wide initially. |
 | Corpse | Box 1.8 × 0.45 × 0.9 m (X/Y/Z); 20 kg; rotation locked; friction 1.0; bounce 0; linear damping 0.5 | Ten-trial stacks/bridges, support removal, no uncontrolled sliding. Scale visual independently. |
-| Pickup / placement | 2.2 m pickup reach; preview centre 1.6 m ahead; maximum centre reach 2.2 m; 0.02 m surface clearance | Surface, wall, player, occupied-body, and out-of-reach categories; no through-wall pickup/placement. |
+| Pickup / placement | 2.2 m pickup reach; preview centre 1.6 m ahead; maximum centre reach 2.2 m; bounded 0.6 m support adjustment; 0.02 m surface clearance | Surface, wall, player, occupied-body, and out-of-reach categories; no through-wall pickup/placement. |
 | Support | Upward normal dot Y at least 0.95; support-height tolerance 0.04 m | Centre plus inset-corner probes must support the planned footprint; no accidental ledge balancing. |
 | Camera | 45° yaw, approximately 35.3° downward angle, orthographic | Fit full room plus 10% margin; preserve view at 16:9, 16:10 and 4:3 using letterboxing when necessary. |
 | Respawn / anvil | 0.6 s feedback before replacement; 1.0 s anvil warning and 3.0 s cycle | Twenty deaths each at most two seconds; warning recognition, restart cancellation, safe entrance. |
@@ -233,3 +235,15 @@ All planning questions have a chosen approach and an acceptance experiment. No s
 clarification is needed. Remaining work is implementation evidence: greybox interactions,
 camera validation, jump/carry animation suitability, benchmarks, export templates, native
 platform runs, and playtests. These are scheduled gates, not claims of completed validation.
+
+## DEV-004. Observed placement precision failures
+
+The fixed aim rejected ordinary pressure-plate edges and diagonal approaches because
+inset support probes landed at two heights. A ray from 0.8 m above the player also hit
+a 1.0 m raised table edge although the carried body can be lifted above it. New tests
+first produced 180 failed/2,279 passed physics assertions. Bounded support projection
+and a lifted transport route fix these cases while retaining continuous yaw, full endpoint
+volume, 2.2 m reach, safe entrance/doorway reservations, and fresh release validation.
+Nearby alternatives are needed when the closest projection touches reserved space or
+another direct plate contributor. The 0.6 m assist is provisional for rendered feel;
+headless regressions do not establish player acceptance or performance targets.

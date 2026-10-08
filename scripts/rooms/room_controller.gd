@@ -6,6 +6,7 @@ signal room_snapshot_changed(snapshot: Dictionary)
 signal placement_preview_changed(result: Dictionary)
 signal puzzle_state_changed(component_id: String, snapshot: Dictionary)
 signal death_committed(event: Dictionary)
+signal presentation_cue(cue: String)
 signal room_completed(epoch: int, room_id: String)
 
 @export var spawn_player: bool = false
@@ -27,6 +28,7 @@ var _carry_visual: Node3D
 var _ghost: Node3D
 var _ghost_material: StandardMaterial3D
 const PLAYER_SCENE := preload("res://scenes/player/player.tscn")
+const DEATH_FEEDBACK := preload("res://scenes/effects/death_feedback.tscn")
 const EVICTION_BURST := preload("res://scenes/effects/eviction_burst.tscn")
 const CORPSE_SCENE := preload("res://scenes/corpses/corpse.tscn")
 
@@ -132,8 +134,23 @@ func _commit_death(command: Dictionary) -> void:
 	add_child(corpse)
 	_feedback_remaining = tuning.respawn_seconds
 	_death_has_committed = true
+	_spawn_feedback("death", corpse.global_position)
+	var hazard_kind := _hazard_kind(command.hazard_id)
+	# The anvil emits its impact cue once before lethal contact is committed.
+	if hazard_kind != "anvil":
+		presentation_cue.emit("saw_hit" if hazard_kind == "saw" else "spike_hit")
 	death_committed.emit({"epoch": state.epoch, "subject_id": command.subject_id,
-		"hazard_id": command.hazard_id, "body_id": result.body_id, "evicted_id": result.evicted_id})
+		"hazard_id": command.hazard_id, "hazard_kind": hazard_kind, "body_id": result.body_id, "evicted_id": result.evicted_id})
+
+func _hazard_kind(identity: String) -> String:
+	for child in get_children():
+		if child is SpikeBed and child.hazard_id == identity:
+			return "spikes"
+		if child is Buzzsaw and child.hazard_id == identity:
+			return "saw"
+		if child is FallingAnvil and child.hazard_id == identity:
+			return "anvil"
+	return identity
 
 func _replace_subject(token: Vector2i) -> void:
 	if not state.replace_subject(token):
@@ -161,15 +178,35 @@ func _remove_prop(body_id: String) -> void:
 	if not bodies.has(body_id):
 		return
 	var prop: Corpse = bodies[body_id]
-	var burst := EVICTION_BURST.instantiate() as Node3D
-	add_child(burst)
-	burst.global_position = player.get_node("CarryAnchor").global_position if prop.freeze and is_instance_valid(player) else prop.global_position
+	var origin: Vector3 = player.get_node("CarryAnchor").global_position if prop.freeze and is_instance_valid(player) else prop.global_position
+	_spawn_feedback("eviction", origin)
+	presentation_cue.emit("body_pop")
 	prop.disable_prop()
 	bodies.erase(body_id)
 	_update_carry_visual()
 	for other in bodies.values():
 		other.sleeping = false
 	prop.queue_free()
+
+func _spawn_feedback(kind: String, origin: Vector3) -> void:
+	if state.phase == RoomState.Phase.RETIRED or tuning.effect_instance_budget <= 0:
+		return
+	var count := mini(8, tuning.effect_instance_budget)
+	var active: Array[Node] = []
+	var used := 0
+	for child in get_children():
+		if child.is_in_group("cosmetic_feedback"):
+			active.append(child)
+			used += child.get_child_count()
+	while used + count > tuning.effect_instance_budget and not active.is_empty():
+		var oldest: Node = active.pop_front()
+		used -= oldest.get_child_count()
+		remove_child(oldest)
+		oldest.queue_free()
+	var effect = (DEATH_FEEDBACK if kind == "death" else EVICTION_BURST).instantiate()
+	effect.fragment_count = count
+	add_child(effect)
+	effect.global_position = origin
 
 func _publish_snapshot() -> void:
 	_update_carry_visual()

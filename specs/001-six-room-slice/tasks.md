@@ -59,7 +59,9 @@ false success. All story work depends on this foundation; no playable gate is pa
 
 ## Phase 3: US1 — Turn Death into a Traversable Route (P1, MVP)
 
-**Implementation checkpoint (2026-10-08):** 58/105 tasks completed: T001–T022,
+**Implementation checkpoint (2026-10-08):** 68/110 tasks completed; T110 adds the
+stacked-plate-weight correction. Remaining tasks include authored-room production and
+rendered/controller gates.
 T025–T034, T037–T042, T045–T047, T049–T056, T058–T064, and T066–T067.
 The user reported the keyboard playtest was “good” and authorized continued work;
 this informal feedback does not establish the full manual/controller gate.
@@ -113,7 +115,7 @@ and death while carrying releases the existing body and adds exactly one new bod
 
 - [X] T025 [P] [US2] Add `tests/state/test_carry.gd` and `tests/physics/test_carry_lifecycle.gd` alongside registry/lifecycle regressions for single-body pickup, unsuccessful pickup with unchanged state, retained age/count, held ineligibility, and death while carrying both the oldest and a newer body at capacity (US2/AS1, AS5; EC-03–EC-05; VR-001).
 - [X] T026 [P] [US2] Add `tests/physics/test_placement.gd` cases for floor/body/spike supports, player/wall/body overlap, out-of-reach and blocked paths, missing/unstable support, and a preview made stale before release; request ten attempts per valid surface and rejection category with unchanged held state on failure (US2/AS2–AS3; SC-006).
-- [X] T027 [P] [US2] Add direct-support contributor and linked-door cases in `tests/state/test_contacts.gd` and `tests/physics/test_contacts.gd`: player/released-body units, held-body exclusion, no indirect stacked weight, threshold changes, contributor removal, and safe entry-side closure while occupied (US2/AS4; FR-020–FR-021; EC-06–EC-07, EC-15).
+- [X] T027 [P] [US2] Add direct-support contributor and linked-door cases in `tests/state/test_contacts.gd` and `tests/physics/test_contacts.gd`: player/released-body units, held-body exclusion, stable stacked-body weight, threshold changes, contributor removal, and safe entry-side closure while occupied (US2/AS4; FR-020–FR-021; EC-06–EC-07, EC-15).
 
 ### Implementation and playable verification
 
@@ -265,15 +267,15 @@ visible, animation never changes support, and the final effects do not delay res
 
 ### Verification definitions
 
-- [ ] T084 [P] [US7] Add `tests/physics/test_presentation_isolation.gd` to compare collider transforms/eligibility through character animations and cosmetic effects; define actual-camera action, silhouette, caption, mute, and feedback-timing review steps in `specs/001-six-room-slice/quickstart.md` (US7/AS1–AS4; FR-034–FR-037; SC-005, SC-009).
-- [ ] T085 [P] [US7] Inventory or produce suitable cheerful music and cartoon trap/death cues, documenting selected sources, reuse permissions, and required attribution in `assets/audio/SOURCE.md`; specify the concrete Music/SFX cue mapping in `resources/audio_cues.tres` for implementation in T088.
+- [X] T084 [P] [US7] Add `tests/physics/test_presentation_isolation.gd` to compare collider transforms/eligibility through character animations and cosmetic effects; define actual-camera action, silhouette, caption, mute, and feedback-timing review steps in `specs/001-six-room-slice/quickstart.md` (US7/AS1–AS4; FR-034–FR-037; SC-005, SC-009).
+- [X] T085 [P] [US7] Inventory or produce suitable cheerful music and cartoon trap/death cues, documenting selected sources, reuse permissions, and required attribution in `assets/audio/SOURCE.md`; specify the concrete Music/SFX cue mapping in `resources/audio_cues.tres` for implementation in T088.
 
 ### Implementation and playable verification
 
 - [ ] T086 [P] [US7] Finish any measured cow animation/scale/material gaps in `assets/characters/cow/presentation.tres`, `scripts/player/character_visual.gd`, `scenes/player/player.tscn`, and `scenes/corpses/corpse.tscn`; preserve retained Blender sources/provenance when re-exporting `assets/characters/cow/cow.glb`, maintain a readable flat corpse pose, and keep clone identity and all physics shapes unchanged.
-- [ ] T087 [P] [US7] Create reusable gothic miniature dressing in `scenes/art/room_dressing.tscn` and ink/high-contrast materials in `resources/materials/gothic_room.tres` and `resources/materials/ink_surface.tres`; retain simple lighting, broad readable surfaces, and the research R8 geometry/light budgets.
-- [ ] T088 [P] [US7] Add the selected music and cartoon effects as `assets/audio/music/cheerful_loop.ogg`, `assets/audio/sfx/spike_hit.ogg`, `assets/audio/sfx/saw_jam.ogg`, `assets/audio/sfx/anvil_drop.ogg`, and `assets/audio/sfx/body_pop.ogg`; connect `resources/audio_cues.tres` in `scripts/app/audio_controller.gd` with Music/SFX routing and update attribution in `assets/audio/SOURCE.md`.
-- [ ] T089 [US7] Finish non-colliding neon death/eviction feedback in `scenes/effects/death_feedback.tscn`, `scripts/effects/death_feedback.gd`, and `scenes/effects/eviction_burst.tscn`; enforce the initial 24-instance cosmetic budget and add humorous subject/death captions through `scripts/ui/hud.gd` without covering decisions, adding failure conditions, or extending the replacement deadline.
+- [X] T087 [P] [US7] Create reusable gothic miniature dressing in `scenes/art/room_dressing.tscn` and ink/high-contrast materials in `resources/materials/gothic_room.tres` and `resources/materials/ink_surface.tres`; retain simple lighting, broad readable surfaces, and the research R8 geometry/light budgets.
+- [X] T088 [P] [US7] Add the selected music and cartoon effects as `assets/audio/music/cheerful_loop.wav`, `assets/audio/sfx/spike_hit.wav`, `assets/audio/sfx/saw_jam.wav`, `assets/audio/sfx/anvil_drop.wav`, and `assets/audio/sfx/body_pop.wav` (plus distinct saw-hit/anvil-warning cues; built-in PCM import replaces planned Ogg without an encoder); connect `resources/audio_cues.tres` in `scripts/app/audio_controller.gd` with Music/SFX routing and update attribution in `assets/audio/SOURCE.md`.
+- [X] T089 [US7] Finish non-colliding neon death/eviction feedback in `scenes/effects/death_feedback.tscn`, `scripts/effects/death_feedback.gd`, and `scenes/effects/eviction_burst.tscn`; enforce the initial 24-instance cosmetic budget and add humorous subject/death captions through `scripts/ui/hud.gd` without covering decisions, adding failure conditions, or extending the replacement deadline.
 - [ ] T090 [US7] Apply the reusable art/lighting to `scenes/rooms/room_01.tscn` through `scenes/rooms/room_06.tscn`, preserving validated collision geometry, stationary framing, ground shadows, plate requirements, and active/jammed/warning distinctions; keep foreground dressing outside essential sightlines.
 - [ ] T091 [US7] Run presentation-isolation checks and review movement/jump/carry/death with five corpses, all three aspect ratios, audio muted, independent audio categories, and twenty timed deaths after final effects; record actual visuals, cue readability, collider stability, ≤2-second respawns, and fixes in `specs/001-six-room-slice/validation.md` (VR-004; US7/AS1–AS4; SC-005, SC-009).
 - [ ] T092 [US7] Profile a rendered release build after 30 seconds warmup and 120 seconds representative play at 1920×1080 with player/five corpses/hazards/effects; record hardware, frame/physics percentiles, draw calls, triangles, stutters, and budgets in `specs/001-six-room-slice/validation.md`, applying measured presentation optimizations through `resources/gameplay_tuning.tres` and affected art resources and rerunning changed checks.
@@ -287,7 +289,7 @@ required by T044; this later polish phase cannot retroactively justify starting 
 desktop release materials. Export generation does not establish native compatibility.
 
 - [ ] T093 Run `scripts/checks/run_checks.py` with the complete state/physics/recovery suites on the integrated slice, require every requested case and repetition to appear, and reconcile FR-004–FR-030 plus EC-01–EC-15 coverage in `specs/001-six-room-slice/validation.md`; correct defects and rerun affected checks before accepting the build.
-- [ ] T094 Prepare `specs/001-six-room-slice/playtest.md` with a consistent first-time protocol, active-time start/stop rules, non-completion/help recording, jump/placement observations, and each SC-008 cue recognition question; link sessions and defects to `specs/001-six-room-slice/validation.md` (VR-007).
+- [X] T094 Prepare `specs/001-six-room-slice/playtest.md` with a consistent first-time protocol, active-time start/stop rules, non-completion/help recording, jump/placement observations, and each SC-008 cue recognition question; link sessions and defects to `specs/001-six-room-slice/validation.md` (VR-007).
 - [ ] T095 Conduct at least five first-time playtests with people who have not seen the solutions; record every session, active completion time including deaths/restarts, help, misunderstandings, jump judgments, placement frustration, and cue recognition without facilitator explanation in `specs/001-six-room-slice/playtest.md`, and summarize actual median/80% recognition results in `specs/001-six-room-slice/validation.md` (SC-007–SC-008).
 - [ ] T096 Resolve playtest findings through the affected `scenes/rooms/room_01.tscn` through `scenes/rooms/room_06.tscn`, `scripts/ui/onboarding.gd`, and `resources/gameplay_tuning.tres`; record the pacing review if median active time is outside 20–30 minutes, run required follow-up playtests and affected regression/solution trials, and retain evidence and unresolved defects in `specs/001-six-room-slice/playtest.md` and `specs/001-six-room-slice/validation.md`.
 - [ ] T097 Set `export_presets.cfg` to include the production six-room catalogue and exclude development fixtures/runners/source art; export the final candidate to `builds/windows/over-my-dead-body.exe` and `builds/macos/over-my-dead-body.zip`, package the Windows executable plus required PCK as `builds/windows/over-my-dead-body.zip`, and create `specs/001-six-room-slice/release.md` with hashes, engine/template versions, included resources, and build identity for all subsequent native checks.
@@ -427,3 +429,11 @@ that task. Record a dependency block honestly when graphics, hardware, participa
 other required evidence are unavailable; continue unrelated authorized implementation.
 Do not lower thresholds or expand scope silently: changes to acceptance require an
 explicit evidence-backed specification amendment and consistent dependent artifacts.
+
+## Playtest correction — DEV-004 table placement
+
+- [X] T106 Add ten-trial table-edge, diagonal, raised-table, second-body, obstacle, undersized-surface, and stale-preview regressions in `tests/physics/test_placement_assistance.gd`; confirm behavioral RED before implementation.
+- [X] T107 Implement bounded continuous-facing support adjustment and lifted transport in `scripts/player/placement_evaluator.gd`; add `placement_assist_distance` tuning and actionable HUD prompts.
+- [X] T108 Run affected physics and full regressions; refresh representative exports/package smoke; record setup, expected/actual outcomes and limitations in `validation.md`.
+- [ ] T109 Retest placement feel and ghost readability in `tests/scenes/greybox_validation.tscn` with keyboard and physical controller: ten table approaches, raised surface, two direct plate bodies, real blockers, and stale rejection. Record rendered query cost against plan budgets; remains unverified without display/controller.
+- [X] T110 Fix plate reconciliation so every released corpse in a stable support chain above a contributing plate contact adds one weight unit; preserve held/side-by-side exclusion and add the stacked-body regression in `tests/physics/test_contacts.gd`. Rerun physics/full regressions and refresh validation evidence.

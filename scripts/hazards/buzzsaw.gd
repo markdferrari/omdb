@@ -9,11 +9,14 @@ func jammed() -> bool:
 	return not contributors.is_empty()
 
 func apply_candidates(ids: Array[String], registry: CorpseRegistry) -> void:
+	var was_jammed := jammed()
 	contributors.clear()
 	for identity in ids:
 		if registry.eligible(identity):
 			contributors[identity] = true
 	_update_visual()
+	if not was_jammed and jammed() and get_parent() is RoomController and get_parent().state.phase != RoomState.Phase.RETIRED:
+		get_parent().presentation_cue.emit("saw_jam")
 
 func _ready() -> void:
 	_material = StandardMaterial3D.new()

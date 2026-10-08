@@ -94,8 +94,9 @@ Perform these checks with keyboard and controller separately, using the bindings
 4. Build and traverse each intended bridge/stack from scratch ten consecutive times.
    Remove a supporting body and verify physical settling without invisible support.
 5. Activate one-unit and multi-unit plates with the live player and released bodies.
-   A body resting only on another body must not add a plate unit. Excess valid weight
-   must keep the door open after one contributor leaves.
+   Every released body in a stable stack whose support chain reaches the plate adds one
+   plate unit; a body resting beside the plate or on an ineligible/held body does not.
+   Excess valid weight must keep the door open after one contributor leaves.
 6. Jam a saw with a released body; wait to prove there is no timeout. Retrieve/remove it
    from a safe position; verify reactivation. Repeat with two bodies so one remaining
    contributor keeps the jam. A jammed designated route must be traversable.
@@ -273,7 +274,12 @@ Use **E** or the controller **West face button** to pick up the nearest reachabl
 unobstructed body. Press the same button while holding to place it at the ghost.
 Move to change the ghost direction. A valid ghost shows **✓ PLACE**; an invalid ghost
 shows **✕ BLOCKED** and the HUD explains the reason. An invalid attempt keeps the body
-held. Held bodies count toward five but provide no collision, plate weight, or saw jam.
+held. Near a table edge, the ghost can adjust up to 0.6 m toward a fully supported
+spot while preserving facing. Valid aim stays unchanged. Raised tables use a lifted
+placement path. Retest straight and diagonal approaches, two bodies side by side,
+and a wall between you and the table; walls must still reject placement. Check that
+these adjustments feel predictable with keyboard and controller (T109).
+Held bodies count toward five but provide no collision, plate weight, or saw jam.
 
 - Floor/body/spikes: create bodies by dying on the spike strip, then use E/West near a
   body. Place on the near-bank floor, on another settled body, and on the spike bed.
@@ -281,8 +287,9 @@ held. Held bodies count toward five but provide no collision, plate weight, or s
   walls, another body/player, unsupported edges, and unreachable targets; rejected
   attempts must retain the same held identity and creation order.
 - Plates: the near-bank stations are at (-4.4, 0, -3.5) and (-4.4, 0, 3.5), requiring
-  one and two direct units respectively. A player counts as one unit; a corpse directly
-  resting on the plate counts as one. An upper stacked corpse adds no indirect weight.
+  one and two units respectively. A player counts as one unit; a corpse directly resting
+  on the plate counts as one. An upper stacked corpse adds one more unit when its stable
+  support chain reaches the plate.
   The linked far-bank doors at x=6.2 reflect the thresholds. Losing weight while standing
   in the doorway returns the player to the reserved entry-side retreat.
 - Saw: the far-bank station is at (3.5, 0, -4.1). Place a body across its lower jam point
@@ -371,3 +378,27 @@ Outputs: `builds/windows/over-my-dead-body.exe` **and its .pck**, plus
 `--save-root` set to a fresh child of the OS temporary directory. They are representative
 fixtures, not release packages. Native keyboard/controller launch, signing/download
 behavior, and the authored six-room acceptance matrix remain unverified.
+
+### Reusable feedback and audio review — T084/T091
+
+The greybox now uses a short original swing loop and separate cartoon trap/eviction
+sounds. Relaunch the original isolated greybox for actual speaker/headphone checks.
+Use `flow_validation.tscn` for Settings: mute Music, then SFX, then both; reopen with
+that same temporary root and confirm independent volume retention. Listen for a smooth
+music seam, balanced overlapping sounds, one saw-jam cue on first jamming, anvil warning
+bells before each drop, one impact clang even on a lethal drop, and an eviction pop.
+Critical labels/motion/warnings must remain clear with both categories muted.
+
+At the stationary camera, inspect movement, jump, carry and death with five bodies at
+16:9, 16:10 and 4:3. Verify the cow silhouette fits its solid support, the jump shadow
+marks landing position, neon fragments stay local to the death/eviction, and humorous
+captions do not cover the exit, ghost, plate count, saw state or anvil target. Effects
+pause with gameplay, expire after 0.6 seconds of active play, and share a maximum of
+24 fragments. Force repeated deaths/evictions and check readable cues under that load.
+Time twenty deaths including overlapping hazards and carrying; replacement/control must
+return within two seconds of active play. Restart during effects and confirm all old
+fragments disappear with the retired room. Record setup, expected/actual outcomes and
+any defects in `validation.md`; resource/collision tests do not establish rendered feel.
+
+First-time six-room testing follows [playtest.md](playtest.md); its five session rows
+are unrun until participants test the authored slice after the required gates.

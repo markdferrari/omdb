@@ -4,11 +4,12 @@
 
 **Input**: Feature specification from `specs/001-six-room-slice/spec.md`
 
-**Status**: Phase 0 research and Phase 1 design complete. Implementation T001–T022
-is complete; US1 automated checks pass, including the keyboard binding regression fix
-from the user's first playtest (DEV-003). Human retest and remaining playable validation
-are pending; the agent environment lacks display/controller access. See [validation.md](validation.md). The feature directory is resolved through `.specify/feature.json`;
-its name is independent of the Git branch. No branch-creation hook is configured.
+**Status**: Implementation in progress: 67/109 tasks complete, including core greybox,
+recovery/menu systems, assisted placement, reusable audio/effects, and playtest protocol.
+The user reports the placement correction is better. Formal greybox/character/controller
+reviews remain open, so full room production is still gated. See [validation.md](validation.md).
+The feature is resolved through `.specify/feature.json`, independently of Git branch name;
+no extension hooks are configured.
 
 ## Summary
 
@@ -121,7 +122,8 @@ Task generation produced `tasks.md`; implementation now records actual results i
 
 ### Source Code (repository root)
 
-The following is the selected implementation layout. T001–T022 now exist; later systems and room files remain planned.
+The following is the selected implementation layout. Core systems now exist; authored
+room scenes, final dressing, and release acceptance remain planned.
 
 ```text
 project.godot
@@ -184,7 +186,9 @@ callback. Collision mutations are committed outside contact callbacks and before
 movement can observe obsolete support. See [data-model.md](data-model.md) and
 [gameplay-state.md](contracts/gameplay-state.md) for the precise boundary.
 
-Plate weight is a set of direct resting contacts. Saw jams are a set of released bodies.
+Plate weight is a set of distinct eligible occupants: a player or corpse directly resting
+on the plate contributes one unit, and every released corpse stably stacked on a contributing
+corpse contributes one additional unit. Saw jams are a set of released bodies.
 Anvils use visual animation and a live-player kill volume without destructive corpse
 impulses. Safe door retreat anchors are protected from placement. Authored geometry
 provides clearance for death while carrying and makes hazard bypasses testable.
@@ -318,3 +322,33 @@ arm64 export prerequisite. Templates stay outside the repo and exports under ign
 T044 and T065 still block full six-room production. Actual manual keyboard/controller,
 character/camera and native results remain required. See the final checkpoint in
 `validation.md`; earlier implementation evidence sections are historical.
+
+## Table placement correction — DEV-004
+
+User playtest feedback identified excessive placement rejection near table edges.
+The nominal 1.6 m facing aim remains unchanged when valid. A bounded 0.6 m adjustment
+search projects the full yaw-oriented body footprint into nearby box support surfaces,
+then uses the existing evaluator for every alternative. Transport rays follow a lift,
+traverse, and lower route from the 1.2 m carry anchor so a raised tabletop does not block
+its own placement. Reach remains 2.2 m; support/overlap/reservation checks remain enforced.
+This initial assist distance is supported by ten-trial physics regressions, with rendered
+control feel and query-cost measurements still awaiting playable validation (T109).
+
+## Independent presentation preparation — T084/T085/T088/T089/T094
+
+Before room-production gates are closed, reusable audio/effects and verification protocols
+can be prepared in the established greybox. Original deterministic PCM sources generated
+by `scripts/checks/generate_audio.py` replace the initially proposed Ogg files: Godot's
+built-in import avoids an external encoder. `AudioCues` selects a 14.545-second original
+swing loop and six short cartoon cues. Four bounded SFX voices keep events separate from
+Music. Unique authored hazard IDs resolve to types for correct cues/captions; anvil impact
+sound is deduplicated from its lethal commit. Cosmetic feedback shares 24 fragments and
+expires independently of the unchanged 0.6-second respawn timer. Isolation checks and
+first-time testing instructions are prepared; artistic/audio and rendered acceptance remain
+T044/T091, and six-room production still requires the existing G1/G2 evidence.
+
+T087 also prepares a reusable 16 × 12 m room frame with shared warm matte stone and
+ink materials, 18 primitive mesh instances, low outboard finials, no collision, lights,
+or shadow-casting dressing. Its geometric scale is intentionally broad and small;
+rendered visibility and frame budgets still require T090–T092 after actual room layout.
+The asset is not used to substitute for the greybox/character proof or author rooms early.

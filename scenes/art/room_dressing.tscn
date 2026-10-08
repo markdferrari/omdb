@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3]
+[ext_resource type="Material" path="res://resources/materials/gothic_room.tres" id="1"]
+[ext_resource type="Material" path="res://resources/materials/ink_surface.tres" id="2"]
+[sub_resource type="BoxMesh" id="PlinthInk"]
+size = Vector3(17.4, 0.22, 13.4)
+[sub_resource type="BoxMesh" id="PlinthStone"]
+size = Vector3(17.1, 0.14, 13.1)
+[sub_resource type="BoxMesh" id="PostInk"]
+size = Vector3(0.8, 0.1, 0.8)
+[sub_resource type="BoxMesh" id="PostStone"]
+size = Vector3(0.68, 0.3, 0.68)
+[sub_resource type="BoxMesh" id="CapInk"]
+size = Vector3(0.92, 0.07, 0.92)
+[sub_resource type="CylinderMesh" id="FinialStone"]
+top_radius = 0.0
+bottom_radius = 0.36
+height = 0.24
+radial_segments = 4
+rings = 1
+[node name="RoomDressing" type="Node3D"]
+[node name="InkPlinth" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.32, 0)
+mesh = SubResource("PlinthInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StonePlinth" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.19, 0)
+mesh = SubResource("PlinthStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="Corner0" type="Node3D" parent="."]
+position = Vector3(-8.35, 0, -6.35)
+[node name="InkPost" type="MeshInstance3D" parent="Corner0"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("PostInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StonePost" type="MeshInstance3D" parent="Corner0"]
+position = Vector3(0, 0.25, 0)
+mesh = SubResource("PostStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="InkCap" type="MeshInstance3D" parent="Corner0"]
+position = Vector3(0, 0.435, 0)
+mesh = SubResource("CapInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StoneFinial" type="MeshInstance3D" parent="Corner0"]
+position = Vector3(0, 0.59, 0)
+mesh = SubResource("FinialStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="Corner1" type="Node3D" parent="."]
+position = Vector3(8.35, 0, -6.35)
+[node name="InkPost" type="MeshInstance3D" parent="Corner1"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("PostInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StonePost" type="MeshInstance3D" parent="Corner1"]
+position = Vector3(0, 0.25, 0)
+mesh = SubResource("PostStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="InkCap" type="MeshInstance3D" parent="Corner1"]
+position = Vector3(0, 0.435, 0)
+mesh = SubResource("CapInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StoneFinial" type="MeshInstance3D" parent="Corner1"]
+position = Vector3(0, 0.59, 0)
+mesh = SubResource("FinialStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="Corner2" type="Node3D" parent="."]
+position = Vector3(-8.35, 0, 6.35)
+[node name="InkPost" type="MeshInstance3D" parent="Corner2"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("PostInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StonePost" type="MeshInstance3D" parent="Corner2"]
+position = Vector3(0, 0.25, 0)
+mesh = SubResource("PostStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="InkCap" type="MeshInstance3D" parent="Corner2"]
+position = Vector3(0, 0.435, 0)
+mesh = SubResource("CapInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StoneFinial" type="MeshInstance3D" parent="Corner2"]
+position = Vector3(0, 0.59, 0)
+mesh = SubResource("FinialStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="Corner3" type="Node3D" parent="."]
+position = Vector3(8.35, 0, 6.35)
+[node name="InkPost" type="MeshInstance3D" parent="Corner3"]
+position = Vector3(0, 0.05, 0)
+mesh = SubResource("PostInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StonePost" type="MeshInstance3D" parent="Corner3"]
+position = Vector3(0, 0.25, 0)
+mesh = SubResource("PostStone")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="InkCap" type="MeshInstance3D" parent="Corner3"]
+position = Vector3(0, 0.435, 0)
+mesh = SubResource("CapInk")
+material_override = ExtResource("2")
+cast_shadow = 0
+[node name="StoneFinial" type="MeshInstance3D" parent="Corner3"]
+position = Vector3(0, 0.59, 0)
+mesh = SubResource("FinialStone")
+material_override = ExtResource("1")
+cast_shadow = 0

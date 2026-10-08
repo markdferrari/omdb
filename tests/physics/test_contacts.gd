@@ -19,11 +19,11 @@ func run(h: SceneTree) -> void:
 		h.check(plate.weight() == 2 and door.is_open and door.get_node("Blocker/Shape").disabled, "FR020.two_direct_bodies.%d" % trial)
 		var stacked: Corpse = helper.add_body(room, Vector3(-4.4, 0.82, 3))
 		await h.frames(60)
-		h.check(plate.weight() == 2 and not stacked.freeze, "FR020.indirect_stack_excluded")
+		h.check(plate.weight() == 3 and door.is_open and not stacked.freeze, "FR020.stacked_bodies_each_count")
 		room.state.remove_body(second.body_id)
 		room._remove_prop(second.body_id)
 		room._sync_contacts()
-		h.check(plate.weight() == 1 and not door.is_open and not door.get_node("Blocker/Shape").disabled, "EC07.immediate_contributor_removal")
+		h.check(plate.weight() == 2 and door.is_open and not door.get_node("Blocker/Shape").disabled, "EC07.immediate_contributor_removal")
 		# Use a fresh collider for the direct-player test, avoiding contact teleports.
 		room.remove_child(room.player)
 		room.player.queue_free()
@@ -35,7 +35,7 @@ func run(h: SceneTree) -> void:
 		first.disable_prop()
 		room._wake_bodies()
 		room._sync_contacts()
-		h.check(plate.weight() == 1 and not door.is_open, "FR020.held_body_immediate_exclusion")
+		h.check(plate.weight() == 2 and door.is_open, "FR020.held_body_immediate_exclusion")
 		await h.frames(60)
 		h.check(absf(stacked.position.y - 0.345) < 0.04 and plate.weight() == 2, "EC06.pickup_support_settles_to_plate")
 		# Door occupation is evaluated from current position, not a cached Area signal.

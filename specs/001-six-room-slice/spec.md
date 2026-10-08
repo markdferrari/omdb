@@ -319,7 +319,10 @@ Verification requirements and measurable outcomes apply across these references.
   no support, plate weight, or saw jam. Acceptance: US2/AS1; US3/AS2.
 - **FR-009**: Carrying MUST show a nearby preview with distinguishable valid and invalid
   states, and allow stable placement on floors, other bodies, and spike beds without a
-  grid. Acceptance: US2/AS2–AS3.
+  grid. Table/plate approaches MUST permit a bounded nearby adjustment to a fully
+  supported pose when the nominal aim straddles an edge, preserving facing and all
+  reach/overlap/reservation rules; a valid nominal aim MUST stay unchanged.
+  Acceptance: US2/AS2–AS3; DEV-004.
 - **FR-010**: Release at a valid preview MUST place the body in the indicated stable pose
   and restore its support, weight, and eligible hazard interactions. Acceptance: US2/AS2, AS4.
 - **FR-011**: Placement intersecting the player, walls, or occupied body space, or beyond
@@ -429,11 +432,19 @@ results already measured.
 - **VR-003**: Before full room production, demonstrate the movement, jumping, death,
   respawn, carrying, preview, stack, plate, saw-jam, and cap behaviors together in one
   greybox room. Record expected and actual outcomes, including manual camera and control
-  checks; this proof does not require all six finished rooms.
+  checks; this proof does not require all six finished rooms. For DEV-004, run ten
+  rebuilt table-edge, diagonal, raised-table, two-body, obstacle, undersized-surface,
+  and stale-preview trials; verify bounded adjustment, unchanged valid aim, stable
+  settling, two direct plate units, and retained holding on invalid release. Retest
+  placement feel/readability with keyboard and physical controller in the greybox.
 - **VR-004**: Before full room production, assess one reused character at the actual
   camera angle and distance with five bodies present. Record visual fit, material/scale
   suitability, animation coverage and gaps, and performance observations. Resource or
-  animation names alone do not establish that the character works in play.
+  animation names alone do not establish that the character works in play. Automated
+  presentation checks MUST verify animation/effect collision isolation, bounded cosmetic
+  feedback, unchanged respawn deadlines under overlapping contacts, correct hazard types
+  for custom IDs, and cue deduplication/retirement with independent audio routing. These
+  checks supplement the required rendered and listening reviews.
 - **VR-005**: Run EC-09–EC-13 and all US4 recovery scenarios at least ten times each,
   including restarting with a held oldest body and reopening a partly solved room.
   Record the resulting room, live-player count, body count, carrying state, puzzle state,
@@ -524,8 +535,10 @@ results already measured.
   completion screen, includes deaths and restarts, and excludes breaks outside play.
   Non-completion and facilitator help are recorded alongside timings, not discarded.
 - Each plate counts the live player and each released body directly resting on it as one
-  unit. Bodies resting only on another body do not add extra plate units. Multi-unit
-  plate layouts must offer space for their required contributors.
+  unit. A released body stably resting on a contributing corpse adds one more unit when
+  its support chain reaches the plate; bodies resting beside the plate or on held/
+  ineligible bodies do not. Multi-unit plate layouts must offer space for their required
+  contributors.
 - If several released bodies occupy a saw jam point, the saw stays jammed while at least
   one remains. This makes removal obey the same remaining-contributor rule as plates.
 - Restart applies to the currently active room. A transition already completed makes the

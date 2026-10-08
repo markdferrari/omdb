@@ -37,11 +37,12 @@ func _snapshot(snapshot: Dictionary) -> void:
 
 func _death(event: Dictionary) -> void:
 	_deaths += 1
-	$Caption.text = "Subject #%d: A pointed argument.  Deaths: %d" % [event.subject_id, _deaths]
+	var quip: String = {"spikes": "A pointed argument.", "saw": "A cutting remark.", "anvil": "An uplifting career, briefly."}.get(event.get("hazard_kind", event.hazard_id), "Another valuable contribution.")
+	$Caption.text = "Subject #%d: %s  Deaths: %d" % [event.subject_id, quip, _deaths]
 
 func _preview(result: Dictionary) -> void:
-	var reasons := {"OUT_OF_REACH": "Too far away", "BLOCKED_PATH": "Path blocked",
-		"NO_SUPPORT": "No supporting surface", "UNSTABLE_SUPPORT": "Needs a flat, supported footprint",
-		"PLAYER_OVERLAP": "Overlaps you", "BODY_OVERLAP": "Body space occupied",
+	var reasons := {"OUT_OF_REACH": "Too far away", "BLOCKED_PATH": "Move around the obstacle",
+		"NO_SUPPORT": "No supporting surface", "UNSTABLE_SUPPORT": "Aim toward the middle of a flat surface",
+		"PLAYER_OVERLAP": "Step back to make room", "BODY_OVERLAP": "Aim beside the other body",
 		"WORLD_OVERLAP": "Blocked or reserved space", "STALE_REQUEST": "Body no longer available"}
 	$PlacementState.text = "✓ %s: PLACE" % ("West" if _prompts.method == "controller" else "E") if result.valid else "✕ KEEP HOLDING — " + reasons.get(result.reason, result.reason)

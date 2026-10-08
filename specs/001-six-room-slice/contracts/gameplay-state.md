@@ -19,7 +19,7 @@ dead actors, or prior epochs return a rejection and do not mutate state.
 | `request_place` | Epoch, subject ID, held body ID | Recompute placement from current facing/space; return `ACCEPTED` or the placement rejection reason. Do not trust a UI-supplied transform. |
 | `request_restart` | Current session and active room identity | Invalidate old epoch, replace active room once, and reject all old callbacks. Available during death feedback. |
 | `request_exit` | Epoch, subject ID, exit ID | Require an alive subject, open exit, actual crossing, and unused exit latch; corpses cannot invoke it. |
-| `observe_contacts` | Epoch, component ID, distinct candidate actor IDs, support/contact evidence | Filter eligibility and update plate or jam membership; duplicate observations do not add weight. |
+| `observe_contacts` | Epoch, component ID, distinct candidate actor IDs, support/contact evidence | Filter eligibility, resolve stable corpse support chains for plates, and update plate or jam membership; duplicate observations do not add weight. |
 | `advance_feedback` | Current epoch/token and elapsed active time | At feedback completion spawn one replacement, unless restart/departure superseded the token. |
 
 Command results use `ACCEPTED`, `INVALID_STATE`, `OUT_OF_REACH`, `BLOCKED_PATH`,
@@ -83,12 +83,22 @@ scene changes their dimensions.
 ## Placement and hazard geometry
 
 Use one placement evaluator for preview and release. Its ordered checks are identity,
-reach, unobstructed path, support, and full-volume overlap. Start with a centre probe and
+horizontal reach, support, final three-dimensional reach, unobstructed transport path,
+full-volume overlap, and protected entrance/doorway space. Start with a centre probe and
 four inset footprint-corner probes on a near-horizontal surface. Require centre support
 and all four corners supported within the tuning height tolerance, permitting multiple
 coplanar supports. This conservative rule allows stable bridges on spike beds and stacks;
 do not require unsupported balancing as an intended solution. Query a small surface
 clearance, then let gravity settle the released body.
+
+A valid nominal candidate stays exactly 1.6 m ahead. If nominal support is missing,
+uneven, or occupied by another body, try nearby BoxShape3D support rectangles in order
+of distance, bounded to a 0.6 m horizontal adjustment. Project the full rotated footprint
+into each rectangle and check nearby alternatives/edges; every candidate passes the same
+support, reach, path, overlap, and reserved-space rules. Explicit target queries remain
+strict. The transport centre rises from the 1.2 m carry anchor, crosses above the chosen
+surface, then lowers to the candidate; ray queries reject obstacles on every leg.
+Preview and release recompute this identical search using current physics state.
 
 The candidate preserves continuous player-facing yaw. It does not snap to a grid or
 rotate in response to decorative animation. Geometry around intended death sites must
@@ -101,9 +111,10 @@ visual rotor and lethal volume stop when jammed; the route must have no remainin
 rotor blocker. An anvil uses a telegraphed visual drop and player-only kill volume, without
 an additional crushing rigid body that destabilizes existing corpses.
 
-Plate support tests require direct resting contact and stable downward support, excluding
-held bodies, jump-over overlaps, and bodies stacked solely on another body. Count one
-unit per eligible identity regardless of mass or contact count. The linked door's state
+Plate support tests require direct resting contact or a stable downward corpse support
+chain, excluding held bodies, jump-over overlaps, and bodies stacked on non-contributing
+or held bodies. Count one unit per eligible identity regardless of mass or contact count.
+The linked door's state
 tracks the resulting weight. Safe entry-side anchors must be outside lethal volumes and
 protected from body placement so closure can displace an occupying player without a new
 hazard or a bypass.
@@ -135,3 +146,19 @@ are `--godot` (executable name/path), `--suite` (the four runner choices above),
 the runner with the corresponding user arguments, captures diagnostics, requires the final
 summary, enforces a process timeout, and propagates failure through its own exit code.
 It uses Python's standard library only. Imported resources and game code remain GDScript.
+
+## Presentation event isolation
+
+Room `presentation_cue(cue)` carries an audio request without mutating gameplay state.
+Committed deaths include `hazard_kind` alongside the unique `hazard_id`; type lookup
+must work for authored IDs such as `greybox_saw`. Emit spike/saw death cues once after
+death deduplication, saw-jam cues only on false-to-true transitions, anvil warning at
+cycle start and drop once at impact (not again at lethal commit), and body-pop on removal.
+Retired rooms emit no new cues. Sessions and isolated validation contexts bind room cues
+to the same AudioController, with four SFX voices and one Music voice; both bus controls
+apply independently. Headless runs resolve streams and requests without audible playback.
+
+Death/eviction fragments contain no physics nodes, register no body identities, and use
+only cosmetic timers. Share a room budget of 24 visible fragments, removing oldest
+cosmetic feedback to admit a new burst. Effects last 0.6 seconds of active play, pause
+with their room, and disappear when it is replaced; they never govern respawn timing.

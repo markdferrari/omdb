@@ -439,3 +439,172 @@ No before/after hooks are configured; both dispatch stages were skipped as requi
 
 NOT READY. Remaining implementation, gates, native checks, and playtests are required.
 No files have been published or deployed.
+
+## Table placement playtest correction — DEV-004 (2026-10-08)
+
+**Reported defect:** “placing objects on the table is not intuitive enough — feels like
+we're blocked when we shouldn't be”. The precise on-screen rejection reason was not
+provided. Repeatable tests reproduced overly narrow edge/diagonal placement and a raised
+table's edge blocking its own transport ray. No rendered observation is claimed here.
+
+**Setup:** Godot 4.7.2.stable.official.ed1daf0bf, Jolt at 60 Hz; physics fixture player
+at (-5, 0, 0), held 1.8 × 0.45 × 0.9 m body. A real 3.8 × 2.0 m pressure plate is offset
+so nominal aim straddles its edge; test straight and diagonal facing. Raised table is a
+2.2 × 1.0 × 2.2 m static box. Second-body trial uses two released direct contributors,
+with the new aim slightly intersecting the existing body. Negative trials use a 3 m wall,
+a 0.3 m support, and an obstacle added after a valid preview. Each arrangement is rebuilt
+ten times in `tests/physics/test_placement_assistance.gd`; the existing floor trial now
+also checks that valid nominal aim stays unchanged.
+
+| Scenario | Expected outcome | Actual result |
+| --- | --- | --- |
+| Straight/diagonal table edge | Find supported spot within 0.6 m; preserve continuous facing; preview matches release | PASS, ten rebuilt trials each |
+| Raised tabletop | Lift above edge; release at stable supported height | PASS, ten rebuilt trials |
+| Second body on plate | Find adjacent clear spot; both settle and contribute two direct units | PASS, ten rebuilt trials |
+| Wall/undersized support | Reject; retain held identity, freeze and disabled solid shape | PASS, ten rebuilt trials each |
+| Stale valid preview | Added obstruction causes fresh release rejection; retain held body | PASS, ten rebuilt trials |
+| Already valid floor aim | Horizontal candidate remains at nominal 1.6 m aim | PASS, ten rebuilt trials |
+
+**Implementation:** A valid nominal candidate remains unchanged. Otherwise, eligible
+support/occupied-body failures trigger nearby box support projections and alternatives,
+ordered by distance and bounded to 0.6 m. Every alternative retains the existing reach,
+normal/height/velocity support, endpoint volume, and protected-space checks. Explicit
+target queries stay strict. Transport rays follow a lift/traverse/lower path from the
+1.2 m carry anchor. Invalid ghost height reflects its centre support; HUD feedback now
+directs players to step back, approach the middle, or move around an obstacle.
+
+**Behavioral evidence:** RED `/tmp/omdb-placement-assist-red.log`: 180 failed, 2,279 passed.
+First implementation left 40 diagonal failures near reserved spawn space; nearby safe
+alternatives resolved them without removing the reservation. Physics GREEN
+`/tmp/omdb-placement-assist-green2.log`: 2,459 passed, zero failed. Final full run
+`/tmp/omdb-placement-final.log`: 83 imports, **6,386 passed, zero failed** (state 2,829,
+physics 2,469, recovery 1,088), exit 0, no engine errors. The full run emitted one Jolt
+job-capacity warning at shutdown after the passing summary; standalone physics and
+package checks did not emit it. Rendered query cost remains unverified under T109.
+
+**Current source identity:** SHA-256 `ea5cd903a0d611c29f26a5185f1cdc1ce9fb17bbbf4e1758775dc76a0c411e34`,
+using the preceding checkpoint's sorted path/NUL/bytes/NUL procedure. This supersedes
+the preceding source identity for the placement correction. No Git commit created.
+
+**Refreshed representative packages:** `/tmp/omdb-placement-export.log` passes both
+exports using exact 4.7.2 templates; project main-scene wiring restored.
+`/tmp/omdb-placement-package.log` passes both Windows/macOS PCK flows on Linux without
+source fallback or engine errors. These are fixture packages; native execution and
+six-room release acceptance remain unverified. Current package identities:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `builds/windows/over-my-dead-body.exe` | 109,127,680 | `4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668` |
+| `builds/windows/over-my-dead-body.pck` | 310,104 | `2eafd4eca0b47be51b7007c49edb31b839c20cbd26e2d98a1f384d111d35851c` |
+| `builds/macos/over-my-dead-body.zip` | 59,891,730 | `814fe39507f9bb0ed92c0bb7bf146f07339e61173f4d5dd93d3bc93b111e22e3` |
+
+**Task status:** T106–T108 complete. T109 remains UNVERIFIED: keyboard/controller
+placement feel, ghost readability, and rendered physics/frame costs require display and
+physical controller access. Relaunch the original greybox command in `quickstart.md` to
+retest. Earlier manual gates, native acceptance, and full room production remain open.
+Requirements checklist remains 16/16 complete. `.specify/extensions.yml` is absent at
+post-execution; no hooks are configured. Release remains NOT READY.
+
+## Reusable presentation and playtest preparation (2026-10-08)
+
+**Scope:** T084/T085/T087/T088/T089/T094/T110 complete; total 68/110 tasks. These are independent
+asset/system/protocol preparations allowed before room authoring. No full-room production
+or final presentation gate is claimed. T044, T065, T091 and native/release checks remain open.
+The user's “ok thats better” feedback confirms informal improvement after DEV-004; it does
+not supply T109's ten trials, controller review, or rendered cost evidence.
+
+**Setup:** Godot 4.7.2.stable.official.ed1daf0bf, Jolt 60 Hz, real physics fixture with held
+corpse and separate visual rig. Ten rebuilt trials cover visual isolation, forty consecutive
+cosmetic requests, muted death flow, named saws, jam transitions, anvil warning/impact, and
+retired rooms. Twenty rebuilt overlapping-death trials check one replacement/body creation
+and control restoration within 120 active physics frames. No display/speakers/controller
+acceptance is inferred from the headless setup.
+
+| Check | Expected outcome | Actual result |
+| --- | --- | --- |
+| Imported Idle/Move/Hurt plus carrying | Player/corpse shapes and held eligibility stay unchanged | PASS, ten trials |
+| Forty mixed death/eviction bursts | At most 24 visible fragments; no collision nodes or queue/support mutations; effects expire after 0.6 active seconds | PASS, ten trials |
+| Twenty overlapping death reports | One committed death and visible feedback; one replacement by two active seconds | PASS, twenty trials |
+| Music and cue resources | Looping >10-second music; six distinct short sounds; one Music/four bounded SFX voices | PASS, ten trials |
+| Muted death and custom `blade_west` ID | Deduplicate deaths; classify unique hazard ID by component type; preserve respawn | PASS, ten trials |
+| Persistent saw jam | Sound once on first transition; no per-tick repeats | PASS, ten trials |
+| Anvil cycles including lethal impact | Warning at each cycle start; one clang per drop, without lethal-commit duplication | PASS, ten trials |
+| Retired room | No subsequent presentation cues | PASS, ten trials |
+
+**Changes:** Original eight-bar 132 BPM swing music and six original sample-free cartoon
+sounds replace the settings-only previews. The generator and source/cue inventory are in
+`assets/audio/SOURCE.md`. PCM WAV paths replace initially proposed Ogg files using built-in
+Godot import because no external encoder is available. Source measurements: music
+641,498 bytes / 14.545442 seconds; six effects total 113,600 bytes / 0.22–0.65 seconds;
+all PCM peaks 0.749992, with no clipping. Actual musical style, loop seam, balance and
+speaker/headphone audibility remain T091 UNVERIFIED.
+
+Room presentation requests bind to the same audio service in both application and isolated
+greybox contexts. Hazards retain their visual signals when muted. Death and eviction now
+share non-colliding cosmetic feedback capped at 24 fragments; cosmetic expiration does
+not drive the respawn transaction. Captions distinguish spike, saw and anvil deaths by
+type even with custom IDs. `playtest.md` prepares five unrun session records, neutral cue
+questions, active timing/intervention/non-completion rules, 80% scoring and follow-up
+procedures; no participant results have been fabricated (T095/T096 remain open).
+
+**Behavioral RED/GREEN:** An initial test syntax error was corrected before establishing
+behavioral RED. `/tmp/omdb-presentation-red2.log`: 85 imports, 11 failed / 2,579 passed,
+missing mapped audio and bounded feedback. `/tmp/omdb-presentation-green.log`: 89 imports,
+2,759 physics assertions passed. After strengthening custom-ID and lethal-impact tests,
+`/tmp/omdb-presentation-full.log`: **6,776 passed, zero failed**, state 2,829 / physics 2,859 /
+recovery 1,088; 89 imports, exit 0, no engine errors. The full run again logs the existing
+Jolt job-capacity warning at shutdown after the passing summary; no such warning appears
+in the standalone GREEN or exported-package checks. Rendered performance is unverified.
+
+**T087 asset inventory:** Original `room_dressing.tscn` and shared stone/ink materials
+prepare a low miniature plinth/frame for later authored rooms. Final engine inspection
+`/tmp/omdb-art-inventory.log`: 18 meshes, 248 triangles, zero collision nodes, lights or
+shadow casters; exit 0. The temporary inspection script needed an explicit Node3D type
+before its successful run. Art is not applied to the greybox or substituted for missing
+room gates. `/tmp/omdb-presentation-art.log` passes 92 imports and all 2,859 physics
+assertions, also logging the known shutdown job-capacity warning. Final export imports
+the last material/mesh dimension adjustment. Actual readability, foreground occlusion,
+frame/physics cost and final room integration remain T090–T092 UNVERIFIED.
+
+**Current source identity:** SHA-256
+`2759dc0d8e466744428c7909b54085c04e501d97dd6a63b70dafc20bd5d6e653`, using the prior sorted
+path/NUL/bytes/NUL procedure. This supersedes the DEV-004 build for current playback.
+No Git commit created; prior user working-tree edits retained.
+
+**Exports:** `/tmp/omdb-presentation-final-export.log` succeeds for both exact-version template
+presets, restoring the original project main-scene wiring. `/tmp/omdb-presentation-final-package.log`
+passes Windows/macOS PCK flows on Linux without source fallback or engine errors. Native
+binary launch, control/audio/rendered performance, signing and six-room acceptance remain
+unverified. These are refreshed representative fixtures, with current identities:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `builds/windows/over-my-dead-body.exe` | 109,127,680 | `4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668` |
+| `builds/windows/over-my-dead-body.pck` | 485,580 | `cc07dfe66ee41f691c89e4a344fca264822481c186e6520c21277efc0e5e4f25` |
+| `builds/macos/over-my-dead-body.zip` | 60,041,625 | `72955468cd197fd8d59bdd0e61ae5cecdafc0c562aa9231649231f5037ec3307` |
+
+**Remaining checks:** T091 rendered/muted review, T109 physical-controller placement and
+query costs, and earlier G1/G2 checks remain UNVERIFIED. Relaunch the same greybox command
+to see/hear this increment; use the flow fixture for saved settings. Requirements checklist
+remains 16/16 complete. `.specify/extensions.yml` is absent at pre/post execution, so hooks
+are skipped. Release remains NOT READY.
+
+## Stacked plate weight correction — T110
+
+Setup: Godot 4.7.2 headless physics suite, fixed 60 FPS, ten repetitions of the pressure
+plate fixture. Each repetition placed two released bodies directly on a two-unit plate and
+then a third released body directly above the first body; the test then removed the second
+direct contributor and picked up the lower stacked body.
+
+Expected: every released body in a stable support chain reaching the plate contributes one
+unit; removing or holding a contributor immediately removes only that body's unit and lets
+the remaining stack settle. Held bodies, side-by-side bodies, and bodies resting on an
+ineligible support remain excluded.
+
+Actual: `FR020.stacked_bodies_each_count` passed in all ten repetitions. The stacked plate
+reported three units while all three bodies were released, two after removing the unrelated
+direct contributor, and two after picking up the lower stack body once the upper body settled
+onto the plate. The linked door state stayed open whenever the requirement remained met.
+The physics suite completed with no failed cases; the standalone runner emitted only the
+known Godot shutdown warning after its passing cases. No display or physical controller was
+available, so rendered placement feel remains unverified under T109.

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCues" load_steps=9 format=3]
+[ext_resource type="Script" path="res://scripts/app/audio_cues.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/cheerful_loop.wav" id="2"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/spike_hit.wav" id="3"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/saw_hit.wav" id="4"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/saw_jam.wav" id="5"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/anvil_warning.wav" id="6"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/anvil_drop.wav" id="7"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/body_pop.wav" id="8"]
+[resource]
+script = ExtResource("1")
+music = ExtResource("2")
+spike_hit = ExtResource("3")
+saw_hit = ExtResource("4")
+saw_jam = ExtResource("5")
+anvil_warning = ExtResource("6")
+anvil_drop = ExtResource("7")
+body_pop = ExtResource("8")

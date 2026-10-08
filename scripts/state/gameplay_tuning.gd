@@ -19,6 +19,7 @@ extends Resource
 @export var pickup_reach: float = 2.2
 @export var preview_distance: float = 1.6
 @export var placement_reach: float = 2.2
+@export var placement_assist_distance: float = 0.6
 @export var surface_clearance: float = 0.02
 @export var support_normal: float = 0.95
 @export var support_height_tolerance: float = 0.04

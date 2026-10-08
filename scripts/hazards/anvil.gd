@@ -44,17 +44,23 @@ func _ready() -> void:
 	_label.outline_size = 8
 	add_child(_label)
 	_update_visual(0)
+	if _room != null:
+		_room.presentation_cue.emit("anvil_warning")
 
 func _physics_process(delta: float) -> void:
 	if _room == null or _room.state.epoch != _epoch or _room.state.phase == RoomState.Phase.RETIRED:
 		return
+	var previous_cycle := int(elapsed / cycle_seconds)
 	elapsed += delta
 	var cycle := int(elapsed / cycle_seconds)
 	var phase := fmod(elapsed, cycle_seconds)
 	warning = phase < warning_seconds
+	if cycle != previous_cycle:
+		_room.presentation_cue.emit("anvil_warning")
 	if phase >= warning_seconds and _last_cycle != cycle:
 		_last_cycle = cycle
 		impact_count += 1
+		_room.presentation_cue.emit("anvil_drop")
 		var query := PhysicsShapeQueryParameters3D.new()
 		query.shape = _impact_shape
 		query.transform = Transform3D(global_basis, global_position + Vector3.UP)

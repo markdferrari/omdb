@@ -73,6 +73,7 @@ func activate_room(definition: RoomDefinition, persist: bool = true) -> Error:
 		return ERR_INVALID_DATA
 	room_epoch += 1
 	candidate.initialize(room_epoch, definition)
+	candidate.presentation_cue.connect(audio.play_cue)
 	# Initialize off the live room's physics footprint before the one-shot commit.
 	var authored_position := candidate.position
 	candidate.position += Vector3(1000, 0, 1000)

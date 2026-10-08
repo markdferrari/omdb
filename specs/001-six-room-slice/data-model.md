@@ -111,13 +111,19 @@ and collision, and remove its registry membership. There is never a sixth eligib
 
 - `epoch`, `subject_id`, `body_id`: the requesting identities.
 - `candidate_transform`: flat pose aligned with player facing, above the tested support.
-- `valid`: result of reach, line-of-sight, footprint, and overlap checks.
+- `valid`: result of reach, lifted transport-path, footprint, overlap, and reserved-space checks.
 - `reason`: `VALID`, `OUT_OF_REACH`, `BLOCKED_PATH`, `NO_SUPPORT`, `UNSTABLE_SUPPORT`,
   `PLAYER_OVERLAP`, `WORLD_OVERLAP`, `BODY_OVERLAP`, or `STALE_REQUEST`.
 - `support_ids`: observed world/body supports; diagnostic, not a permanent weld.
 - `sampled_physics_tick`: identifies preview freshness; release always revalidates.
 
-The query ignores only the held body's disabled physics representation. It must still
+A default candidate may adjust horizontally within the plan's 0.6 m bound to find
+supported space. A valid nominal aim remains unchanged; explicit-target queries remain
+strict. The candidate orientation always matches continuous facing. Release recomputes
+support/search/path against the current physics step.
+
+The endpoint query ignores only the held body's disabled physics representation.
+Transport rays additionally exclude the actor, whose carry anchor starts inside its shape. It must still
 test the live player and the supporting bodies for penetration. Touching a surface from
 above is permitted using the documented clearance; intersecting occupied volume is not.
 
@@ -125,7 +131,7 @@ above is permitted using the documented clearance; intersecting occupied volume 
 
 | Component | State | Validation / derived behavior |
 | --- | --- | --- |
-| Pressure plate | ID; required integer weight; set of eligible direct-support actor IDs | Requirement at least 1 and feasible within available player/body allocation; weight equals distinct eligible occupants, not mass or number of signals. |
+| Pressure plate | ID; required integer weight; set of eligible direct-support actor IDs and stable corpse-stack members | Requirement at least 1 and feasible within available player/body allocation; weight equals each distinct eligible player or released corpse whose stable support chain reaches the plate, not mass or duplicate signals. |
 | Buzzsaw | ID; set of released body IDs at jam point | Jammed iff set is nonempty; no jam timeout. A held/removed ID can never remain eligible. |
 | Falling anvil | ID; `WAITING`, `WARNING`, `DROPPING`, `RECOVERING`; cycle time | Lethal volume active during impact/drop; warning precedes each drop; reset cancels the old cycle. Bodies are not destroyed or pushed by a crushing rigid body. |
 | Spike bed | ID; player-only lethal volume; solid corpse-support bed | A body-covered route must keep the player's collision shape above the exposed lethal volume. |

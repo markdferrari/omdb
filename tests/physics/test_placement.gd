@@ -59,6 +59,9 @@ func run(h: SceneTree) -> void:
 			await h.frames(45)
 			var result := PlacementEvaluator.evaluate(room, identity)
 			h.check(result.valid, "SC006.valid.%s.%d" % [surface, trial])
+			if surface == "floor":
+				var nominal := room.player.global_position + room.player.facing * room.tuning.preview_distance
+				h.check(Vector2(result.candidate_transform.origin.x - nominal.x, result.candidate_transform.origin.z - nominal.z).length() < 0.001, "DEV004.valid_aim_unchanged")
 			var held: Corpse = room.bodies[identity]
 			h.check(held.freeze and held.collision_layer == 0 and held.collision_mask == 0 and held.get_node("Shape").disabled, "US2.held_has_no_physics")
 			room.request_interact(room.state.epoch, room.state.subject_id)

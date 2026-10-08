@@ -19,6 +19,7 @@ corpse_linear_damp = 0.5
 pickup_reach = 2.2
 preview_distance = 1.6
 placement_reach = 2.2
+placement_assist_distance = 0.6
 surface_clearance = 0.02
 support_normal = 0.95
 support_height_tolerance = 0.04
