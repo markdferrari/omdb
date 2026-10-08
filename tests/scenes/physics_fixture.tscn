@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3]
+[ext_resource type="Script" path="res://scripts/rooms/room_controller.gd" id="1"]
+[sub_resource type="BoxShape3D" id="floor_shape"]
+size = Vector3(16, 0.4, 12)
+[sub_resource type="BoxMesh" id="floor_mesh"]
+size = Vector3(16, 0.4, 12)
+[sub_resource type="StandardMaterial3D" id="floor_material"]
+albedo_color = Color(0.22, 0.27, 0.32, 1)
+[sub_resource type="BoxShape3D" id="wall_shape0"]
+size = Vector3(0.4, 2, 12)
+[sub_resource type="BoxMesh" id="wall_mesh0"]
+size = Vector3(0.4, 2, 12)
+[sub_resource type="BoxShape3D" id="wall_shape1"]
+size = Vector3(0.4, 2, 12)
+[sub_resource type="BoxMesh" id="wall_mesh1"]
+size = Vector3(0.4, 2, 12)
+[sub_resource type="BoxShape3D" id="wall_shape2"]
+size = Vector3(16, 2, 0.4)
+[sub_resource type="BoxMesh" id="wall_mesh2"]
+size = Vector3(16, 2, 0.4)
+[sub_resource type="BoxShape3D" id="front_shape"]
+size = Vector3(16, 2, 0.4)
+[sub_resource type="BoxMesh" id="front_mesh"]
+size = Vector3(16, 0.15, 0.4)
+[node name="PhysicsFixture" type="Node3D"]
+script = ExtResource("1")
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.2, 0)
+collision_layer = 1
+collision_mask = 6
+[node name="Shape" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("floor_shape")
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("floor_mesh")
+material_override = SubResource("floor_material")
+[node name="Spawn" type="Marker3D" parent="."]
+position = Vector3(-5, 0.05, 0)
+[node name="Camera" type="Camera3D" parent="."]
+position = Vector3(12, 12, 12)
+rotation_degrees = Vector3(-35.3, 45, 0)
+projection = 1
+size = 21.0
+current = true
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -30, 0)
+shadow_enabled = true
+light_energy = 1.2
+[node name="Wall0" type="StaticBody3D" parent="."]
+position = Vector3(-8.2, 1, 0)
+collision_layer = 1
+collision_mask = 6
+[node name="Shape" type="CollisionShape3D" parent="Wall0"]
+shape = SubResource("wall_shape0")
+[node name="Mesh" type="MeshInstance3D" parent="Wall0"]
+mesh = SubResource("wall_mesh0")
+[node name="Wall1" type="StaticBody3D" parent="."]
+position = Vector3(8.2, 1, 0)
+collision_layer = 1
+collision_mask = 6
+[node name="Shape" type="CollisionShape3D" parent="Wall1"]
+shape = SubResource("wall_shape1")
+[node name="Mesh" type="MeshInstance3D" parent="Wall1"]
+mesh = SubResource("wall_mesh1")
+[node name="Wall2" type="StaticBody3D" parent="."]
+position = Vector3(0, 1, -6.2)
+collision_layer = 1
+collision_mask = 6
+[node name="Shape" type="CollisionShape3D" parent="Wall2"]
+shape = SubResource("wall_shape2")
+[node name="Mesh" type="MeshInstance3D" parent="Wall2"]
+mesh = SubResource("wall_mesh2")
+[node name="FrontBoundary" type="StaticBody3D" parent="."]
+position = Vector3(0, 1, 6.2)
+collision_layer = 1
+collision_mask = 6
+[node name="Shape" type="CollisionShape3D" parent="FrontBoundary"]
+shape = SubResource("front_shape")
+[node name="CutawayMesh" type="MeshInstance3D" parent="FrontBoundary"]
+position = Vector3(0, -0.925, 0)
+mesh = SubResource("front_mesh")

@@ -1,0 +1,12 @@
+# Godot generated imports and local editor data
+.godot/
+builds/
+.test-output/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/

@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="RoomCatalogue" load_steps=10 format=3]
+[ext_resource type="Script" path="res://scripts/rooms/room_catalogue.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/rooms/room_definition.gd" id="2"]
+[ext_resource type="PackedScene" path="res://tests/scenes/recovery_room.tscn" id="3"]
+[sub_resource type="Resource" id="room1"]
+script = ExtResource("2")
+room_id = "room_01"
+title = "Recovery fixture 1 — not an authored room"
+scene = ExtResource("3")
+next_room_id = "room_02"
+[sub_resource type="Resource" id="room2"]
+script = ExtResource("2")
+room_id = "room_02"
+title = "Recovery fixture 2 — not an authored room"
+scene = ExtResource("3")
+next_room_id = "room_03"
+[sub_resource type="Resource" id="room3"]
+script = ExtResource("2")
+room_id = "room_03"
+title = "Recovery fixture 3 — not an authored room"
+scene = ExtResource("3")
+next_room_id = "room_04"
+[sub_resource type="Resource" id="room4"]
+script = ExtResource("2")
+room_id = "room_04"
+title = "Recovery fixture 4 — not an authored room"
+scene = ExtResource("3")
+next_room_id = "room_05"
+[sub_resource type="Resource" id="room5"]
+script = ExtResource("2")
+room_id = "room_05"
+title = "Recovery fixture 5 — not an authored room"
+scene = ExtResource("3")
+next_room_id = "room_06"
+[sub_resource type="Resource" id="room6"]
+script = ExtResource("2")
+room_id = "room_06"
+title = "Recovery fixture 6 — not an authored room"
+scene = ExtResource("3")
+next_room_id = ""
+[resource]
+script = ExtResource("1")
+rooms = Array[ExtResource("2")]([SubResource("room1"), SubResource("room2"), SubResource("room3"), SubResource("room4"), SubResource("room5"), SubResource("room6")])

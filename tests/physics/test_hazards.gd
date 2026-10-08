@@ -1,0 +1,33 @@
+extends RefCounted
+const SETUP := preload("res://tests/physics/test_placement.gd")
+func run(h: SceneTree) -> void:
+	var helper = SETUP.new()
+	for trial in range(10):
+		var room: RoomController = load("res://tests/scenes/physics_fixture.tscn").instantiate()
+		room.spawn_player = true
+		h.root.add_child(room)
+		var saw: Buzzsaw = load("res://scenes/hazards/buzzsaw.tscn").instantiate()
+		saw.position = Vector3(3, 0, 3)
+		room.add_child(saw)
+		var first: Corpse = helper.add_body(room, Vector3(3, 0.245, 2.4))
+		var second: Corpse = helper.add_body(room, Vector3(3, 0.245, 3.6))
+		await h.frames(600)
+		h.check(saw.jammed() and saw.contributors.size() == 2, "US3.jam_without_timeout.%d" % trial)
+		room.state.pickup(room.state.epoch, room.state.subject_id, first.body_id)
+		first.disable_prop()
+		room._sync_contacts()
+		h.check(saw.jammed() and saw.contributors.size() == 1, "EC14.pickup_one_still_jammed")
+		# Place the capsule above the remaining body inside the stopped rotor volume.
+		room.player.position = Vector3(3, 0.72, 3.6)
+		await h.frames(3)
+		h.check(room.player.alive, "US3.stopped_saw_safe_route")
+		var query := PhysicsRayQueryParameters3D.create(Vector3(2, 1.4, 3), Vector3(4, 1.4, 3), 1)
+		h.check(room.get_world_3d().direct_space_state.intersect_ray(query).is_empty(), "US3.no_solid_stopped_rotor")
+		room.state.remove_body(second.body_id)
+		room._remove_prop(second.body_id)
+		room._sync_contacts()
+		h.check(not saw.jammed() and not room.player.alive, "EC14.reactivation_existing_player_contact")
+		await h.frames(45)
+		h.check(room.state.subject_id == 2 and room.player.alive, "US3.saw_single_death_respawn")
+		h.check(room.state.registry.record_for(first.body_id).size() > 0, "US3.saw_corpse_immunity")
+		await helper.dispose(h, room)

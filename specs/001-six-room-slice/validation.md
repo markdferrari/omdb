@@ -1,0 +1,441 @@
+# Six-room slice validation evidence
+
+Implementation began 2026-10-08. Engine: `4.7.2.stable.official.ed1daf0bf`;
+Python 3.12.3; `Linux-7.0.0-31-generic-x86_64-with-glibc2.39`; CPU `AMD Ryzen 5 220 w/ Radeon 740M Graphics`; `MemTotal:       30429908 kB`. GPU and controller devices are not exposed. No usable display/GPU/controller device access in
+this session. Rendered launch confirmed X11 and Wayland unavailable. Headless results do not establish visual, input-feel, or native acceptance.
+
+## Record format
+
+For every scenario record requirement/scenario IDs, task, code revision, engine/build,
+OS/CPU/GPU/RAM/input, resolution, setup/starting state, exact actions, expected outcome,
+actual result, repetitions, metrics, pass/fail/unverified, and related defect IDs.
+A changed implementation invalidates affected earlier evidence until rechecked.
+Procedures and commands: [quickstart.md](quickstart.md).
+
+## Implementation checkpoints
+
+| Check | Setup / actions | Expected | Actual | Status |
+| --- | --- | --- | --- | --- |
+| T001–T004 project/assets | Initialize pinned project; copy R5 files; recompute source and copy SHA-256 | Engine/renderer/layers/inputs/tuning present; byte-identical sources | Godot 4.7.2 imports cow; all three hashes match source; `SOURCE.md` records bytes and hashes; source project untouched | PASS (setup only) |
+| T006–T010 foundations | `python3 scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-foundation-checks`; fresh fixture, 90 actual physics frames | Nonempty state/physics/recovery; isolated paths; solid floor support | 31 assertions passed: state 19, physics 4, recovery 8; floor support within 0.04 m and velocity <0.1 m/s | PASS (foundation only, one run) |
+
+The foundation recovery suite checks only storage-root injection and rejection. It does
+not implement or validate SaveStore, restart, saved-room resume, or production recovery.
+Registry/death behavior is now implemented and covered by the US1 results below.
+No suite is represented as complete story coverage by the foundation results.
+
+## Defects and environment limitations
+
+| ID | Observation | Resolution / remaining work |
+| --- | --- | --- |
+| ENV-001 | Restricted first import could not create engine user/cache/config files and local editor sockets | Wrapper redirects XDG directories into disposable `/tmp/omdb-engine-*` directories; authorized headless checks run with local socket access. Game save-root injection is separate. No errors suppressed. |
+| ENV-002 | No `/dev/dri` or `/dev/input` exposed | Rendered checks, physical controller trials, and representative benchmark remain UNVERIFIED. |
+
+## T011 negative harness results
+
+Procedure: `python3 scripts/checks/check_harness.py`; fresh temporary project per fault,
+headless Godot 4.7.2, Linux, no human input. Expected: each faulty runner/wrapper returns
+nonzero, no production saves touched, no fault left in working code. Actual: all twelve
+fault categories rejected; project files were only mutated in temporary copies.
+
+| Fault | Observed exit | Result |
+| --- | ---: | --- |
+| Empty suite | 1 | PASS |
+| Missing case script | 1 | PASS |
+| Intentional false assertion | 1 | PASS |
+| No assertions | 1 | PASS |
+| Script parse/import error | 1 | PASS |
+| Runtime script error | 1 | PASS |
+| Missing final summary | 1 | PASS |
+| Runner watchdog (0.1 s injected, unbounded frames) | 1 | PASS |
+| Missing physics fixture | 1 | PASS |
+| Unknown suite | 1 | PASS |
+| Unsafe `user://` root | 1 | PASS |
+| Caller process timeout (0.1 s, five-second child) | 1 | PASS |
+
+One execution per fault; these prove harness failure handling, not ten-trial gameplay.
+Intentional fault injections never entered the working tree. T011 complete.
+
+## Tuning history
+
+All [R8 defaults](research.md#r8-initial-tuning-and-measurement-decisions) are captured
+in `resources/gameplay_tuning.tres` and remain labelled unmeasured. No observed control,
+jump, placement, camera, or performance measurement has justified a tuning change yet.
+
+## Greybox and representative character gates
+
+| Gate / requirement | Expected evidence | Actual | Status |
+| --- | --- | --- | --- |
+| G1 / VR-003 | Keyboard/controller greybox: movement, jump, death, carry, placement, stacks, plates, saws, cap | US1 movement/death/bridge fixture and tests complete; carry/plate/saw core still pending | UNVERIFIED |
+| VR-004 / SC-009 | Actual-camera cow material/scale/action review with one player and five corpses; performance observations | GLB imports; source provenance verified; visual assessment unrun | UNVERIFIED |
+| VR-002 / SC-003 | Ten fresh rebuilds and traversals per bridge/stack | Ten scripted fresh US1 bridges and ten support-removal trials pass; human traversal/readability review unrun | PARTIAL |
+| G2 / VR-006 representative flow | Complete menu/play/restart/settings with keyboard and controller | Not implemented/run | UNVERIFIED |
+
+## State and recovery scenario trials
+
+VR-001 / VR-005 require ten repetitions per applicable scenario, including all
+EC-01–EC-15. Story trial records will be appended below as actual tests run.
+US1 applicable state/physics results follow below. All other story and recovery scenarios remain UNVERIFIED.
+
+## Six-room solution records
+
+All room production awaits G1/G2. Each future record must include original scene,
+measured geometry/jump reach, exact actions, creation order, placements, peak count,
+anti-bypass checks, ten fresh trials, traversal observations, and defects.
+
+| Room | Intended teaching | Trials | Status |
+| --- | --- | ---: | --- |
+| 1 | Sacrifice/traversal | 0 | UNVERIFIED |
+| 2 | Carry/weigh | 0 | UNVERIFIED |
+| 3 | Persistent jam | 0 | UNVERIFIED |
+| 4 | Anvil/FIFO replacement (six creations, five active) | 0 | UNVERIFIED |
+| 5 | Deliberate five-body allocation | 0 | UNVERIFIED |
+| 6 | Final combined experiment | 0 | UNVERIFIED |
+
+## Native input matrix
+
+| Platform | Input | Full flow / restart / reopen / settings / replay | Status |
+| --- | --- | --- | --- |
+| Windows x86_64 | Keyboard | Not run | UNVERIFIED |
+| Windows x86_64 | Controller | Not run | UNVERIFIED |
+| macOS Universal 2 | Keyboard | Not run | UNVERIFIED |
+| macOS Universal 2 | Controller | Not run | UNVERIFIED |
+
+Native machines and matching export templates are not available here. Downloaded macOS
+launch/signing and architecture smoke checks remain UNVERIFIED.
+
+## Performance
+
+Required: rendered release build, one player/five bodies/hazards/effects, 1920×1080,
+30 s warmup and 120 s capture; record actual hardware and frame/physics p95,
+triangles/draw calls/effects. Targets: frame p95 ≤16.7 ms, physics p95 ≤4 ms.
+No rendered capture run: UNVERIFIED. Headless support timing is not a benchmark.
+
+## First-time playtests
+
+Required: at least five people unfamiliar with solutions, active completion times
+including retries, non-completions/help, cue recognition, jump judgments, placement
+frustration; pacing review/follow-up after changes. No participants/session evidence:
+UNVERIFIED. The 20–30 minute median and ≥80% cue recognition remain targets.
+
+## US1 implementation and regression checkpoint (T012–T023)
+
+**Build identity:** working tree based on `2952b7180465b0afa87f0b8c5046a6841b4338c4`. SHA-256 of sorted runtime/test
+paths and bytes (`path + NUL + bytes + NUL`, excluding UIDs/cache): `a6a55391c9647232cc40b8cbcdfbf27710ba8a6b17ea5a88db2939d13c0408fd`.
+Includes project/version files and `.gd`, `.tscn`, `.tres`, `.glb`, `.import` under
+scripts/scenes/tests/resources/assets/characters/cow. This identifies the code tested;
+no Git commit has been created.
+
+**Setup:** Linux, Godot 4.7.2 standard, Compatibility selected, Jolt, 60 Hz physics;
+headless Dummy renderer/audio; scripted input, no human/controller. Wrapper isolates XDG
+engine data and injects `/tmp/omdb-us1-final` before game save access. Tests use fixed
+60 Hz simulation (`--fixed-fps 60`), accelerated relative to wall time. CPU/GPU benchmark
+conditions are not exercised. Command in quickstart; final process exit 0.
+
+**Expected:** compile every current script/scene/resource; all nonempty requested suites
+pass; one accepted death/corpse/replacement, body count ≤5 with creation-order eviction,
+no stale contact acceptance, solid support, support-removal settling, and ten fresh
+scripted bridge traversals.
+
+**Actual:** 33 resources compile/load without engine/script errors; 2,906
+assertions pass, zero fail. State: 1,909; physics:
+989; foundation storage-root recovery: 8.
+
+| Scenario / requirements | Setup and actions | Expected / actual | Repetitions | Status |
+| --- | --- | --- | ---: | --- |
+| T012/T015; FR-013; EC-02 | New registry per trial; create 12 bodies and inspect every returned identity, immutable age/origin, snapshots, FIFO and eviction result | Unique epoch-qualified IDs; never >5; oldest correctly replaced; returned record mutation cannot alter authoritative age — all pass | 10 × 12 creations | PASS |
+| T012/T015; FR-004–FR-005; EC-01–EC-02 | Fresh RoomState, 12 accepted deaths per trial with duplicate/stale epoch/subject requests and repeated replacement token | Exactly one latch/replacement per subject; old tokens rejected; prior body IDs retained except legitimate eviction — all pass | 10 × 12 deaths | PASS |
+| T014/T017; FR-003 | Independent expected 45° ground directions, normalized diagonals, analog magnitude and echoed/non-echoed jump events | Correct cardinal vectors/speed; echo rejected; one press buffers jump — all pass | 10 per scenario | PASS (scripted input only) |
+| T013/T016/T018; FR-006/FR-017; EC-06/EC-08/EC-14 | Actual corpse boxes on spike-support bed; live player stands/traverses upper body; disable support and wake upper prop | Lower/upper centre height within 0.04/0.06 m; live actor supported without death; upper settles within 0.04 m after removal; exposed contact kills; corpse survives — all pass | 10 fresh fixtures | PASS |
+| T019/T022; FR-004–FR-006/FR-013–FR-014; EC-01–EC-02 | Real player/corpse/HUD scene, two lethal requests in same dispatch, seven repeated deaths per fixture; arrange resulting props in separated diagnostic space | Immediate dead-player ineligibility, disabled physical shape after commit, one corpse at observed X, one replacement at safe hatch, count ≤5, marker agrees with registry — all pass | 10 × 7 scene deaths | PASS (no human timing claim) |
+| T021/T023; VR-002/SC-003 preliminary | Fresh greybox each trial; walk/jump into spike strip, let actual hazard create central corpse, respawn, jump onto corpse, walk top, jump to far bank | One hazard-created body supports completed route; replacement alive/grounded beyond x=2.12; no extra deaths — all pass | 10 consecutive fresh rebuilt routes | PASS (scripted); playable review UNVERIFIED |
+| T020; FR-006/FR-035 preliminary | Import cow, resolve Idle/Move/collapsed clips, squash visual and inspect independent collision, sample/pause corpse pose | Clips resolve; continuous movement loops; visual scale does not alter collision; flat pose paused; released box translates with rotation locked — all pass | 1 integrity run | PASS (resource/animation integrity only) |
+
+Body/rig metadata and scripted animation integrity do not establish visual fit or camera
+readability. Mixed-hazard and held-body twenty-death timing acceptance remains T043.
+The recovery suite still validates only root isolation; SaveStore and actual recovery
+are not implemented. Carry/plate/saw/anvil scenarios are not silently covered by these results.
+
+### Observed defects and corrections
+
+| ID | Observation | Fix / recheck |
+| --- | --- | --- |
+| DEV-001 | Child HUD `_ready` preceded parent state initialization and raised a nil snapshot error | Initialize state in room `_enter_tree`; final all-suite recheck has zero script errors |
+| TEST-001 | Support-removal fixture teleported a live CharacterBody away from contact, injecting a large kinematic solver velocity into its supporting body | Disable the test actor before independent support-loss trial; upper prop now settles in ten trials. This was a fixture correction, not evidence that arbitrary game teleports are safe |
+| TEST-002 | Bridge test inspected registry at the immediate death latch, before the deferred physical commit | Await the safe commit boundary; ten fresh routes pass |
+| DEV-002 | Imported continuous clip loop behavior was not guaranteed by clip names | Explicit Idle/Move looping and animation-integrity assertion; final check passes |
+
+### T023/T024 blocked playable checks
+
+Attempted an actual rendered launch of `greybox_validation.tscn` with isolated storage
+and five-iteration limit. **Actual exit 1:** `X11 Display is not available`, Wayland
+connection/creation also failed, and Godot reported all display drivers failed. `/dev/dri`
+and `/dev/input` are absent. Therefore human physics/control feel, maximum jump reach
+including forgiveness under each input method, shadows/landing judgment, camera framing
+at the three required resolutions, and actual-camera cow fit cannot be checked here.
+No graphics acceptance was inferred from headless tests. T023 remains partially verified
+and unchecked; T024 remains unverified and unchecked. The US1 phase is not fully accepted.
+
+The invoked implementation skill requires phase completion before moving to the next
+phase. Implementation stops at this phase validation boundary; later tasks remain open.
+Feature scheduling permits isolated later systems while G1 is unavailable, but no such
+later phase is claimed implemented at this checkpoint. Full room production remains gated.
+
+## Keyboard playtest defect and fix — DEV-003 (2026-10-08)
+
+**Requirements/tasks:** FR-003, FR-031; US1/AS1; T002/T014/T017/T024.
+
+**Reported setup:** User launched the isolated greybox using the documented command and
+a `mktemp -d /tmp/omdb-greybox.XXXXXX` save root. Input: keyboard arrow keys. User platform,
+engine/build, hardware, resolution, and repetition count were not reported.
+**Expected:** Right Arrow moves screen-right; Left Arrow moves screen-left.
+**Actual user report:** Right Arrow moves left; Left Arrow does nothing. Original
+playable keyboard result: FAIL. This is defect evidence, not completion of T024.
+
+**Reproduction:** Query the installed Godot 4.7.2 constants and match actual
+`InputEventKey` events against the loaded InputMap. `KEY_LEFT` is 4194319 and
+`KEY_RIGHT` is 4194321. The serialized left action had 4194321 (Right Arrow), while the
+right action had 4194323 (Page Up). UI left/right had the same mistake. The camera-relative
+movement function was correct; the earlier tests exercised vectors and movement overrides
+and therefore missed the serialized keyboard binding defect.
+
+**Fix:** Correct only the arrow-key entries for `move_left`, `move_right`, `ui_left`,
+and `ui_right` in `project.godot`. Preserve WASD and controller bindings. Add
+`tests/state/test_keyboard_input.gd` to send actual key events through InputMap and
+`tests/physics/test_keyboard_movement.gd` to drive actual CharacterBody3D motion with
+those events, with movement overrides disabled. Project settings remain authoritative;
+no runtime remapping was added.
+
+**Regression setup:** Agent Linux environment and hardware as recorded above; engine
+4.7.2; headless real Jolt simulation at fixed 60 Hz; synthetic keyboard events; isolated
+engine caches and game save roots. Fresh reusable physics fixture/player for each motion
+trial; use the actual orthographic camera's projected screen positions for assertions.
+
+| Check | Actions / expected result | Actual result | Repetitions | Status |
+| --- | --- | --- | ---: | --- |
+| Before-fix keyboard regression | New state tests with actual Left/Right key events, exclusivity, UI arrows, diagonals and opposing keys | Exit 1; 90 failures, 2,159 passes; reproduces the user report without script/import errors | 10 per state scenario | Confirmed defect |
+| Correct movement bindings | Press/release each arrow and WASD key; exactly the intended movement action and vector, zero on release | All pass | 10 per key | PASS (synthetic input) |
+| UI navigation arrows | Each arrow matches exactly its corresponding UI direction | All pass | 10 per arrow | PASS (binding only; menus still planned) |
+| Combined keys | Diagonal normalized; opposite horizontal keys cancel; releasing one preserves the remaining direction | All pass for arrows and WASD | 10 per category per key set | PASS |
+| Real player motion | From safe fixture spawn, press each key for 12 physics frames; projected displacement >1 pixel along intended screen axis, perpendicular displacement <0.1 pixel; release and await 20 frames to stop | All pass with `use_movement_override=false` | 10 fresh fixtures per key (80 total) | PASS (scripted playable components) |
+| Existing affected regressions | Full state/physics/root-isolation suite, including ten fresh bridge rebuilds, support-loss settling, death/cap/oldest/visual checks | Exit 0; 35 resources compile/load; 3,486 assertions pass, zero fail (state 2,249; physics 1,229; recovery 8) | Existing required scripted trials plus new trials | PASS |
+
+Commands:
+
+```sh
+# New regression tests were run before editing the bindings:
+python3 scripts/checks/run_checks.py --suite state --save-root /tmp/omdb-keyboard-red
+# Final verification after the binding fix:
+python3 scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-keyboard-fixed
+```
+
+**Fixed-build identity:** same source-path/byte hashing procedure as the earlier checkpoint:
+`18bb05d9a2ca5424c7acbb2493552e2b1904184b1ca7ae5478bee2112186537a`. Earlier checkpoint records are historical; this recheck
+supersedes their affected input/bridge regression evidence.
+
+**Remaining:** Human confirmation of the corrected arrow controls is UNVERIFIED. User
+must close and relaunch the scene to load the updated InputMap, then check all four arrows,
+WASD, releases/diagonals, and jumps. Controller comfort, native platforms, camera/readability,
+and the rest of T023/T024 remain unverified. No tuning or acceptance thresholds changed.
+DEV-003 is fixed in code and regression-verified; manual retest is pending.
+
+## Carry, contacts, FIFO, saw, and anvil checkpoint (T025–T048)
+
+**Status:** T025–T034, T037–T042, and T045–T047 implemented and regression-verified.
+41/105 implementation tasks are complete. Required playable checks remain unchecked.
+The user said the keyboard playtest was “good” and requested continued implementation
+following DEV-003. This is informal feedback; no controller, resolution, ten-trial manual
+placement, or character acceptance was reported. Earlier manual-pending records remain
+historical; this feedback does not complete T024 or T044.
+
+**Build identity:** SHA-256 `28ed0dad094a8b9cb969b6ed82a8f34e2ba225ad67458c2f6edc1f8f885eae62`.
+Sorted `path + NUL + bytes + NUL` for `project.godot`, `.godot-version`, and every file
+under scripts/tests/scenes/resources/assets excluding `.uid`, `.md`, and `.import`.
+No Git commit was created. Same engine/hardware as the header; headless Dummy rendering,
+Jolt, fixed 60 Hz physics, scripted input, disposable engine XDG and injected save roots.
+No rendering/physical-controller or native-platform performance claim.
+
+```sh
+# Behavioral expectations before saw/anvil implementation:
+python3 -u scripts/checks/run_checks.py --suite state --save-root /tmp/omdb-saw-red
+python3 -u scripts/checks/run_checks.py --suite physics --save-root /tmp/omdb-anvil-red
+# Final integrated verification:
+python3 -u scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-systems-final
+python3 -u scripts/checks/check_harness.py
+```
+
+Saw RED: 20 behavioral failures (unique contributors and remaining jam), 2,609 passes.
+Anvil RED: 30 behavioral failures (warning, impact, repeat), 1,979 passes. Both wrappers
+returned nonzero as expected; minimal unimplemented interfaces compiled. Earlier US2
+expectations likewise failed before carry/contact implementation. Final run: exit 0,
+57 resources compile/load, **4,716 assertions pass, zero fail** (state 2,649; physics 2,059;
+recovery 8), with no engine/script errors. The recovery assertions still establish only
+save-root isolation, not SaveStore or production restart/resume. Negative harness:
+all 12 intentional faults rejected, exit 0; the injected process timeout prints its
+expected failure message. Faults were confined to disposable project copies.
+
+| Requirements / tasks | Setup and actions | Expected and actual | Repetitions | Result |
+| --- | --- | --- | --- | --- |
+| T025/T030/T032; EC-03–EC-05 | New state/physical room; missing/second pickup, stale release, oldest/newer held at five; die and replace | One held ID, unchanged age/count, disabled world physics; carrying death releases before FIFO; oldest removed, newer survives, one replacement — pass | 10 per state case; 10 per held age in real physics | PASS (scripted) |
+| T026/T028/T034; SC-006 | Fresh player at hatch, body centre (-3.7,.245,0), facing +X; floor, settled body (-3.4,.245,0), and local spike supports | Same evaluator ghost/commit; full volume clear, accepted collision restored; centre within .04m vertically and horizontal preview difference <.03m after settle — pass | 10 each surface | PASS (physics) |
+| T026/T034; SC-006 | Reach/player/world/body overlap, transport wall, removed floor, incomplete footprint and moving support; stale preview before E intent | Rejection reason correct; stale/invalid interaction keeps held identity, frozen collider, queue age/count — pass | 10 per defined category | PASS (scripted; manual interaction review pending) |
+| T027/T029/T034; EC-06–EC-07/EC-15 | Two direct bodies on two-unit plate, upper stack, live player, pickup/removal; close occupied door at (5,0,0) | Unique direct units only; upper contributes nothing; held excluded immediately; unsupported upper settles; safe entry-side retreat, live player, reserved anchor — pass | 10 fresh setups | PASS (physics) |
+| T037/T040/T041; EC-02–EC-07/EC-14 | Five bodies, oldest held/supporting/plate/saw; sixth death; inspect carry marker, collider/contact removal and burst | Count stays five, indicated oldest removed in every role; carry clears, plate/saw lose contributor immediately, unsupported stack settles to floor within .04m; burst has no collision objects — pass | 10 per role, state and physics | PASS |
+| T038/T039; EC-14 | Two released bodies overlap jam box; wait 600 fixed frames; hold one, remove final with live player already in rotor volume | Jam has no timeout; first removal leaves jam; final removal reactivates and kills existing live contact exactly once; stopped rotor has no solid obstruction; bodies survive — pass | 10 fresh setups, each ≥10 simulated seconds jammed | PASS (physics; human route readability pending) |
+| T038/T040; EC-07 | Three bodies directly on widened two-unit plate; remove one then another | Weight 3→2 keeps door open, 2→1 closes; immediate reconciliation — pass | 10 real physics setups plus 10 state trials | PASS |
+| T045–T047; EC-08–EC-09 | Player and settled corpse under actual anvil component; inspect warning at .5s, impact after 1s, repeat at 4s; retire and wait | One-second warning, three-second repeat cycle; impact kills player with one replacement; corpse remains stable and intact, no impulse; retirement cancels future impacts — pass | 10 fresh setups | PASS (physics; warning readability pending) |
+| Prior US1 regressions | Full suite including arrow events/motion, duplicate deaths, ten fresh spike bridge rebuilds and rig/collider integrity | Existing affected regressions remain passing | Existing ten-trial loops rerun | PASS (scripted) |
+
+**Defects found and resolved:**
+
+- US2 pickup fixture initially overlapped the player capsule, pushing it and changing
+  the intended preview/support alignment. Body centre moved to -3.7; support/reach
+  thresholds and assertions were preserved.
+- Static save-root storage retained `save_paths.gd` at engine shutdown. An attempted
+  static-unload annotation did not resolve it. Session data now lives in SceneTree
+  metadata, preserving isolation validation; clean shutdown and root checks pass.
+- A new saw test referenced a nonexistent death counter. The runtime error aborted its
+  cleanup and left a fixture floor present, causing later missing-support failures.
+  Correcting the test to assert actual subject/replacement identity restored clean
+  cleanup and both suites pass. No placement tolerance or expectation was weakened.
+
+**Still UNVERIFIED:** T023–T024 human controls/jump/framing; T035 manual placement with
+both devices; T036 manual stack/bridge traversal; T043 twenty active-play mixed/held
+hazard deaths timed to restored control; T044 the integrated keyboard/controller and
+one-player/five-cow visual/performance gate; T048 human warning/jam/door checks. Tests
+use accelerated simulation, so their tick counts do not establish active-play latency.
+No graphical/controller access is available here. Full six-room production remains
+blocked by T044; isolated recovery/menu work remains unimplemented. New station steps
+are in `quickstart.md`. No tuning values or acceptance requirements changed.
+
+## Recovery, menus, controller mapping, and representative exports (T049–T067)
+
+**Final scope:** 58/105 tasks implemented. T049–T056, T058–T064, T066–T067 complete
+isolated recovery/representative flow work. T057/T065 human checks remain unchecked,
+alongside the earlier greybox/character tasks. The catalogue intentionally maps all six
+valid IDs to the same reusable greybox; no six-room teaching sequence is authored.
+T044 and T065 are the hard entry gate for Phase 8.
+
+**Setup:** same Linux/engine/CPU as the header, Compatibility selected, fixed 60 Hz Jolt,
+headless Dummy rendering/audio, synthetic keyboard and joypad events (including device
+42), separate disposable save/engine paths. Child-process reopen tests run the same exact
+Godot executable against the recovery fixture. No physical controller/display/native OS.
+
+```sh
+# Save expectations before behavior:
+python3 -u scripts/checks/run_checks.py --suite recovery --save-root /tmp/omdb-save-red
+# Corrected interfaces, before room transactions:
+python3 -u scripts/checks/run_checks.py --suite recovery --save-root /tmp/omdb-reset-behavior-red
+# Menu/audio expectations before behavior:
+python3 -u scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-menu-red
+# Device-independent controller expectations before binding fix:
+python3 -u scripts/checks/run_checks.py --suite state --save-root /tmp/omdb-controller-red
+# Final checks:
+python3 -u scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-final-flow
+python3 -u scripts/checks/check_harness.py
+python3 -u scripts/checks/export_fixture.py --template-dir /tmp/omdb-export-templates/4.7.2.stable
+python3 -u scripts/checks/check_package.py
+```
+
+Behavioral RED results: saves 150 fail/128 pass; reset transactions 20 fail/358 pass;
+menu/audio 40 fail/5,646 pass; device-42 binding and pause 20 fail/2,799 pass. These runs
+compiled and returned nonzero for unmet expectations, not empty tests. Final integrated
+regressions: **5,976 pass, zero fail** (state 2,829; physics 2,059; recovery 1,088), 82
+resources compile/load, exit 0 with no engine errors. All 12 negative harness probes
+are rejected; its deliberately injected process-timeout message is expected.
+
+| Requirements / tasks | Setup/actions | Expected and actual | Repetitions | Result |
+| --- | --- | --- | --- | --- |
+| T049/T051; EC-11–EC-12 | Separate version-1 progress/settings in injected roots; six IDs, missing/corrupt/unsupported schemas, invalid room values, unknown fields, partial/non-finite/bool/string/out-of-range volume values | Valid IDs retained; fallback room 1; independent field defaults; finite numbers clamped; malformed reads do not overwrite; no production-root fallback — pass | 10 per category, all six IDs | PASS (Linux) |
+| T049/T051; EC-12 | Real root-path write failure; controlled temporary-write and checked-rename failures after valid destination exists | Nonzero result; previous progress byte-identical and loadable; prior settings retained; only owned temporary files cleaned — pass | 10 per failure category | PASS |
+| T050/T052/T053/T055; EC-09–EC-10 | Held oldest, queued death, committed feedback/pending replacement callback, saw jam, queued placement; restart before/after another activation | Old epoch retired immediately; fresh room/player/queue/carry/machinery; initial anvil phase restored at activation; exactly one hosted room; stale commands/callbacks rejected; restart targets committed room — pass | 10 per scenario | PASS |
+| T053; EC-10–EC-11 | Bad candidate root after valid room 3, invalid arbitrary path and duplicate catalogue | Prior playable room/progress retained; lookup rejected; no invalid candidate committed — pass | 10 per category | PASS |
+| T054/T056; VR-005 | Each valid ID, settings .12/.88; populate/hold body, close; run a separate Godot process to reopen | One live subject, zero bodies/carry, original plate/door/saw state, correct room/settings, no engine errors — pass | 10 × 6 independent process reopen trials | PASS (fixture IDs, not authored rooms) |
+| T055; FR-026 | Actual physical R key and North face-button events on device 42 during death feedback | Fresh room/epoch, one player, zero bodies, brief restart feedback; no stale replacement — pass | 10 per method | PASS (synthetic events) |
+| T058/T061/T063 | Title/Continue; Escape and joypad pause events; queued death feedback and movement while paused; Settings/Back; Quit to Title/Continue | Opening event consumed; simulation/feedback frozen; Resume focused; Settings Music focused; previous Settings control restored; reentry fresh — pass | 10 per flow | PASS (headless controls) |
+| T058/T062 | Stick noise .1 then active .7; key E; active-device disconnect/reconnect and application focus loss; replace HUD then change method | Noise ignored; generic controller/key prompts switch; active disconnect/focus loss pauses; reconnect retains focus; freed HUD subscriptions do not run — pass | 10 each | PASS (synthetic; physical hardware unverified) |
+| T059/T060/T064; SC-010 | Live Music/SFX slider changes/mute, Back save, restart, fixture final-room completion, Replay, Quit to Title; forced settings-save failure | Separate buses and live mapping/mute; previous save survives failure while current volumes stay active; failure shown briefly; room 6 retained at completion, Replay saves fresh room 1 and retains volumes — pass | 10 each | PASS (headless; audibility unverified) |
+
+**Resolved defects and evidence limits:**
+
+- ConfigFile's parser logs engine errors for malformed quoted values. The reader now
+  parses only contract scalar fields with JSON's non-logging parser, checks structural
+  lines/schema, ignores unknown fields, and preserves per-field defaults. Missing fields
+  are tested before `get_value` so null defaults do not trigger Godot diagnostics.
+  The harness still rejects unexpected engine errors; no output errors are filtered out.
+- Every original joypad binding targeted device 0. Device-42 tests failed for Pause;
+  bindings now use device -1 for all gameplay/UI joypad actions. Pause and restart pass.
+  Actual controller comfort, mapping/disconnect behavior and native input remain unverified.
+- Retired rooms now skip deferred commits/contact reconciliation, preventing obsolete
+  puzzle updates after cancellation. New rooms initialize off the prior physics footprint,
+  commit once, restore authored position, and save only after success.
+- macOS Universal 2 export initially failed because ETC2/ASTC imports were disabled.
+  Enabling `textures/vram_compression/import_etc2_astc` resolved the observed prerequisite.
+  No gameplay tuning, engine choice, or acceptance threshold changed.
+- The rapid packaged smoke test exposed active preview audio retained at shutdown;
+  Explicit stop/clear on exit alone did not resolve the Dummy-backend retention.
+  Headless checks now retain streams/bus routing without starting inaudible playback;
+  normal graphics sessions still play previews. Native audibility/shutdown remains
+  unverified. Final package checks shut down cleanly; no engine diagnostics are filtered out.
+
+### Template provenance and export evidence
+
+Matching standard templates were obtained from the
+[official Godot 4.7.2 archive](https://godotengine.org/download/archive/4.7.2-stable/).
+The full 1.22 GiB download timed out; a range reader retrieved only the needed release
+members and checked their ZIP CRCs and exact `4.7.2.stable` version. Per-member SHA-256
+is retained in `export-template-source.json`; no full-archive checksum is claimed.
+All template data is outside the repository under `/tmp/omdb-export-templates`.
+
+Windows x86_64 and macOS Universal 2 exports succeed. Windows PE architecture, required
+PCK header, and macOS fat-binary x86_64/arm64 entries are checked. Automated test runners
+and source art are excluded; the representative menu/greybox fixtures remain included.
+The exporter restores `res://scenes/main.tscn` after temporary fixture selection and keeps
+unrelated project edits. Exact final artifact sizes/hashes are recorded below and in
+`builds/fixture-manifest.json`; `builds/` is ignored. The macOS app is unsigned/unnotarized.
+Linux headless PCK checks pass and prove packaged resources/menu/recovery behavior;
+they do not run native binaries or establish VR-006 acceptance.
+
+**Remaining:** Actual keyboard/controller placement/traversal and Stage 1/2 playable
+checks (T023–T024, T035–T036, T043–T044, T048, T057, T065), character/camera review and
+measured performance, six-room authoring/solutions/progression, final presentation/audio,
+Windows/macOS native input/launch/signing, and first-time-player acceptance. Required
+physical/display checks cannot run here. Phase 8 remains blocked by its explicit gate;
+no complete-slice or release acceptance is claimed.
+
+### Final build and packaged smoke results
+
+**Final build identity:** SHA-256 `81c9ecf09fbac7df9e7be87a8fcfe95a6ecf9fc436273b8bf76db0fb5ee3769c` of sorted `path + NUL + bytes + NUL`
+for project/version/export presets/default bus layout and every file under scripts/tests/
+scenes/resources/assets excluding `.uid`, `.md`, `.import`, `.pyc`, and `__pycache__`.
+This includes runtime and verification tooling. No Git commit was created.
+
+Final full run `/tmp/omdb-final-flow.log`: 82 imports, 5,976 assertions, zero failed,
+exit 0, no engine errors. Final export `/tmp/omdb-final-export.log`: both presets succeed,
+exact 4.7.2 templates, normal main-scene wiring restored. Final package smoke
+`/tmp/omdb-package-final.log`: **Windows and macOS PCK flows PASS**, clean exit 0 and
+no engine errors. Linux checks use an empty source fallback directory, load the exported
+Title/Continue/Pause/Settings/Quit-to-Title/fresh-Continue flow, validate retained volumes,
+and confirm excluded automated runners are absent. This is not native binary execution.
+
+| Artifact | Bytes | SHA-256 | Acceptance |
+| --- | ---: | --- | --- |
+| `builds/windows/over-my-dead-body.exe` | 109,127,680 | `4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668` | Native launch UNVERIFIED |
+| `builds/windows/over-my-dead-body.pck` | 307,112 | `dc004e821d461562cdece972eda668b8521f3304ba3d69c47c81f04fa55cd044` | Required companion; Linux PCK smoke PASS |
+| `builds/macos/over-my-dead-body.zip` | 59,889,152 | `33af55a92dc2c999311a279e61ee318ffc4e940edc8dcdcba0a9c3eb24ccee75` | Native launch UNVERIFIED |
+
+The macOS application contains x86_64 and arm64 executable slices. The Windows executable
+is x86_64 PE and has its separate valid PCK. Neither package has native visual/input,
+signing, downloaded-launch, or release acceptance. They require a temporary `--save-root`
+and contain representative fixtures, not the six-room slice. Full room production remains
+blocked by T044/T065.
+
+## Extension hooks
+
+`.specify/extensions.yml` is absent at both pre-execution and post-execution checks.
+No before/after hooks are configured; both dispatch stages were skipped as required.
+
+## Release acceptance
+
+NOT READY. Remaining implementation, gates, native checks, and playtests are required.
+No files have been published or deployed.

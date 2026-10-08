@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3]
+[resource]
+metadata/visual_scale = 0.72
+metadata/corpse_scale = 0.72
+metadata/move_clip = "Move"
+metadata/idle_clip = "Idle"
+metadata/death_clip = "Hurt"
+metadata/corpse_clip = "KnockedOut"
+metadata/jump = "Idle with visual stretch; unverified"
+metadata/carry = "Pending US2 adaptation; unverified"

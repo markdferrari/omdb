@@ -1,0 +1,35 @@
+[gd_scene format=3]
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+[node name="Panel" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -180.0
+offset_right = 220.0
+offset_bottom = 180.0
+[node name="Items" type="VBoxContainer" parent="Panel"]
+theme_override_constants/separation = 18
+[node name="Heading" type="Label" parent="Panel/Items"]
+text = "OVER MY DEAD BODY"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+[node name="Start" type="Button" parent="Panel/Items"]
+text = "Start / Continue"
+custom_minimum_size = Vector2(400, 58)
+theme_override_font_sizes/font_size = 24
+[node name="Settings" type="Button" parent="Panel/Items"]
+text = "Settings"
+custom_minimum_size = Vector2(400, 58)
+theme_override_font_sizes/font_size = 24
+[node name="Quit" type="Button" parent="Panel/Items"]
+text = "Quit"
+custom_minimum_size = Vector2(400, 58)
+theme_override_font_sizes/font_size = 24

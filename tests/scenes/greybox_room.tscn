@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3]
+[ext_resource type="PackedScene" path="res://tests/scenes/physics_fixture.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/spike_bed.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/pressure_plate.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/exit_door.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/buzzsaw.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/anvil.tscn" id="7"]
+[node name="GreyboxRoom" instance=ExtResource("1")]
+spawn_player = true
+[node name="SpikeBed" parent="." instance=ExtResource("2")]
+[node name="HUD" parent="." instance=ExtResource("3")]
+[node name="PlateOne" parent="." instance=ExtResource("4")]
+position = Vector3(-4.4, 0, -3.5)
+plate_id = "plate_one"
+[node name="PlateTwo" parent="." instance=ExtResource("4")]
+position = Vector3(-4.4, 0, 3.5)
+plate_id = "plate_two"
+required_weight = 2
+[node name="DoorOne" parent="." instance=ExtResource("5")]
+position = Vector3(6.2, 0, -2.5)
+linked_plate_id = "plate_one"
+exit_id = "exit_one"
+[node name="DoorTwo" parent="." instance=ExtResource("5")]
+position = Vector3(6.2, 0, 2.5)
+linked_plate_id = "plate_two"
+exit_id = "exit_two"
+[node name="PlacementStation" type="Label3D" parent="."]
+position = Vector3(-3.6, 0.6, -1.8)
+billboard = 1
+font_size = 32
+outline_size = 8
+text = "CARRY / PLACE
+E or West"
+
+[node name="SawStation" parent="." instance=ExtResource("6")]
+position = Vector3(3.5, 0, -4.1)
+hazard_id = "greybox_saw"
+
+[node name="AnvilStation" parent="." instance=ExtResource("7")]
+position = Vector3(3.5, 0, 4.3)
+hazard_id = "greybox_anvil"

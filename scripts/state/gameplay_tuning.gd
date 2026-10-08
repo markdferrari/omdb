@@ -1,0 +1,47 @@
+class_name GameplayTuning
+extends Resource
+## R8 hypotheses. These defaults remain unmeasured until playable trials.
+@export var measurement_status: String = "Unmeasured R8 defaults"
+@export var move_speed: float = 4.5
+@export var acceleration: float = 24.0
+@export var gravity: float = 20.0
+@export var jump_speed: float = 6.0
+@export var coyote_time: float = 0.10
+@export var jump_buffer: float = 0.12
+@export var floor_snap: float = 0.18
+@export var player_height: float = 1.5
+@export var player_radius: float = 0.32
+@export var corpse_size: Vector3 = Vector3(1.8, 0.45, 0.9)
+@export var corpse_mass: float = 20.0
+@export var corpse_friction: float = 1.0
+@export var corpse_bounce: float = 0.0
+@export var corpse_linear_damp: float = 0.5
+@export var pickup_reach: float = 2.2
+@export var preview_distance: float = 1.6
+@export var placement_reach: float = 2.2
+@export var surface_clearance: float = 0.02
+@export var support_normal: float = 0.95
+@export var support_height_tolerance: float = 0.04
+@export var camera_yaw_degrees: float = 45.0
+@export var camera_pitch_degrees: float = 35.3
+@export var camera_margin: float = 0.1
+@export var respawn_seconds: float = 0.6
+@export var anvil_warning_seconds: float = 1.0
+@export var anvil_cycle_seconds: float = 3.0
+@export var stick_deadzone: float = 0.2
+@export var character_triangle_budget: int = 7000
+@export var character_surface_budget: int = 32
+@export var character_material_budget: int = 10
+@export var character_bone_budget: int = 8
+@export var character_byte_budget: int = 524288
+@export var room_triangle_budget: int = 100000
+@export var room_draw_call_budget: int = 450
+@export var shadowed_light_budget: int = 1
+@export var effect_instance_budget: int = 24
+@export var target_fps: int = 60
+@export var frame_p95_ms: float = 16.7
+@export var physics_p95_ms: float = 4.0
+@export var benchmark_warmup_seconds: float = 30.0
+@export var benchmark_seconds: float = 120.0
+@export var benchmark_resolution: Vector2i = Vector2i(1920, 1080)
+@export var minimum_landing_width: float = 1.2

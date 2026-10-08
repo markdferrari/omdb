@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="GameplayTuning" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/state/gameplay_tuning.gd" id="1"]
+[resource]
+script = ExtResource("1")
+move_speed = 4.5
+acceleration = 24.0
+gravity = 20.0
+jump_speed = 6.0
+coyote_time = 0.10
+jump_buffer = 0.12
+floor_snap = 0.18
+player_height = 1.5
+player_radius = 0.32
+corpse_size = Vector3(1.8, 0.45, 0.9)
+corpse_mass = 20.0
+corpse_friction = 1.0
+corpse_bounce = 0.0
+corpse_linear_damp = 0.5
+pickup_reach = 2.2
+preview_distance = 1.6
+placement_reach = 2.2
+surface_clearance = 0.02
+support_normal = 0.95
+support_height_tolerance = 0.04
+camera_yaw_degrees = 45.0
+camera_pitch_degrees = 35.3
+camera_margin = 0.1
+respawn_seconds = 0.6
+anvil_warning_seconds = 1.0
+anvil_cycle_seconds = 3.0
+stick_deadzone = 0.2
+character_triangle_budget = 7000
+character_surface_budget = 32
+character_material_budget = 10
+character_bone_budget = 8
+character_byte_budget = 524288
+room_triangle_budget = 100000
+room_draw_call_budget = 450
+shadowed_light_budget = 1
+effect_instance_budget = 24
+target_fps = 60
+frame_p95_ms = 16.7
+physics_p95_ms = 4.0
+benchmark_warmup_seconds = 30.0
+benchmark_seconds = 120.0
+benchmark_resolution = Vector2i(1920, 1080)
+minimum_landing_width = 1.2
