@@ -8,6 +8,16 @@
 
 **Input**: User description: "$ARGUMENTS"
 
+**Governing documents**: `PRD.md` and `.specify/memory/constitution.md`
+
+## Scope and Principle Alignment *(mandatory)*
+
+- **Slice contribution**: [PRD requirement and milestone this feature delivers]
+- **Included / excluded**: [Feature boundary within the six-room slice]
+- **Applicable principles**: [I–V with affected rules; explain any N/A]
+- **Puzzle progression**: [Mechanics taught or combined and intended solution within five
+  bodies for affected rooms; or N/A with reason]
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
@@ -78,6 +88,12 @@
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
 
+For affected gameplay, specify observable outcomes for simultaneous hazard contacts,
+rapid deaths, invalid placement, death while carrying, and oldest-body removal while
+carried, supporting a stack, pressing a plate, or jamming a saw. Cover restart, room
+transition, and reopening saved progress where relevant. Mark unrelated cases N/A with
+a reason; do not omit applicable state rules.
+
 ## Requirements *(mandatory)*
 
 <!--
@@ -87,16 +103,30 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001**: Game MUST [observable capability for this feature]
+- **FR-002**: Game MUST [relevant corpse, placement, or hazard rule]
+- **FR-003**: Players MUST be able to [affected interaction using keyboard and controller]
+- **FR-004**: Game MUST [applicable restart, progression, or settings behavior]
+- **FR-005**: Game MUST [feedback needed to understand the puzzle from the fixed camera]
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-006**: Game MUST [NEEDS CLARIFICATION: observable interaction not defined by the PRD]
+
+### Verification Requirements *(mandatory)*
+
+This section explicitly requests the applicable verification tasks required by the
+constitution. Define acceptance evidence, not implementation details or a test framework.
+
+- **VR-001**: Verify [affected state invariants and edge cases] through repeatable
+  regression checks with defined starting state, actions, and expected result.
+- **VR-002**: Validate [affected physics, camera readability, placement, and control feel]
+  in playable scenes, with repeat counts and pass criteria defined for the feature.
+- **VR-003**: Exercise [affected flows] with keyboard and controller; specify Windows and
+  macOS checks required for this feature and for release.
+- **VR-004**: Record setup, expected outcomes, actual results, and outstanding defects in
+  [feature validation record]. Include greybox/asset evidence, room solution steps, or
+  playtest observations when applicable; explain N/A cases.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -112,10 +142,13 @@
 
 ### Measurable Outcomes
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-001**: [Player outcome, e.g., intended route completed within the five-body limit]
+- **SC-002**: [Reliability measure with trial count, setup, and allowed failure count]
+- **SC-003**: [Readability or usability outcome assessed from the stationary camera]
+- **SC-004**: [Completion of affected input, recovery, and platform checks]
+
+For full-slice playtests, record completion time against the 20–30 minute first-playthrough
+target, help requests, misunderstood rules, jump judgment, and placement frustration.
 
 ## Assumptions
 
@@ -125,7 +158,7 @@
   chosen when the feature description did not specify certain details.
 -->
 
-- [Assumption about target users, e.g., "Users have stable internet connectivity"]
-- [Assumption about scope boundaries, e.g., "Mobile support is out of scope for v1"]
-- [Assumption about data/environment, e.g., "Existing authentication system will be reused"]
-- [Dependency on existing system/service, e.g., "Requires access to the existing user profile API"]
+- [Feature-specific assumption about player knowledge or teaching order]
+- [Dependency on the greybox proof or an existing gameplay interaction]
+- [Asset assumption requiring visual validation; metadata alone is not proof]
+- [Unresolved tuning or measurement decision assigned to feature planning]

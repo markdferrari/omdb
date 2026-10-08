@@ -18,29 +18,57 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]
+**Language/Version**: GDScript / Godot 4.x [record exact engine version]
 
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]
+**Primary Dependencies**: [Godot built-ins, selected runtime assets, any justified add-ons]
 
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]
+**Storage**: Local current-room progress and player settings; no saved corpse arrangement
 
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]
+**Testing**: [Repeatable state regression checks and playable scene checks; commands and evidence paths]
 
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Target Platform**: Windows and macOS; complete keyboard and controller support
 
-**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]
+**Project Type**: Godot 3D puzzle-platformer
 
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]
+**Performance Goals**: [Measured targets, reference hardware, resolution, and player-plus-five-corpses scenario]
 
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]
+**Tuning and Asset Budgets**: [Relevant movement, placement, physics, and asset limits;
+greybox evidence or a planned experiment to establish them, with results recorded before completion]
 
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Constraints**: Stationary orthographic camera; five-body cap; stable solid corpses; local recovery
+
+**Scale/Scope**: [Feature's part of the six-room slice and current milestone; excluded work]
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Read `.specify/memory/constitution.md` and `PRD.md`. Record a result and supporting design
+reference for each gate before research and after design; use N/A only with a reason.
+
+| Principle | Required evidence | Before research | After design |
+|-----------|-------------------|-----------------|--------------|
+| I. Focused Six-Room Slice | PRD scope mapping, teaching order, and intended solutions within the cap where rooms change | [Result/reference] | [Result/reference] |
+| II. Reliable Corpse Physics and State | State ownership and transitions for death, carrying, FIFO replacement, hazard updates, and stable support | [Result/reference] | [Result/reference] |
+| III. Readable Puzzles and Dependable Controls | Camera framing, screen-relative input, landing cues, placement validity, and readable puzzle feedback | [Result/reference] | [Result/reference] |
+| IV. Complete Play Flow and Recovery | Keyboard/controller coverage, restart and save boundaries, and platform verification | [Result/reference] | [Result/reference] |
+| V. Prove Interactions Before Expanding | Greybox/asset proof dependencies, repeatable checks, and recorded playtest or scene validation | [Result/reference] | [Result/reference] |
+
+Resolve conflicts before implementation. Complexity Tracking records issues and their
+resolution; it does not authorise a constitution exception.
+
+### Verification and Evidence
+
+- **State regression checks**: [Applicable spec scenarios, automated checks where practical,
+  reproducible manual alternatives, and expected outcomes]
+- **Playable validation**: [Bridge/stack trials, camera and placement readability, control
+  feel, setup and repetition counts; record actual results during implementation]
+- **Asset check**: [Selected character, source/export paths, actual-camera inspection,
+  animation gaps, and player-plus-five-corpses performance; or N/A with reason]
+- **Input and platform matrix**: [Affected flows on keyboard/controller and Windows/macOS;
+  distinguish completed checks from planned or unavailable checks]
+- **Evidence location**: [Feature quickstart and validation record paths; room solution
+  steps and playtest findings where applicable]
 
 ## Project Structure
 
@@ -52,52 +80,31 @@ specs/[###-feature]/
 ├── research.md          # Phase 0 output (/speckit-plan command)
 ├── data-model.md        # Phase 1 output (/speckit-plan command)
 ├── quickstart.md        # Phase 1 output (/speckit-plan command)
-├── contracts/           # Phase 1 output (/speckit-plan command)
-└── tasks.md             # Phase 2 output (/speckit-tasks command - NOT created by /speckit-plan)
+├── contracts/           # Phase 1 output when applicable (/speckit-plan command)
+├── tasks.md             # Phase 2 output (/speckit-tasks command - NOT created by /speckit-plan)
+└── validation.md        # Actual check results recorded during implementation and playtesting
 ```
 
 ### Source Code (repository root)
 <!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
+  ACTION REQUIRED: Replace this illustrative Godot layout with the feature's
+  actual paths. Include only directories needed for its scope. Keep visual
+  assets separate from gameplay scripts and corpse collision behavior.
 -->
 
 ```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
-
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
-
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
-
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+project.godot
+scenes/
+├── player/
+├── corpses/
+├── hazards/
+├── rooms/
+└── ui/
+scripts/
+assets/
+├── characters/
+└── audio/
+tests/                  # Regression scripts and/or reproducible validation scenes
 ```
 
 **Structure Decision**: [Document the selected structure and reference the real
@@ -105,9 +112,9 @@ directories captured above]
 
 ## Complexity Tracking
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
+> **Fill ONLY if Constitution Check identifies a conflict. Record its resolution or
+> the required amendment; justification alone does not pass the gate.**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Conflict | Why Proposed | Compliant Alternative or Amendment Required | Resolution |
+|----------|--------------|--------------------------------------------|------------|
+| [Principle and proposed deviation] | [Concrete need] | [Alternative or amendment] | [Status/reference] |
