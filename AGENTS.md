@@ -7,7 +7,7 @@ dependent specifications, plans, tasks, and templates consistent.
 
 This is a Godot 4.x / GDScript 3D puzzle-platformer targeting a six-room Windows and macOS
 slice. Preserve the five-body creation-order limit, dependable corpse support and
-placement, stationary camera readability, complete keyboard/controller flow, and room
+placement, readability in all four diagonal isometric camera views, complete keyboard/controller flow, and room
 recovery rules. Keep visual rigs independent of solid corpse collision behavior.
 
 Use the Spec Kit artifacts under `specs/` for feature requirements, design decisions,

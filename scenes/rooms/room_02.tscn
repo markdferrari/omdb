@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3]
+[ext_resource type="PackedScene" path="res://scenes/rooms/chamber.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/spike_bed.tscn" id="spikes"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/exit_door.tscn" id="exit"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/pressure_plate.tscn" id="plate"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/buzzsaw.tscn" id="saw"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/anvil.tscn" id="anvil"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/gate_wall.tscn" id="wall"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="hud"]
+[ext_resource type="PackedScene" path="res://scenes/art/room_dressing.tscn" id="art"]
+[node name="Room02" instance=ExtResource("1")]
+spawn_player = true
+[node name="Exit" parent="." instance=ExtResource("exit")]
+position = Vector3(6.2, 0, 0)
+linked_plate_id = "exit_plate"
+[node name="ExitWall" parent="." instance=ExtResource("wall")]
+position = Vector3(6.2, 0, 0)
+[node name="HUD" parent="." instance=ExtResource("hud")]
+[node name="Dressing" parent="." instance=ExtResource("art")]
+[node name="Teaching" type="Label3D" parent="."]
+position = Vector3(-4, 0.1, 5)
+billboard = 1
+font_size = 26
+outline_size = 8
+text = "02 — Dead weight\nLeave two bodies on the remote plate; the live clone is only one unit."
+[node name="SupplySpikes" parent="." instance=ExtResource("spikes")]
+position = Vector3(-5, 0, -3.5)
+hazard_id = "supply_spikes"
+bed_size = Vector2(2, 2)
+[node name="TeachingPlate" parent="." instance=ExtResource("plate")]
+position = Vector3(-5, 0, 3.5)
+plate_id = "teaching_plate"
+caption = "PRACTICE PLATE"
+required_weight = 1
+[node name="ExitPlate" parent="." instance=ExtResource("plate")]
+position = Vector3(-1, 0, 3.5)
+plate_id = "exit_plate"
+caption = "EXIT PLATE"
+required_weight = 2

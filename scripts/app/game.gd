@@ -47,7 +47,8 @@ func _ready() -> void:
 	menu.game = self
 	$UI.add_child(menu)
 	_notice = Label.new()
-	_notice.position = Vector2(40, 240)
+	_notice.position = Vector2(24, 272)
+	_notice.add_theme_font_size_override("font_size", 22)
 	$UI.add_child(_notice)
 	notification.connect(_show_notice)
 	if auto_start and catalogue != null:
@@ -62,6 +63,8 @@ func _ready() -> void:
 
 func activate_room(definition: RoomDefinition, persist: bool = true) -> Error:
 	if definition == null or not definition.is_progression_room() or definition.scene == null:
+		return ERR_INVALID_DATA
+	if catalogue != null and catalogue.production and (not catalogue.valid_sequence() or catalogue.find(definition.room_id) != definition):
 		return ERR_INVALID_DATA
 	var instance := definition.scene.instantiate()
 	if not instance is RoomController:
@@ -78,7 +81,7 @@ func activate_room(definition: RoomDefinition, persist: bool = true) -> Error:
 	var authored_position := candidate.position
 	candidate.position += Vector3(1000, 0, 1000)
 	room_host.add_child(candidate)
-	if not is_instance_valid(candidate.player) or candidate.state.phase != RoomState.Phase.ACTIVE:
+	if not is_instance_valid(candidate.player) or candidate.state.phase != RoomState.Phase.ACTIVE or (catalogue != null and catalogue.production and not definition.matches_room(candidate)):
 		room_host.remove_child(candidate)
 		candidate.queue_free()
 		return ERR_INVALID_DATA
@@ -100,6 +103,8 @@ func activate_room(definition: RoomDefinition, persist: bool = true) -> Error:
 	_set_mode(Mode.PLAYING)
 	menu.show_screen("")
 	room_activated.emit(current_room_id, room_epoch)
+	if catalogue != null and catalogue.production:
+		notification.emit("Experiment %s — %s" % [current_room_id.right(2), definition.title])
 	return OK
 
 func request_activation(room_id: String) -> String:

@@ -2,14 +2,38 @@
 
 **Date**: 2026-10-08 | **Plan**: [plan.md](plan.md)
 
-The pinned project, foundation harness, and US1 greybox now exist. Carrying, plates,
-saws, recovery, menus, authored rooms, and exports remain planned. Commands and expected
-outcomes for those later milestones are procedures, not completed test evidence.
-See [validation.md](validation.md) for actual results.
+The pinned project now includes six connected authored rooms, carrying, plates, saws,
+anvils, recovery, menus, Completion/Replay and desktop playtest archives. Automated
+solutions and recovery pass; rendered, physical-controller, native-platform and first-time
+playtest acceptance remain unverified. See [validation.md](validation.md) for actual results.
 
 ## 1. Prerequisites and first import
 
-Run commands from the repository root. Use Godot **4.7.2** standard build and Python 3.12
+Run commands from the repository root. The normal main scene now contains the complete
+six-room sequence, Title/Continue, Pause/Settings, Completion and Replay. For a fresh
+playtest with isolated progress:
+
+```sh
+OMDB_ROOM_ROOT="$(mktemp -d /tmp/omdb-rooms.XXXXXX)"
+godot --path . -- --save-root "$OMDB_ROOM_ROOT"
+```
+
+Select Start/Continue at Title. To enter immediately with the same connected progression:
+
+```sh
+godot --path . --scene res://tests/scenes/authored_room_validation.tscn -- --save-root "$OMDB_ROOM_ROOT"
+```
+
+Use the same root to resume the saved room fresh; create a new root to begin at Room 1.
+Set the variable and run Godot in the same shell. An unset variable passes an empty
+save root and is rejected. Normal `godot --path .` uses local player saves.
+Exits advance automatically; the sixth opens Completion and Replay saves a fresh Room 1.
+Keyboard: arrows/WASD, Space jump, E pickup/place, R restart, Escape pause, Q/C or 1–4
+camera views. Controller: left stick, South jump, West pickup/place, North restart,
+Menu pause, LB/RB camera views. Preserve the body left in the saw when ferrying bodies.
+See [room-solutions.md](room-solutions.md) for recorded routes and allocations.
+
+Use Godot **4.7.2** standard build and Python 3.12
 for the development check wrapper. Runtime players need only the exported game. Obtain
 matching 4.7.2 export templates before export; the inspected local template directory is
 empty. Interactive checks require graphics access and a physical controller.
@@ -115,7 +139,27 @@ before full room production. An unavailable display/controller leaves those chec
 
 ## 4. Recovery, menus, and room solutions
 
-After stage 2, run the main project with an isolated root and follow US4–US6:
+All six authored rooms are available with connected exits, restart and contextual
+teaching. This launcher starts the real catalogue immediately, including saved-room resume:
+
+Use Q/C (controller LB/RB) to cycle diagonal isometric views, or 1 South-east /
+2 South-west / 3 North-west / 4 North-east to select directly. The initial view is
+South-east; each cycle turns 90° while preserving tilt, elevation, distance and zoom. Movement follows
+the selected view. Camera-facing perimeter meshes cut away while solid boundaries remain.
+The open exit now retains a green doorway frame. Check the route/ghost/landing visibility
+at every view and the three required resolutions; these rendered checks remain unverified.
+
+```sh
+OMDB_ROOM_ROOT="$(mktemp -d /tmp/omdb-rooms.XXXXXX)"
+godot --path . --scene res://tests/scenes/authored_room_validation.tscn -- --save-root "$OMDB_ROOM_ROOT"
+```
+
+Jump into the spikes once, respawn, jump onto the remaining body, cross its top, and
+jump to the far bank before entering the open exit. R/North restarts for another trial.
+The doorway advances to Room 2; subsequent exits advance through Room 6 and Completion.
+See `room-solutions.md` for recorded solution/bypass checks.
+
+Run the main project with an isolated root and follow US4–US6:
 
 ```sh
 OMDB_FLOW_ROOT="$(mktemp -d /tmp/omdb-flow.XXXXXX)"
@@ -134,8 +178,8 @@ godot --path . -- --save-root "$OMDB_FLOW_ROOT"
   reverse crossings and corpses cannot complete a room; restarting before a queued
   crossing commits keeps the current room. The isolated greybox has no next-room
   catalogue, so it reports completion without becoming a progression room. Use the
-  representative flow fixture for progression/Completion/Replay checks; its repeated
-  greybox rooms remain fixtures until T071–T077 author and integrate the six rooms.
+  authored launcher or normal main scene for production progression/Completion/Replay.
+  The older representative flow remains an optional repeated-greybox diagnostic fixture.
 - Inspect every anvil warning/drop cycle and safe door displacement. Closing a door cannot
   become an unlisted lethal hazard or let the player pass with insufficient plate weight.
 
@@ -347,9 +391,8 @@ explicit temporary root before any read/write. `recovery_validation.tscn` enters
 fixture immediately; `flow_validation.tscn` begins at Title.
 
 The six valid IDs in `recovery_catalogue.tres` deliberately reuse the same greybox. They
-verify lookup/recovery, not room authoring. Automated checks invoke the final-room
-completion event to exercise Completion and Replay; actual live-player exit crossing
-and six authored rooms remain later work gated on T044/T065. Physical controller,
+verify lookup/recovery, not room authoring. Production automation now checks real exit
+crossing, all six solutions, Completion and Replay against the authored catalogue. Physical controller,
 window disconnect/reconnection, audio audibility, focus/readability, and full manual
 recovery checks remain unverified until recorded.
 
@@ -358,7 +401,22 @@ python3 scripts/checks/run_checks.py --suite all --save-root /tmp/omdb-final-flo
 python3 scripts/checks/check_harness.py
 ```
 
-### Representative desktop exports
+### Connected desktop playtest exports
+
+```sh
+python3 scripts/checks/export_fixture.py --production --template-dir /tmp/omdb-export-templates/4.7.2.stable
+python3 scripts/checks/check_package.py
+```
+
+`--production` selects the authored main scene and excludes all tests/check scripts/source
+art. Windows distribution ZIP includes both EXE and PCK; keep those files together.
+macOS ZIP contains the Universal 2 app. `builds/game-manifest.json` records exact hashes;
+[release.md](release.md) identifies the candidate and remaining native acceptance.
+Normal player saves are used unless an optional `--save-root` overrides them. The Linux
+PCK smoke checks cover six definitions, menus/settings, fresh activation, Completion and
+Replay; they do not establish native Windows/macOS launch, graphics or controller behavior.
+
+### Optional representative fixture exports
 
 Matching **standard Godot 4.7.2** templates are available from the
 [official release archive](https://godotengine.org/download/archive/4.7.2-stable/).

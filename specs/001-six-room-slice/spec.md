@@ -1,5 +1,14 @@
 # Feature Specification: Six-Room Puzzle Slice
 
+Camera amendment (2026-10-09, user clarification): provide four selectable South-east/
+South-west/North-west/North-east diagonal isometric orthographic views via Q/C or
+controller shoulders, with direct keys 1/2/3/4. Begin at the authored South-east view;
+rotate in 90° yaw steps, preserving authored tilt, distance, height and zoom. Keep movement
+relative to the active view. Cut away camera-facing perimeter meshes without changing
+collision. An open exit retains a visible frame. Verify all presets, wrap-around,
+movement, collision/state isolation and door visibility automatically, and inspect
+readability in each view during playable review. Free camera orbit remains excluded.
+
 **Feature Branch**: `main` (existing branch; no branch-creation hook configured)
 
 **Feature Directory**: `specs/001-six-room-slice`
@@ -21,14 +30,14 @@ solve spatial puzzles. The audience is players who enjoy puzzle-platformers and 
 slapstick. The release is free on Itch.io for Windows and macOS, with a first-playthrough
 target of 20–30 minutes. Death enables progress and unlimited retries.
 
-**Included:** Screen-relative movement and jumping in full 3D; a stationary isometric,
-orthographic view; solid supporting corpses; carrying and assisted placement; a visible
+**Included:** Screen-relative movement and jumping in full 3D; four selectable elevated
+orthographic diagonal isometric views; solid supporting corpses; carrying and assisted placement; a visible
 five-body limit; spikes, buzzsaws, falling anvils, weighted plates, and linked exits;
 room restart; local room progress and settings; complete keyboard/controller play;
 menus, onboarding, completion, replay, character reuse, visual feedback, and audio.
 
 **Excluded:** Jointed physical ragdolls, aimed throwing, simulated dragging, hanging
-ropes, crates, projectile shielding, turrets, additional hazard types, camera rotation,
+ropes, crates, projectile shielding, turrets, additional hazard types, free camera orbit,
 multi-character swapping, inventory systems, complex enemy AI, branching stories,
 elaborate lighting systems, and a separate body-generation button.
 
@@ -293,8 +302,9 @@ Verification requirements and measurable outcomes apply across these references.
 
 - **FR-001**: The game MUST provide a linear sequence of exactly six authored rooms with
   the teaching goals in the progression table. Acceptance: US5/AS1–AS2.
-- **FR-002**: Each room MUST show its entire playable puzzle through a stationary
-  orthographic camera at an isometric angle; foreground geometry MUST NOT hide the live
+- **FR-002**: Each room MUST show its entire playable puzzle through four selectable
+  diagonal isometric orthographic views separated by 90° yaw with unchanged tilt,
+  elevation, distance and zoom; foreground geometry MUST NOT hide the live
   player, hazards, or bodies needed for the puzzle. Acceptance: US1/AS1; US7/AS1.
 - **FR-003**: Players MUST move across the floor in any direction relative to the screen
   and jump manually, with a ground shadow showing landing position. Intended routes MUST

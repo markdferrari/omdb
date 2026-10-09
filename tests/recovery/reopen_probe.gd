@@ -8,12 +8,21 @@ func _run() -> void:
 	if root_index < 0 or room_index < 0 or root_index + 1 >= args.size() or room_index + 1 >= args.size() or SavePaths.inject_test_root(args[root_index + 1]) != OK:
 		quit(2)
 		return
-	var game: GameSession = load("res://tests/scenes/recovery_validation.tscn").instantiate()
+	var game: GameSession = load("res://scenes/main.tscn").instantiate()
+	game.auto_start = true
 	root.add_child(game)
 	for index in range(3):
 		await physics_frame
 	var room := game.active_room
-	var valid: bool = game.current_room_id == args[room_index + 1] and room != null and room.player.alive and room.state.registry.count() == 0 and room.state.subject_id == 1 and room.state.held_body_id.is_empty() and game.room_host.get_child_count() == 1 and not room.saws[0].jammed() and room.plates[0].weight() == 0 and not room.doors[0].is_open and is_equal_approx(game.settings.music_volume, 0.12) and is_equal_approx(game.settings.sfx_volume, 0.88)
+	var valid: bool = game.current_room_id == args[room_index + 1] and room != null and room.player.alive and room.state.registry.count() == 0 and room.state.subject_id == 1 and room.state.held_body_id.is_empty() and game.room_host.get_child_count() == 1 and is_equal_approx(game.settings.music_volume, 0.12) and is_equal_approx(game.settings.sfx_volume, 0.88)
+	if room != null:
+		valid = valid and room.definition.matches_room(room)
+		for saw in room.saws:
+			valid = valid and not saw.jammed()
+		for plate in room.plates:
+			valid = valid and plate.weight() == 0
+		for door in room.doors:
+			valid = valid and door.is_open == door.linked_plate_id.is_empty()
 	game.queue_free()
 	await process_frame
 	print("OMDB_REOPEN_RESULT ", "PASS" if valid else "FAIL")

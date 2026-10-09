@@ -1,4 +1,13 @@
 <!--
+Sync Impact Report — 2026-10-09
+Version: 1.1.0 → 1.1.1 (user clarification: preserve isometric perspective).
+Principle III clarifies that all four stationary orthographic presets remain diagonal
+isometric views, separated by 90° yaw with unchanged elevation, tilt, distance and zoom.
+Free camera orbit remains excluded. PRD, feature spec/plan/controls/tasks/validation and
+spec/plan/tasks templates updated. Existing physics, cap and recovery rules unchanged.
+Rendered review of all four views remains required; no metadata-only acceptance.
+-->
+<!--
 Sync Impact Report
 Version change: unversioned template → 1.0.0 (initial adoption)
 Modified principles: all five placeholder slots replaced with:
@@ -58,7 +67,8 @@ State changes MUST preserve these rules together so that puzzle outcomes remain 
 
 ### III. Readable Puzzles and Dependable Controls
 
-Each room MUST use a stationary orthographic camera at an isometric angle that shows the
+Each room MUST use an orthographic camera with four selectable diagonal isometric views,
+separated by 90° yaw while preserving authored elevation, tilt, distance and zoom, that shows the
 entire puzzle. Geometry, lighting, animation, and effects MUST preserve visibility of the
 player, important bodies, and hazard states. Movement MUST follow screen directions;
 manual jumping MUST use forgiving landings and a clear ground shadow. Intended solutions
@@ -121,7 +131,7 @@ difficulty judging jumps, and placement frustration, with findings used to revis
   gore, simple lighting, and cheerful music contrasted with cartoon trap sounds. Effects
   for oldest-body removal MUST be non-colliding.
 - Jointed ragdolls, aimed throwing, simulated dragging, hanging ropes, crates, projectile
-  shielding, turrets, extra hazard types, camera rotation, multi-character swapping,
+  shielding, turrets, extra hazard types, free camera orbit, multi-character swapping,
   inventory systems, complex enemy AI, branching stories, elaborate lighting systems,
   and a separate body-generation button MUST remain outside this slice.
 - Feature plans MUST select and record the exact Godot version, movement and physics
@@ -171,4 +181,4 @@ guidance; PATCH for clarifications without changed obligations. Preserve the ori
 ratification date and set the last-amended date to the amendment date in ISO format.
 Compliance MUST be checked during specification, planning, change review, and release.
 
-**Version**: 1.0.0 | **Ratified**: 2026-10-07 | **Last Amended**: 2026-10-07
+**Version**: 1.1.1 | **Ratified**: 2026-10-07 | **Last Amended**: 2026-10-09

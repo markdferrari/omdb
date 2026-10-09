@@ -107,7 +107,7 @@ a reason; do not omit applicable state rules.
 - **FR-002**: Game MUST [relevant corpse, placement, or hazard rule]
 - **FR-003**: Players MUST be able to [affected interaction using keyboard and controller]
 - **FR-004**: Game MUST [applicable restart, progression, or settings behavior]
-- **FR-005**: Game MUST [feedback needed to understand the puzzle from the fixed camera]
+- **FR-005**: Game MUST [feedback needed to understand the puzzle from the selected camera]
 
 *Example of marking unclear requirements:*
 
@@ -120,7 +120,7 @@ constitution. Define acceptance evidence, not implementation details or a test f
 
 - **VR-001**: Verify [affected state invariants and edge cases] through repeatable
   regression checks with defined starting state, actions, and expected result.
-- **VR-002**: Validate [affected physics, camera readability, placement, and control feel]
+- **VR-002**: Validate [affected physics, all four diagonal isometric camera presets with preserved tilt/elevation/distance/zoom, readability, placement, and control feel]
   in playable scenes, with repeat counts and pass criteria defined for the feature.
 - **VR-003**: Exercise [affected flows] with keyboard and controller; specify Windows and
   macOS checks required for this feature and for release.
@@ -144,7 +144,7 @@ constitution. Define acceptance evidence, not implementation details or a test f
 
 - **SC-001**: [Player outcome, e.g., intended route completed within the five-body limit]
 - **SC-002**: [Reliability measure with trial count, setup, and allowed failure count]
-- **SC-003**: [Readability or usability outcome assessed from the stationary camera]
+- **SC-003**: [Readability or usability outcome assessed from the selected camera]
 - **SC-004**: [Completion of affected input, recovery, and platform checks]
 
 For full-slice playtests, record completion time against the 20–30 minute first-playthrough

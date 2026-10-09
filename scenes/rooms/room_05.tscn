@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3]
+[ext_resource type="PackedScene" path="res://scenes/rooms/wide_chamber.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/spike_bed.tscn" id="spikes"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/exit_door.tscn" id="exit"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle/pressure_plate.tscn" id="plate"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/buzzsaw.tscn" id="saw"]
+[ext_resource type="PackedScene" path="res://scenes/hazards/anvil.tscn" id="anvil"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/gate_wall.tscn" id="wall"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="hud"]
+[ext_resource type="PackedScene" path="res://scenes/art/room_dressing.tscn" id="art"]
+[node name="Room05" instance=ExtResource("1")]
+spawn_player = true
+[node name="Exit" parent="." instance=ExtResource("exit")]
+position = Vector3(9, 0, 0)
+linked_plate_id = "exit_plate"
+[node name="ExitWall" parent="." instance=ExtResource("wall")]
+position = Vector3(9, 0, 0)
+[node name="HUD" parent="." instance=ExtResource("hud")]
+[node name="Dressing" parent="." instance=ExtResource("art")]
+scale = Vector3(1.5, 1, 1)
+[node name="Teaching" type="Label3D" parent="."]
+position = Vector3(-8, 0.1, 5)
+billboard = 1
+font_size = 26
+outline_size = 8
+text = "05 — A modest staffing budget\nBudget two plate bodies, one saw body and two stepping bodies."
+[node name="ExitPlate" parent="." instance=ExtResource("plate")]
+position = Vector3(-7, 0, 3.5)
+plate_id = "exit_plate"
+caption = "EXIT PLATE"
+required_weight = 2
+[node name="Saw" parent="." instance=ExtResource("saw")]
+position = Vector3(-3, 0, 0)
+hazard_id = "saw"
+[node name="SawWall" parent="." instance=ExtResource("wall")]
+position = Vector3(-3, 0, 0)
+[node name="Anvil" parent="." instance=ExtResource("anvil")]
+position = Vector3(-7, 0, -3.5)
+hazard_id = "anvil"
+[node name="RouteSpikes" parent="." instance=ExtResource("spikes")]
+position = Vector3(2, 0, 0)
+hazard_id = "route_spikes"
+bed_size = Vector2(5.2, 11.9)

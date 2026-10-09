@@ -21,6 +21,16 @@ identity, eligibility, order, and lifecycle belong to the room controller's mode
 there is no global gameplay registry. Test scenes use the same composition with an
 isolated SaveStore and explicit room definition.
 
+The production `RoomCatalogue` has `production=true` and exactly six definitions in
+sequence, with canonical authored scene paths and next links. Fixture catalogues keep
+`production=false` for isolated tests. Production activation accepts only its catalogue's
+definition and validates actual spawn, orthographic camera, floor dimensions, hazard/plate
+identities, root-configured spike dimensions and exit/plate links before replacing the old
+room or committing progress. Root `floor_width`, spike `bed_size` and partition
+`passage_offset` are immutable authoring configuration, not live or saved puzzle state.
+Spike/saw/anvil callbacks accept only their owning room's current live subject; retired or
+foreign-room contacts cannot kill a replacement subject.
+
 ## Entities and validation
 
 ### Application session
@@ -60,6 +70,14 @@ clear death/drop space, and safe door retreat anchors. Every reset instantiates 
 definition anew; no mutable puzzle state is stored in the definition resource.
 
 ### Room state
+
+The room owns a transient diagonal isometric camera selection (South-east/South-west/
+North-west/North-east), starting at index 0 with the authored South-east transform.
+Each step rotates that transform by 90° about the room's vertical axis, preserving
+elevation, distance, pitch and zoom. It survives ordinary deaths with the
+room, resets on restart/departure and is not saved. Rotating moves only the camera and
+camera-facing decorative perimeter meshes; solid collision and body/plate/hazard state
+are unchanged. Movement uses the active camera basis immediately.
 
 - `epoch`: matches the active session epoch.
 - `phase`: `INITIALIZING`, `ACTIVE`, `DEATH_FEEDBACK`, or `RETIRED`.

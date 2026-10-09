@@ -46,7 +46,8 @@ func _overlaps(shape_node: CollisionShape3D, mask: int) -> Array[Dictionary]:
 	return get_world_3d().direct_space_state.intersect_shape(query, 32)
 
 func _on_body_entered(body: Node3D) -> void:
-	if not jammed() and body is PlayerController:
+	var room := get_parent() as RoomController
+	if room != null and room.state.phase != RoomState.Phase.RETIRED and not jammed() and body is PlayerController and body == room.player and room.state.is_live(body.epoch, body.subject_id):
 		body.report_lethal(hazard_id)
 
 func _physics_process(delta: float) -> void:

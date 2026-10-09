@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/ui/onboarding.gd" id="2"]
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1")
 [node name="Panel" type="PanelContainer" parent="."]
@@ -10,6 +11,18 @@ offset_bottom = 128.0
 mouse_filter = 2
 [node name="Status" type="Label" parent="Panel"]
 theme_override_font_sizes/font_size = 23
+[node name="Onboarding" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -95.0
+offset_right = -24.0
+offset_bottom = -20.0
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 2
+mouse_filter = 2
+script = ExtResource("2")
 [node name="Caption" type="Label" parent="."]
 offset_left = 24.0
 offset_top = 136.0
@@ -22,3 +35,10 @@ offset_top = 180.0
 offset_right = 1100.0
 offset_bottom = 225.0
 theme_override_font_sizes/font_size = 23
+[node name="CameraView" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 230.0
+offset_right = 1100.0
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 20
+mouse_filter = 2

@@ -35,7 +35,7 @@
 **Tuning and Asset Budgets**: [Relevant movement, placement, physics, and asset limits;
 greybox evidence or a planned experiment to establish them, with results recorded before completion]
 
-**Constraints**: Stationary orthographic camera; five-body cap; stable solid corpses; local recovery
+**Constraints**: Four diagonal isometric orthographic views, 90° yaw steps with fixed tilt/elevation/distance/zoom; five-body cap; stable solid corpses; local recovery
 
 **Scale/Scope**: [Feature's part of the six-room slice and current milestone; excluded work]
 

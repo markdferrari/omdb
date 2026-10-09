@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		query.transform = Transform3D(global_basis, global_position + Vector3.UP)
 		query.collision_mask = 2
 		for hit in get_world_3d().direct_space_state.intersect_shape(query, 8):
-			if hit.collider is PlayerController:
+			if hit.collider is PlayerController and hit.collider == _room.player and _room.state.is_live(hit.collider.epoch, hit.collider.subject_id):
 				hit.collider.report_lethal(hazard_id)
 	_update_visual(phase)
 

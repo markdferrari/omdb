@@ -42,7 +42,9 @@ func _run() -> void:
 		_fail_arguments()
 		return
 	# Wall-time watchdog remains bounded even with fixed-step fast headless simulation.
-	_deadline_ms = Time.get_ticks_msec() + 45000
+	# Six authored ten-trial walkthroughs and real-process reopen checks outgrew
+	# the original 45-second fixture budget. Keep a bounded whole-run deadline.
+	_deadline_ms = Time.get_ticks_msec() + 180000
 	var requested: Array = SUITES.keys() if selected == "all" else [selected]
 	for suite in requested:
 		current_suite = suite

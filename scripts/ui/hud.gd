@@ -14,9 +14,15 @@ func _ready() -> void:
 		_prompts = InputPrompts.new()
 		add_child(_prompts)
 	_prompts.method_changed.connect(_method_changed)
+	_bind_camera.call_deferred()
 	room.room_snapshot_changed.connect(_snapshot)
 	room.death_committed.connect(_death)
 	room.placement_preview_changed.connect(_preview)
+	_snapshot(room.state.snapshot())
+
+func _bind_camera() -> void:
+	var room := get_parent() as RoomController
+	room.camera_views.view_changed.connect(func(_view: String): _snapshot(_last_snapshot))
 	_snapshot(room.state.snapshot())
 
 func _method_changed(_method: String) -> void:
@@ -28,6 +34,9 @@ func _snapshot(snapshot: Dictionary) -> void:
 	var controller := _prompts.method == "controller"
 	var controls := "Move: Left stick   Jump: South   Restart: North" if controller else "Move: WASD / arrows   Jump: Space   Restart: R"
 	var interact := "West" if controller else "E"
+	var room := get_parent() as RoomController
+	var view := room.camera_views.view_name() if room.camera_views != null else "Default"
+	$CameraView.text = "View: %s — %s" % [view, "LB / RB to rotate" if controller else "Q / C to rotate; 1 SE, 2 SW, 3 NW, 4 NE"]
 	$Panel/Status.text = "Bodies: %d/5   Oldest: %s   Subject #%d\n%s\n%s: pick up or place   Carrying: %s" % [
 		snapshot.body_count, "—" if snapshot.oldest_id.is_empty() else snapshot.oldest_id,
 		snapshot.subject_id, controls, interact, "none" if snapshot.held_body_id.is_empty() else snapshot.held_body_id + (" (NEXT TO GO)" if snapshot.held_body_id == snapshot.oldest_id else "")]

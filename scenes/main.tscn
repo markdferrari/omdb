@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/app/game.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/room_catalogue.tres" id="2"]
 [node name="Game" type="Node"]
 script = ExtResource("1")
+catalogue = ExtResource("2")
+auto_start = false
 [node name="RoomHost" type="Node3D" parent="."]
 [node name="UI" type="CanvasLayer" parent="."]
 [node name="Audio" type="Node" parent="."]

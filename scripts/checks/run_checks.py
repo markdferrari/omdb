@@ -13,7 +13,7 @@ import tempfile
 PROJECT = Path(__file__).resolve().parents[2]
 SUITES = ("state", "physics", "recovery")
 DIAGNOSTIC = re.compile(r"(?:SCRIPT ERROR:|(?:^|\n)ERROR:|Parse Error:|Failed to load|Error importing|OMDB watchdog timeout)")
-TIMEOUT_SECONDS = 60
+TIMEOUT_SECONDS = 240
 
 
 def run_process(command: list[str], timeout: float = TIMEOUT_SECONDS) -> tuple[int, str]:

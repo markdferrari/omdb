@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the representative menu/greybox flow, restoring only temporary main-scene wiring."""
+"""Export the authored game or representative fixture, restoring temporary configuration."""
 import argparse
 import hashlib
 import json
@@ -18,6 +18,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--template-dir',type=Path,required=True)
     parser.add_argument('--godot',default='godot')
+    parser.add_argument('--production', action='store_true', help='Export the connected six-room main scene instead of the fixture')
     args=parser.parse_args()
     if (args.template_dir/'version.txt').read_text().strip() != '4.7.2.stable':
         raise RuntimeError('Matching 4.7.2.stable templates are required')
@@ -29,6 +30,8 @@ def main():
     pattern=r'(?m)^run/main_scene=.*$'
     saved_line=re.search(pattern,original).group()
     fixture_line='run/main_scene="res://tests/scenes/flow_validation.tscn"'
+    presets=PROJECT/'export_presets.cfg'
+    original_presets=presets.read_text()
     records=[]
     with tempfile.TemporaryDirectory(prefix='omdb-export-engine-') as temporary:
         environment=os.environ.copy()
@@ -38,7 +41,13 @@ def main():
         destination=Path(environment['XDG_DATA_HOME'])/'godot/export_templates/4.7.2.stable'
         shutil.copytree(args.template_dir,destination)
         try:
-            project.write_text(re.sub(pattern,fixture_line,original))
+            if not args.production:
+                project.write_text(re.sub(pattern,fixture_line,original))
+                presets.write_text(re.sub(r'(?m)^exclude_filter=.*$', 'exclude_filter="art/*,tests/state/*,tests/physics/*,tests/recovery/*,tests/run_tests.gd,scripts/checks/import_check.gd,scripts/checks/package_probe.gd"', original_presets))
+            else:
+                if saved_line != 'run/main_scene="res://scenes/main.tscn"':
+                    raise RuntimeError('Production exports require the authored main scene')
+                presets.write_text(re.sub(r'(?m)^exclude_filter=.*$', 'exclude_filter="art/*,tests/*,scripts/checks/*"', original_presets))
             for preset,path in [('Windows Desktop','builds/windows/over-my-dead-body.exe'),('macOS','builds/macos/over-my-dead-body.zip')]:
                 output=PROJECT/path
                 output.parent.mkdir(parents=True,exist_ok=True)
@@ -55,6 +64,7 @@ def main():
             current=project.read_text()
             if fixture_line in current:
                 project.write_text(current.replace(fixture_line,saved_line,1))
+            presets.write_text(original_presets)
     exe=PROJECT/'builds/windows/over-my-dead-body.exe'
     data=exe.read_bytes()
     offset=int.from_bytes(data[60:64],'little')
@@ -75,7 +85,15 @@ def main():
         types={int.from_bytes(binary[8+i*20:12+i*20],'big') for i in range(count)}
         if not {0x1000007,0x100000c}.issubset(types):
             raise RuntimeError('macOS x86_64/arm64 architecture missing')
-    (PROJECT/'builds/fixture-manifest.json').write_text(json.dumps({'engine':version,'fixture':'res://tests/scenes/flow_validation.tscn','requires':'--save-root ABSOLUTE_TEMP_DIRECTORY','exports':records},indent=2)+'\n')
+    if args.production:
+        windows_zip=PROJECT/'builds/windows/over-my-dead-body.zip'
+        with zipfile.ZipFile(windows_zip, 'w', compression=zipfile.ZIP_DEFLATED) as package:
+            for member in (exe, pck):
+                package.write(member, member.name)
+        records.append({'preset':'Windows distribution', 'file':str(windows_zip.relative_to(PROJECT)), 'bytes':windows_zip.stat().st_size, 'sha256':hashlib.sha256(windows_zip.read_bytes()).hexdigest(), 'native_launch':'UNVERIFIED'})
+    scene='res://scenes/main.tscn' if args.production else 'res://tests/scenes/flow_validation.tscn'
+    manifest='game-manifest.json' if args.production else 'fixture-manifest.json'
+    (PROJECT/'builds'/manifest).write_text(json.dumps({'engine':version,'scene':scene,'save_root':'optional temporary override' if args.production else 'required absolute temporary directory','exports':records},indent=2)+'\n')
     return 0
 
 if __name__=='__main__':

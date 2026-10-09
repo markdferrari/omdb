@@ -4,7 +4,7 @@ func run(h: SceneTree) -> void:
 	for trial in range(10):
 		var game: GameSession = load("res://scenes/main.tscn").instantiate()
 		game.auto_start = false
-		game.catalogue = load("res://tests/scenes/recovery_catalogue.tres")
+		game.catalogue = load("res://resources/room_catalogue.tres")
 		game.store = SaveStore.new(SavePaths.get_root().path_join("exit_flow_%d" % trial))
 		h.root.add_child(game)
 		game.request_activation("room_01")

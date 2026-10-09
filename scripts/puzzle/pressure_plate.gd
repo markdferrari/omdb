@@ -1,6 +1,7 @@
 class_name PressurePlate
 extends StaticBody3D
 @export var plate_id: String = "plate"
+@export var caption: String = "WEIGHT"
 @export_range(1, 5) var required_weight: int = 1
 var contributors: Dictionary = {}
 var _material: StandardMaterial3D
@@ -17,7 +18,7 @@ func apply_observations(observations: Array[Dictionary]) -> void:
 		if observation.eligible and observation.direct:
 			contributors[observation.id] = true
 	if is_inside_tree():
-		$Label.text = "WEIGHT %d / %d\n%s" % [weight(), required_weight, "OPEN" if active() else "ADD WEIGHT"]
+		$Label.text = "%s %d / %d\n%s" % [caption, weight(), required_weight, "ACTIVE" if active() else "ADD WEIGHT"]
 		if _material == null:
 			_material = StandardMaterial3D.new()
 			$Mesh.material_override = _material

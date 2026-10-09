@@ -669,3 +669,223 @@ macOS ZIP is 60,044,516 bytes, SHA-256
 Native launch and release acceptance remain unverified. Requirements checklist remains
 16/16 complete; extension configuration is absent before/after implementation, so hooks
 are skipped. Existing user changes are preserved; no commit created.
+
+## First authored room — T069/T071, partial T078/T079 — 2026-10-09
+
+Setup: Godot 4.7.2 standard, Linux, Compatibility/Jolt, headless fixed 60 Hz with
+isolated XDG/save roots. New production chamber/room scenes use the same real components
+as the proved greybox; they do not inherit test fixtures. `room-solutions.md` distinguishes
+six proposed allocations from room 1's actual solution. The authored test catalogue
+contains only room 1; it is not a substitute for T077's complete production catalogue.
+
+Expected: one hazard-created corpse supports repeatable traversal without carrying;
+unaided jumps and outer-edge approaches cannot bypass spikes; current-method teaching
+changes after first death; one real forward exit crossing completes the room.
+
+Actual: ten fresh one-body solutions/exit completions; ninety empty-room bypass attempts
+across three launch positions and centre/both edges; thirty actual ledge/coyote-window
+jump measurements all pass. Maximum observed same-height reach is 3.000001 m against a
+3.6 m exposed strip. Ten repetitions each of pre-death teaching, post-death body support
+teaching and controller prompt updates pass. No corpse was inserted or repositioned by
+the solution test. Exact actions/geometry are in `room-solutions.md`.
+
+Verification: `/tmp/omdb-rooms-red.log` fails the missing-authored-catalogue expectation
+before authoring (one failed assertion, 2,969 passed). `/tmp/omdb-room01-check.log` passes
+3,129 physics assertions after authoring; `/tmp/omdb-room01-final.log` passes **7,206,
+zero failed** across state 2,869 / physics 3,159 / recovery 1,178, with clean imports.
+The final full run logs the previously observed Jolt shutdown job-capacity warning after
+the passing summary; standalone room checks do not. This is not a rendered benchmark.
+
+T069/T071 are complete; T078 is implemented for room 1 but remains open for all six
+definitions. T079 remains open for rooms 2–3 and formal playable observations. T072–T077
+and subsequent room acceptance are outstanding. Display/controller/native acceptance
+is not inferred from the user's authorization or these scripted trials. No tuning
+value changed. Requirements checklist remains 16/16 complete; extension hooks absent.
+
+Desktop preparation: `/tmp/omdb-room01-export.log` refreshes both representative
+packages; `/tmp/omdb-room01-package.log` passes Windows/macOS PCK smoke on Linux.
+These packages still launch the representative menu/greybox flow, not a finished
+six-room game. The source launcher in quickstart opens the authored first room.
+Current Windows PCK: 503,484 bytes, SHA-256
+`9015ca4959d1afbc3a797a8b0bf3b71d0103b6c7864491639b4681e0b7584b70`;
+macOS ZIP: 60,048,909 bytes, SHA-256
+`80c659c18a9f61d246dbd1da23568f3f1e9cd509347c31857cb092f46da7a1e1`.
+Windows executable identity is unchanged from the preceding record. No commit created.
+
+## CAM-01 — Four compass views and exit visibility — 2026-10-09
+
+User-reported defect: the authored room's doorway cannot be seen from its angle. The
+user explicitly requests North/South/East/West camera rotation, amending the original
+stationary-camera scope. Constitution 1.1.0, PRD, feature spec/plan/controls/data model,
+AGENTS and the spec/plan/tasks templates now permit four stationary elevated compass
+presets. Free camera orbit remains excluded.
+
+Implementation: preserve the authored default until selection; Q/C and LB/RB cycle
+North/East/South/West, with 1/2/3/4 direct keyboard selection. Preserve camera radius,
+height and orthographic size. Movement uses the same camera instance's new basis.
+Hide only camera-facing perimeter meshes, leaving solid boundaries unchanged. Open
+doors now retain a green frame because the earlier open state hid their whole mesh.
+HUD shows selected view and current-method controls. Camera selection belongs to the
+room, surviving ordinary respawn but resetting with room reconstruction; it is not saved.
+
+Setup: Godot 4.7.2, Linux, Compatibility/Jolt, isolated storage/XDG, fixed 60 Hz headless.
+Expected: all four compass positions and corresponding screen movement, constant zoom,
+unchanged registry/collision, wrap from West to North and a visible open exit frame.
+Actual: ten repetitions of every new assertion pass. Full strict wrapper in
+`/tmp/omdb-camera-final.log`: **7,386 passed, zero failed** (physics 3,339 / state 2,869 /
+recovery 1,178); 104 clean imports. An initial missing type annotation on the direction
+array was corrected before the passing run. The known Jolt job-capacity shutdown warning
+appears after the passing summary. No rendered benchmark is claimed.
+
+`/tmp/omdb-camera-export.log` refreshes both representative packages;
+`/tmp/omdb-camera-package.log` passes both PCK smoke checks on Linux. Windows PCK:
+513,032 bytes, SHA-256 `3f6ef82700c4830f8e6adc1a695865fa5edcbe8996d82d181c82e49b2d0d455e`.
+macOS ZIP: 60,051,831 bytes, SHA-256
+`c9941e10f2383e408ecddd53d78c0c482f17f10faead098ba6227a9eefd73cce`.
+Windows executable identity remains unchanged. T111/T112 complete; T113 rendered
+four-view/controller/three-resolution review remains unverified. Checklist 16/16;
+extension hooks absent before/after implementation. No commit created.
+
+## Connected authored sequence — 2026-10-09
+
+Scope authorized: the user explicitly requests the remaining rooms and connected
+progression after accepting their earlier playtest. This continues development under
+their recorded G1/G2 scheduling direction; it does not mark unreported manual checks passed.
+Requirements checklist: 16/16 complete. No extension hooks are configured before/after.
+
+Implemented: Rooms 2–6 and their definitions; an exact six-room production catalogue;
+normal Title/Continue, live-only forward exits, fresh next rooms, Completion, saved Replay;
+contextual keyboard/controller teaching; shared gothic dressing and real metadata/geometry
+validation. The authored validation launcher now runs the connected sequence immediately.
+Practice/exit plates have distinct captions and required weights. The early Room 4 ledge
+proposal was revised to a body-assisted observation shelf with an ordinary return route:
+entrance respawn after evicting a mandatory entry support would otherwise strand the clone.
+No checkpoint, death quota, new hazard, creation button or cap/tuning change was added.
+
+Setup: Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/Jolt, Linux headless,
+fixed 60 Hz, isolated temporary saves/XDG. Expected: all six intended routes complete
+repeatedly within five simultaneous bodies; Room 4 creates six and evicts its unneeded
+oldest step; unaided obstacle bypasses fail; recovery reconstructs fresh actual rooms;
+only the live forward exit crossing advances and saves; Replay preserves settings.
+
+Actual: all six solutions complete ten consecutive times from fresh scenes. Room 1
+uses one body; Room 2 two; Room 3 one; Rooms 4–6 retain five. Room 4 completes with
+subject #7 after six real anvil deaths and removal of the first step body. Full solutions
+use actual controller motion/jumps, hazard deaths and pickup/placement; no subject/body
+teleport, injected corpse or manually changed hazard state is used. Independent diagnostic
+trials rebuild the later arrangements ten times with real hazard-created bodies and real
+interactions, staging only the subject with contacts disabled across the teleport. Every
+bridge is traversed and every actual exit is crossed. Positions/order and tick ranges are
+recorded in `room-solutions.md` and emitted per trial as `OMDB_SOLUTION` lines.
+
+Anti-bypass: ninety existing fresh Room 1 launch/edge attempts, thirty prior real ledge
+reach measurements, and ten repetitions of each centre/edge attempt against Rooms 2–6
+spike/saw/closed-door partitions pass. Additional isolated closed-exit checks cover Rooms
+2/4/5/6, including the final offset passage; both combined saws are independently tested
+so later obstacles cannot mask their bypass. Reliable lower-body-count alternatives are
+allowed. The 8.4 m / 5.2 m combined spike widths were selected after correcting repeatable
+lethal far-bank landings, retaining broad standing-jump landings and the unchanged tuning.
+
+Recovery: ten fresh activation/reset trials per actual room; ten repetitions each of
+pending death, death feedback, held oldest, jammed saw and pending placement resets in the
+authored combined room; restart before/after activation and old epoch/token rejection;
+sixty real separate-process reopen checks (six actual IDs × ten) from held/partly solved
+arrangements; ten actual-sequence progression/Completion/Replay checks, including retained
+volumes and completed saves reopening a fresh Room 6. Fixture regressions also remain.
+Lifecycle tests stage arrangements or door state to isolate recovery; they are distinct
+from the no-staging physical solution checks.
+
+Before authoring, `/tmp/omdb-sequence-red.log` fails the missing-production-catalogue
+expectation (1 failed, 1,178 passed); later physical/packaged failures drove the geometry
+and ownership corrections recorded below.
+
+Final strict command:
+
+```sh
+python3 scripts/checks/run_checks.py --godot /usr/local/bin/godot --suite all --save-root /tmp/omdb-six-rooms-accepted
+```
+
+`/tmp/omdb-six-rooms-accepted.log`: **10,796 passed, zero failed**, state 2,869 / physics
+6,049 / recovery 1,878; **124 clean imports**. The strict wrapper accepts the nonempty
+summary and rejects engine/script diagnostics. The previously recorded Jolt job-capacity
+warning appears only at shutdown after the passing summary; it remains an engine warning,
+not a measured runtime benchmark. `/tmp/omdb-room01-metrics.log` separately repeats ten
+Room 1 solutions and ninety bypasses to record timing; its 160 assertions pass.
+
+| Affected rules | Repeatable evidence |
+| --- | --- |
+| FR-004–FR-006, EC-01; one death/replacement, support | State/physics lifecycle, bridge/support, full authored walkthroughs |
+| FR-007–FR-012, EC-02/EC-03/EC-08; carry, invalid/assisted placement, carrying death | Carry lifecycle, placement/assistance and real authored deliveries |
+| FR-013–FR-016, EC-04–EC-07; FIFO in every role, held count/eligibility | State/physics FIFO-role/contact tests plus Room 4 sixth creation |
+| FR-017–FR-022, EC-14/EC-15; plate chains, jams, warned anvil, door closure | Contacts/surplus weight/hazards/anvil/combined-room and isolated bypass tests |
+| FR-023–FR-025, EC-13; single live exit, six-room sequence | Exit-crossing, hazard ownership, authored walkthrough and actual-catalogue progression |
+| FR-026–FR-030, EC-09–EC-12; restart, save/resume, completion/replay | Authored catalogue/lifecycle, reset/input/activation/save failures, separate-process reopen, actual exit progression |
+
+Resolved defects/setup issues:
+
+- Wider planned strips caused repeatable lethal far-bank landings: corrected geometry
+  using physical trials, without changing cap, movement, grace or body dimensions.
+- A diagnostic character teleport imparted artificial impulses to props: only the
+  diagnostic setup disables contacts across staging; full walkthroughs never teleport.
+- Retired/foreign hazard signals could kill a new room's player: ownership/epoch/live
+  guards now reject them. `/tmp/omdb-hazard-red.log` fails 20 assertions before the fix;
+  `/tmp/omdb-hazard-green.log` passes all 20 afterward, and integrated regressions pass.
+- Compiled exports lost nested inherited shape overrides, expanding the Room 2 supply
+  sensor across its spawn. Package inspection observed 3.6 × 11.9 instead of 2 × 2.
+  Root geometry properties configure shapes/meshes equally in source and export; metadata
+  verifies actual floor/spike geometry. Both final packages now start every room fresh.
+- The original 45 s whole-suite budget was insufficient for authored trials: bounded
+  runner/process limits are now 180/240 s. Strict test IDs were corrected to contain no
+  whitespace; an untyped conditional test array was corrected. The wrapper rejected both
+  invalid runs despite passing assertions elsewhere. `check_harness.py` was updated and
+  its copy filter corrected: ignoring every directory named `art` also removed runtime
+  `scenes/art`, causing unrelated import failures in the earlier negative runs. A valid
+  temporary-project positive control now must pass before the 12 fault/unsafe-root/timeout
+  cases run. The final positive control passes and all 12 injected faults/unsafe inputs/
+  timeouts are rejected in `/tmp/omdb-connected-harness-final.log`; empty-suite and
+  watchdog cases have their specific expected diagnostics. The earlier
+  `/tmp/omdb-connected-harness.log` is not accepted as fault-specific evidence. No fault
+  injection remains in the working project.
+
+Desktop preparation: `export_fixture.py --production` creates the actual main-scene
+Windows EXE/PCK/ZIP and macOS Universal 2 ZIP, excluding all tests/check scripts/source
+art. `/tmp/omdb-connected-candidate-export.log` succeeds;
+`/tmp/omdb-connected-candidate-package.log` passes both PCK smoke checks from empty source
+directories using Linux Godot. Checks include six actual definitions/geometries, menus,
+settings/mute, fresh activation/Continue, Completion and saved Replay. Exact hashes and
+native status are in `release.md` and `builds/game-manifest.json`.
+
+T068/T072–T081/T090/T093/T097 are complete. Human rendered three-resolution/four-view
+review, controller feel, full manual flow, first-time duration/cue recognition, native
+Windows/macOS input matrix, signing/download behavior and target performance remain
+**UNVERIFIED** (including T082/T083/T091/T095/T098–T105/T113 and earlier human gates).
+Scripted active timing is not the 20–30 minute first-playthrough measurement. No commit
+or publication was performed. Requested room/progression implementation is complete;
+overall release readiness is not claimed.
+
+## CAM-02 — Preserve isometric perspective while rotating — 2026-10-09
+
+User correction: cardinal-axis presets changed the intended isometric perspective.
+All selections now rotate the authored camera transform in 90° yaw steps between
+South-east, South-west, North-west and North-east. The initial view is South-east;
+Q/C and LB/RB immediately rotate to adjacent corners, and 1–4 select those corners.
+The original basis is rotated intact, preserving pitch, elevation, distance,
+orthographic projection and zoom. Both camera-facing perimeter meshes cut away while
+every solid boundary remains active. HUD and governing/dependent artifacts agree.
+
+Setup: Godot 4.7.2, headless fixed 60 FPS, isolated `/tmp/omdb-isometric-check` saves;
+`run_checks.py --godot /usr/local/bin/godot --suite physics --save-root
+/tmp/omdb-isometric-check`. Log: `/tmp/omdb-isometric-check.log`.
+Expected: ten trials in each of the six actual rooms, four independent diagonal
+position expectations, direct input selection, immediate ±90° cycling from startup,
+wrap-around, invariant camera pitch/elevation/distance/projection/zoom, screen-relative
+movement, visible exit frames and unchanged puzzle state/solid collision.
+Actual: 124 imported scripts/resources checked with zero failures; **9,289 physics
+assertions passed, zero failed**, including the expanded camera regression. T114 is
+complete. Prior CAM-01 cardinal labels/default-until-selection behavior is superseded.
+Rendered three-resolution readability, physical-controller feel and native platform
+acceptance remain **UNVERIFIED** under T113 and existing review tasks.
+Local production Windows/macOS archives were refreshed successfully in
+`/tmp/omdb-isometric-export.log`; both exported PCK smoke checks passed using Linux Godot
+in `/tmp/omdb-isometric-package.log`. Current hashes are in `release.md` and
+`builds/game-manifest.json`. These are not native platform or rendered-camera checks.

@@ -8,7 +8,7 @@
 
 **Engine:** Godot 4.x using GDScript.
 
-**Presentation:** Full 3D rooms viewed through a stationary orthographic camera at an isometric angle. The player moves across the floor in any direction and can jump vertically. Each room is framed to show the entire puzzle.
+**Presentation:** Full 3D rooms viewed through an orthographic camera with four selectable diagonal isometric views. Rotation changes yaw in 90° steps while preserving the authored elevation, distance, tilt and zoom. The player moves across the floor in any direction and can jump vertically. Each room is framed to show the entire puzzle.
 
 ## 2. Target Audience & Platform
 
@@ -19,7 +19,7 @@
 
 ## 3. Core Gameplay Loop
 
-1. **Assess the room:** Identify the exit, hazards, pressure plates, and potential uses for bodies from the fixed camera view.
+1. **Assess the room:** Identify the exit, hazards, pressure plates, and potential uses for bodies from the selected camera view.
 2. **Sacrifice for science:** Intentionally enter a lethal hazard to leave a persistent corpse at the death location.
 3. **Return as a fresh clone:** Respawn at the room's entrance hatch while existing corpses and puzzle state persist.
 4. **Arrange the remains:** Carry and place bodies to create a traversable surface, provide weight, or stop a buzzsaw.
@@ -33,10 +33,10 @@ Deaths allow unlimited retries. Death counts and subject numbers provide humor r
 ### Movement and camera
 
 - Controls are dependable and responsive. Exaggerated animation, death effects, and sound provide the physical comedy.
-- Keyboard and controller movement follow screen directions under the fixed camera angle.
+- Keyboard and controller movement follow screen directions under the selected camera angle.
 - Include a forgiving manual jump, broad landing surfaces, and a clear ground shadow to communicate height and landing position.
 - Avoid precision jumping and timed jump sequences in the slice.
-- The camera remains stationary within each room. Frame the entire playable puzzle and use open or cutaway foreground walls so geometry does not hide the player, hazards, or important bodies.
+- The camera remains stationary between four selectable South-east/South-west/North-west/North-east isometric views. Start at the authored South-east view; cycling rotates immediately to an adjacent corner. Frame the entire playable puzzle and use open or cutaway foreground walls so geometry does not hide the player, hazards, or important bodies.
 
 ### Death and corpse persistence
 
@@ -105,7 +105,7 @@ Each room must have a repeatable intended solution within the five-body limit. R
 
 ## 7. Visual, Animation & Audio Direction
 
-**Art direction:** Stylised gothic miniature testing chambers with high-contrast silhouettes, ink-and-wash-inspired surfaces, and cartoonish neon blood splatters in hot pink or glowing green. Prioritise readable geometry and hazard states from the fixed camera distance.
+**Art direction:** Stylised gothic miniature testing chambers with high-contrast silhouettes, ink-and-wash-inspired surfaces, and cartoonish neon blood splatters in hot pink or glowing green. Prioritise readable geometry and hazard states from the selected camera distance.
 
 **Lighting:** Simple lighting and clear ground shadows that support depth perception and landing judgment. Avoid elaborate lighting systems in the slice.
 
@@ -137,7 +137,7 @@ Each room must have a repeatable intended solution within the five-body limit. R
 
 ### Outside the slice
 
-Jointed ragdolls, aimed throwing, simulated dragging, hanging ropes, crates, projectile shielding, turrets, additional hazard types, camera rotation, multi-character swapping, inventory systems, complex enemy AI, branching storylines, and elaborate lighting systems.
+Jointed ragdolls, aimed throwing, simulated dragging, hanging ropes, crates, projectile shielding, turrets, additional hazard types, free camera orbit, multi-character swapping, inventory systems, complex enemy AI, branching storylines, and elaborate lighting systems.
 
 ## 9. Acceptance & Playtest Criteria
 
@@ -145,7 +145,7 @@ The slice is ready for release when:
 
 - All six rooms can be completed from a fresh start using either keyboard or controller, including menus, restart, and completion flow.
 - Intended body bridges and stacks can be repeatedly built and traversed without unintended collapse or dependence on lucky physics bounces.
-- Players can judge landing positions, valid body placements, and hazard states from the stationary camera.
+- Players can judge landing positions, valid body placements, and hazard states from the selected camera.
 - Every death creates only one corpse and replacement player, and the room never retains more than five corpses.
 - The displayed oldest body matches the body removed next, including when it is supporting a stack, pressing a plate, jamming a saw, or being carried.
 - Invalid placement, death while carrying, overlapping hazard contacts, and rapid repeated deaths preserve correct carrying and queue state.

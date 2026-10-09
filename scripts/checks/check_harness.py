@@ -9,6 +9,17 @@ import subprocess
 import tempfile
 
 PROJECT = Path(__file__).resolve().parents[2]
+
+def copy_project(target):
+    generated = shutil.ignore_patterns('.git', '.godot', 'builds', '.test-output', '.agents', '.codex', '.aws', '.specify', 'specs', '__pycache__')
+    def ignore(directory, names):
+        excluded = set(generated(directory, names))
+        # Retained Blender sources live at the root; scenes/art is runtime content.
+        if Path(directory).resolve() == PROJECT:
+            excluded.add('art')
+        return excluded
+    shutil.copytree(PROJECT, target, ignore=ignore)
+
 FAULTS = {
     "empty_suite": ('tests/run_tests.gd', '"state": ["res://tests/state/test_foundation.gd"]', '"state": []'),
     "missing_case": ('tests/run_tests.gd', 'res://tests/state/test_foundation.gd', 'res://tests/state/missing.gd'),
@@ -26,26 +37,42 @@ def main():
     records = []
     with tempfile.TemporaryDirectory(prefix='omdb-harness-') as location:
         base = Path(location)
+        control = base / 'valid_project'
+        copy_project(control)
+        command = ['python3', str(control / 'scripts/checks/run_checks.py'), '--suite', 'state', '--save-root', str(base / 'saves' / 'control')]
+        result = subprocess.run(command, capture_output=True, text=True, timeout=90)
+        from run_checks import validate_summary
+        if result.returncode or not validate_summary(result.stdout + result.stderr, 'state'):
+            print('HARNESS_BASELINE FAIL\n' + result.stdout + result.stderr)
+            return 1
+        print('HARNESS_BASELINE PASS', flush=True)
         for name, (relative, old, new) in FAULTS.items():
             target = base / name
-            shutil.copytree(PROJECT, target, ignore=shutil.ignore_patterns('.git', '.godot', 'art', '.agents', '.codex', '.aws', '.specify', 'specs', '__pycache__'))
+            copy_project(target)
             path = target / relative
             if name == 'empty_suite':
                 path.write_text(re.sub(r'"state": \[[^\n]*\]', '"state": []', path.read_text()))
-                shutil.rmtree(target / 'tests/state')
-                (target / 'tests/state').mkdir()
+                # Keep imported/preloaded helpers available: clear the discovered
+                # cases instead of turning this into a missing-resource import fault.
+                path.write_text(path.read_text().replace('files.sort()\n', 'files.sort()\n\t\tif suite == "state":\n\t\t\tfiles.clear()\n'))
             else:
                 path.write_text(new if old is None else path.read_text().replace(old, new))
             if name == 'watchdog':
                 runner = target / 'tests/run_tests.gd'
-                runner.write_text(runner.read_text().replace('Time.get_ticks_msec() + 45000', 'Time.get_ticks_msec() + 100'))
+                runner.write_text(runner.read_text().replace('Time.get_ticks_msec() + 180000', 'Time.get_ticks_msec() + 100'))
             suite = 'physics' if name == 'missing_fixture' else 'state'
             command = ['python3', str(target / 'scripts/checks/run_checks.py'), '--suite', suite, '--save-root', str(base / 'saves' / name)]
             result = subprocess.run(command, capture_output=True, text=True, timeout=90)
             output = result.stdout + result.stderr
             (base / f'{name}.log').write_text(output)
             # Each failure must have an observable reason and a nonzero wrapper status.
-            records.append({'fault': name, 'exit_code': result.returncode, 'rejected': result.returncode != 0, 'diagnostic': output.splitlines()[-1] if output else 'NO OUTPUT'})
+            diagnostic = 'NO DIAGNOSTIC'
+            for marker in ['OMDB watchdog timeout', 'SCRIPT ERROR:', 'FAIL', 'ERROR:']:
+                found = next((line for line in output.splitlines() if marker in line), None)
+                if found:
+                    diagnostic = found
+                    break
+            records.append({'fault': name, 'exit_code': result.returncode, 'rejected': result.returncode != 0, 'diagnostic': diagnostic})
         # Runner must itself reject invalid suite names and the production save path.
         environment = os.environ.copy()
         for key, leaf in [('XDG_DATA_HOME', 'data'), ('XDG_CACHE_HOME', 'cache'), ('XDG_CONFIG_HOME', 'config')]:

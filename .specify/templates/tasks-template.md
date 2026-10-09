@@ -68,7 +68,7 @@ steps. Additional automated suites are optional unless requested in the specific
 Examples of foundational tasks (adjust based on your project):
 
 - [ ] T004 Configure shared physics layer names in project.godot
-- [ ] T005 [P] Create the stationary camera and floor in scenes/rooms/greybox.tscn
+- [ ] T005 [P] Create the four diagonal isometric camera presets (90° yaw steps, fixed tilt/elevation/distance/zoom) and floor in scenes/rooms/greybox.tscn
 - [ ] T006 [P] Inspect the candidate character and record asset/animation gaps in specs/[###-feature-name]/validation.md
 - [ ] T007 Create the shared room state owner in scripts/room_state.gd
 - [ ] T008 Define reproducible validation setups and expected results in specs/[###-feature-name]/quickstart.md

@@ -10,9 +10,11 @@ signal presentation_cue(cue: String)
 signal room_completed(epoch: int, room_id: String)
 
 @export var spawn_player: bool = false
+@export var floor_width: float = 0.0
 @export var tuning: GameplayTuning = preload("res://resources/gameplay_tuning.tres")
 var state: RoomState
 var definition: RoomDefinition
+var camera_views: RoomCameraViews
 var _commands: Array[Dictionary] = []
 var _commit_pending: bool = false
 var player: PlayerController
@@ -43,6 +45,19 @@ func _enter_tree() -> void:
 		initialize(1, RoomDefinition.new())
 
 func _ready() -> void:
+	if floor_width > 0:
+		for path in ["Floor/Shape", "Wall2/Shape", "FrontBoundary/Shape"]:
+			var shape: BoxShape3D = get_node(path).shape.duplicate()
+			shape.size.x = floor_width
+			get_node(path).shape = shape
+		for path in ["Floor/Mesh", "Wall2/Mesh", "FrontBoundary/CutawayMesh"]:
+			var mesh: BoxMesh = get_node(path).mesh.duplicate()
+			mesh.size.x = floor_width
+			get_node(path).mesh = mesh
+		$Wall0.position.x = -floor_width * 0.5 - 0.2
+		$Wall1.position.x = floor_width * 0.5 + 0.2
+	camera_views = RoomCameraViews.new()
+	add_child(camera_views)
 	if spawn_player:
 		_spawn_subject()
 		_build_ghost()

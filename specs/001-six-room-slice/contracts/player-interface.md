@@ -9,11 +9,13 @@ prompts can display the appropriate connected-controller glyph. No mouse is requ
 
 | Action | Keyboard | Controller | Behavior |
 | --- | --- | --- | --- |
-| `move_left/right/up/down` | A/D/W/S and arrow keys | Left stick | Ground-plane motion relative to fixed camera; normalize diagonals, preserve analog magnitude. |
+| `move_left/right/up/down` | A/D/W/S and arrow keys | Left stick | Ground-plane motion relative to selected camera; normalize diagonals, preserve analog magnitude. |
 | `jump` | Space | South face button | One buffered manual jump; no repeat from key echo. |
 | `interact` | E | West face button | Empty hands: pick up nearest reachable body. Holding: attempt current preview placement. |
 | `restart_room` | R | North face button | Immediately request a fresh active room, including during death feedback. Also available in pause menu. |
 | `pause` | Escape | Start/Menu | Open/close pause menu; block gameplay actions while menus own input. |
+| `camera_previous/next` | Q / C | Left / right shoulder (LB / RB) | Cycle diagonal isometric presets in 90° steps, preserving tilt, elevation, distance and zoom. |
+| `camera_north/east/south/west` (legacy action IDs) | 1 / 2 / 3 / 4 | Use shoulder cycling | Select South-east/South-west/North-west/North-east directly; movement follows the selected view. |
 | `ui_accept` | Enter or Space | South face button | Activate the focused menu control. |
 | `ui_cancel` | Escape | East face button | Return from submenu, preserving focus; resume from pause. |
 | `ui_left/right/up/down` | Arrow keys | D-pad or left stick | Move focus or adjust the focused slider; no simultaneous gameplay movement. |
@@ -22,7 +24,7 @@ Use `Input.get_vector` and the camera's projected right/forward ground axes, the
 the projected basis. Unit tests cover all four screen directions and diagonal speed.
 The placement direction is the last nonzero movement direction, retained when standing.
 The controller deadzone begins at 0.2 and is tuned through the required device trials.
-There is no aimed throwing, dragging, camera rotation, or body-generation action.
+There is no aimed throwing, dragging, free camera orbit, or body-generation action.
 
 ## Flow and focus
 

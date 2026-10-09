@@ -2,6 +2,7 @@ class_name ValidationContext
 extends Node3D
 ## Isolated launch context, never a seventh saved room.
 @export var room_scene: PackedScene = preload("res://tests/scenes/physics_fixture.tscn")
+@export var room_definition: RoomDefinition
 var room: RoomController
 var epoch: int = 0
 var audio: AudioController
@@ -29,7 +30,7 @@ func restart() -> void:
 		remove_child(room)
 		room.queue_free()
 	room = room_scene.instantiate()
-	room.initialize(epoch, RoomDefinition.new())
+	room.initialize(epoch, room_definition if room_definition != null else RoomDefinition.new())
 	room.presentation_cue.connect(audio.play_cue)
 	add_child(room)
 	room.restart_requested.connect(func(command_epoch: int):

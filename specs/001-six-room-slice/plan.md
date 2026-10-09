@@ -4,13 +4,19 @@
 
 **Input**: Feature specification from `specs/001-six-room-slice/spec.md`
 
-**Status**: Implementation in progress: 70/110 tasks complete, including live exit
-traversal/progression, core greybox,
-recovery/menu systems, assisted placement, reusable audio/effects, and playtest protocol.
+**Status**: Implementation in progress: 89/114 tasks complete. All six authored rooms,
+connected production catalogue, contextual teaching, real exit progression, Completion,
+Replay, authored recovery and ten-trial solutions/support checks are implemented. Integrated
+regressions pass 10,796 assertions; production desktop archives and Linux PCK smoke checks
+pass. Human readability/controller/native/playtest/performance acceptance remains open.
+The isometric camera clarification passes 9,289 physics assertions (including ten
+trials per room); see CAM-02 in `validation.md` for the latest affected-system evidence.
 The user accepts their greybox playtest and explicitly authorizes further implementation
 (2026-10-09: "I have verified as much as I need to"). This authorizes development beyond
 the G1/G2 review boundary. Detailed unreported controller/rendered trials remain unverified
 and required for release; they are not retroactively marked passed. See [validation.md](validation.md).
+Historical evidence sections below describe earlier checkpoints; the completed Stage 3
+record in validation.md supersedes their earlier room-production status.
 The feature is resolved through `.specify/feature.json`, independently of Git branch name;
 no extension hooks are configured.
 
@@ -56,12 +62,17 @@ These are validation targets, not achieved benchmarks or advertised minimum requ
 
 **Tuning and Asset Budgets**: [Research R8](research.md#r8-initial-tuning-and-measurement-decisions)
 records initial movement, jump, collision, carry, camera, timing, and rendering budgets.
+Room 1 authoring measures 3.000001 m maximum same-height jump reach from a real ledge
+over thirty scripted trials including delayed coyote jumps. The 3.6 m spike route also
+rejects ninety direct bypass trials. These headless measurements inform geometry;
+rendered landing judgment and controller feel remain separate checks.
 Cow metadata supports the initial 7,000-triangle/32-surface/10-material/8-bone character
 budget. Every other physical or performance value remains a named experiment until
 measured in the greybox; record revisions before accepting that milestone.
 
 **Constraints**: Five bodies including held; exactly one corpse/replacement per death;
-no support from held bodies; creation-order eviction; stationary orthographic view;
+no support from held bodies; creation-order eviction; four diagonal isometric orthographic views
+with 90° yaw steps and fixed authored tilt, elevation, distance and zoom;
 full room reset and fresh-room resume. Scope exclusions remain those in the spec.
 
 **Scale/Scope**: Six authored rooms, three lethal hazard types, one/multi-unit plates,
@@ -77,11 +88,12 @@ These are design compliance results. They do not mark gameplay or platform tests
 | --- | --- | --- |
 | I. Focused Six-Room Slice | PASS — spec scope, teaching table, FR-001/FR-024, and exclusions bound the feature. | PASS — delivery stages and room budget table below keep six rooms and solutions within five simultaneous bodies. |
 | II. Reliable Corpse Physics and State | PASS — FR-004–FR-021 and EC-01–EC-08 require shared lifecycle invariants. | PASS — data model and gameplay contract define single ownership, deduplication, eviction, contact invalidation, and physical settling. |
-| III. Readable Puzzles and Dependable Controls | PASS — spec movement/preview/camera requirements are explicit. | PASS — fixed camera, support/overlap evaluator, input/feedback contract, and VR-003/VR-007 checks cover them. |
+| III. Readable Puzzles and Dependable Controls | PASS — spec movement/preview/camera requirements are explicit. | PASS — selected camera, support/overlap evaluator, input/feedback contract, and VR-003/VR-007 checks cover them. |
 | IV. Complete Play Flow and Recovery | PASS — US4–US6 and VR-005/VR-006 cover recovery and platform/input flows. | PASS — fresh scene reconstruction, versioned save contract, menu focus, and native validation matrix implement those boundaries. |
 | V. Prove Interactions Before Expanding | PASS — VR-003/VR-004 gate full room production. | PASS — stage 1 exit requires real greybox and asset evidence; headless results cannot substitute for camera/control validation. |
 
-No principle exception or scope amendment is needed. Unknowns from the draft technical
+The user-requested camera amendment and isometric clarification (2026-10-09) update constitution 1.1.1,
+PRD and dependent artifacts; free camera orbit remains excluded. Unknowns from the draft technical
 context are resolved in [research.md](research.md); remaining observations are scheduled
 implementation checks with explicit pass criteria.
 
@@ -233,12 +245,15 @@ not increasing the cap. Every listed room starts with an empty body registry.
 | 1 | One sacrifice leaves a landing/support body across part of the spike route. Its remaining jump is broad; the full exposed gap exceeds measured unaided reach. No carry is required for the introductory route. | 1 |
 | 2 | Generate and carry a body to a plate to keep the separated exit open; show one-unit contribution and required-weight feedback. Demonstrate multi-unit weighting before later combined requirements. | 2 |
 | 3 | Leave/place one body at the saw jam point, observe permanent stop, safely retrieve it from outside the lethal volume to show reactivation, then re-jam and cross. | 1 |
-| 4 | Use one early body to reach a one-way ledge. In the later anvil area, allocate two bodies to a two-unit plate and three to a broad spike route. The sixth creation replaces the now-unneeded oldest entry body, explicitly demonstrating the cap. | 5 (6 total creations) |
+| 4 | Use one early body to reach an observation shelf with a return route. Allocate two newer anvil bodies to the plate and three to the spike route. The sixth creation replaces the unneeded oldest step body. The shelf remains optional for alternative solutions; no death quota controls the exit. | 5 (6 total creations) |
 | 5 | Allocate two bodies to a bridge/step route, two directly to a plate, and one to a saw; all interactions were introduced earlier. | 5 |
 | 6 | Combine the same five-body allocation with a different route and telegraphed anvil area; no new rule or timed jump is required. Reach final completion and Replay. | 5 |
 
-Room 4's early body remains visible from the whole-room camera, even after the one-way
-ledge, so its removal is observable. The intended route does not require recovering it.
+Room 4's early body remains visible beside the observation shelf so its removal is
+observable. The proposed one-way entry ledge was replaced during implementation: after
+the sixth death, entrance respawn plus FIFO eviction would otherwise prevent returning
+to the puzzle. The shelf teaches body support but has a normal floor return; no checkpoint,
+new mechanic or death quota was introduced. The final route does not require that body.
 Reliable alternative solutions remain valid; there is no invisible death quota on exits.
 Plate surfaces must fit all required direct contributors. Spike beds support bodies;
 wall/route geometry prevents stepping around the obstacle or bypassing it with the

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://scenes/rooms/chamber.tscn" id="1"]
+[node name="WideChamber" instance=ExtResource("1")]
+floor_width = 24.0
+[node name="Spawn" parent="." index="1"]
+position = Vector3(-10, 0.05, 0)
+[node name="Camera" parent="." index="2"]
+position = Vector3(16, 16, 16)
+size = 28.0

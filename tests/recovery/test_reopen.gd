@@ -8,13 +8,19 @@ func run(h: SceneTree) -> void:
 			var store := SaveStore.new(root)
 			store.write_progress(id)
 			store.write_settings(0.12, 0.88)
-			var game: GameSession = load("res://tests/scenes/recovery_validation.tscn").instantiate()
+			var game: GameSession = load("res://scenes/main.tscn").instantiate()
+			game.auto_start = true
 			game.store = store
 			h.root.add_child(game)
 			await h.frames(3)
 			var body := helper.add_body(game.active_room, Vector3(-3.7, 0.245, 0))
 			game.active_room.state.pickup(game.active_room.state.epoch, game.active_room.state.subject_id, body.body_id)
 			body.disable_prop()
+			for plate in game.active_room.plates:
+				helper.add_body(game.active_room, plate.position + Vector3(0, 0.345, 0))
+			for saw in game.active_room.saws:
+				helper.add_body(game.active_room, saw.position + Vector3(0, 0.245, 0))
+			await h.frames(30)
 			game.queue_free()
 			await h.frames(2)
 			var output: Array = []
