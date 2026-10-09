@@ -307,7 +307,14 @@ Verification requirements and measurable outcomes apply across these references.
   elevation, distance and zoom; foreground geometry MUST NOT hide the live
   player, hazards, or bodies needed for the puzzle. Acceptance: US1/AS1; US7/AS1.
 - **FR-003**: Players MUST move across the floor in any direction relative to the screen
-  and jump manually, with a ground shadow showing landing position. Intended routes MUST
+  and jump manually, with a ground shadow and a contrasting airborne footprint showing
+  the surface directly beneath their feet. Air steering MUST permit prompt correction;
+  releasing movement MUST brake horizontal drift without changing jump height or maximum
+  movement speed. The footprint is a ground reference, not a predicted trajectory.
+  Verify stopping distance of at most 0.18 m from full speed at 60 Hz, reversal response,
+  marker tracking and visibility through landing in every isometric view, plus repeatable
+  authored route and hazard-bypass regressions. Review rendered readability/control feel
+  with keyboard and controller; record unavailable reviews as unverified. Intended routes MUST
   provide broad landing surfaces and avoid precision or timed jump sequences.
   Acceptance: US1/AS1, AS3; US5/AS2.
 - **FR-004**: Each hazard death MUST leave exactly one body at the death location and

@@ -57,8 +57,17 @@ func _physics_process(delta: float) -> void:
 	var direction := ground_direction(input, basis)
 	if direction.length_squared() > 0.0001:
 		facing = direction.normalized()
-	velocity.x = move_toward(velocity.x, direction.x * tuning.move_speed, tuning.acceleration * delta)
-	velocity.z = move_toward(velocity.z, direction.z * tuning.move_speed, tuning.acceleration * delta)
+	if is_on_floor():
+		velocity.x = move_toward(velocity.x, direction.x * tuning.move_speed, tuning.acceleration * delta)
+		velocity.z = move_toward(velocity.z, direction.z * tuning.move_speed, tuning.acceleration * delta)
+	else:
+		# Responsive correction and short, direction-independent stopping distance.
+		var horizontal := Vector2(velocity.x, velocity.z)
+		var target := Vector2(direction.x, direction.z) * tuning.move_speed
+		var rate := tuning.air_braking if input.is_zero_approx() else tuning.air_acceleration
+		horizontal = horizontal.move_toward(target, rate * delta)
+		velocity.x = horizontal.x
+		velocity.z = horizontal.y
 	_coyote_remaining = tuning.coyote_time if is_on_floor() else maxf(0, _coyote_remaining - delta)
 	if _jump_remaining > 0 and _coyote_remaining > 0:
 		velocity.y = tuning.jump_speed
@@ -86,5 +95,7 @@ func _update_shadow() -> void:
 	var query := PhysicsRayQueryParameters3D.create(global_position + Vector3.UP * 0.1, global_position + Vector3.DOWN * 20, 5)
 	var hit := get_world_3d().direct_space_state.intersect_ray(query)
 	$GroundShadow.visible = not hit.is_empty()
+	$JumpFootprint.visible = not is_on_floor() and not hit.is_empty()
 	if not hit.is_empty():
 		$GroundShadow.global_position = hit.position + Vector3.UP * 0.008
+		$JumpFootprint.global_position = hit.position + Vector3.UP * 0.025

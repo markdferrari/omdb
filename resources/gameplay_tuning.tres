@@ -4,6 +4,8 @@
 script = ExtResource("1")
 move_speed = 4.5
 acceleration = 24.0
+air_acceleration = 42.0
+air_braking = 60.0
 gravity = 20.0
 jump_speed = 6.0
 coyote_time = 0.10

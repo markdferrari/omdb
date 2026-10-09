@@ -31,6 +31,12 @@ Exits advance automatically; the sixth opens Completion and Replay saves a fresh
 Keyboard: arrows/WASD, Space jump, E pickup/place, R restart, Escape pause, Q/C or 1–4
 camera views. Controller: left stick, South jump, West pickup/place, North restart,
 Menu pause, LB/RB camera views. Preserve the body left in the saw when ferrying bodies.
+While jumping, the yellow ring shows the surface directly beneath your feet. Steer in
+the air to correct your approach; release movement to brake before landing. The ring
+is a ground reference rather than a prediction of your eventual landing. Review stopping
+and reversing on the floor and on body bridges in all four views, with keyboard and
+controller. Check the ring on dark floors, body tops and spike surfaces at all three
+resolutions; record readability/control feel in `validation.md`.
 See [room-solutions.md](room-solutions.md) for recorded routes and allocations.
 
 Use Godot **4.7.2** standard build and Python 3.12

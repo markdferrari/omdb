@@ -13,9 +13,9 @@ and unnotarized. Changes remain in the working tree; this is not a committed bui
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
 | builds/windows/over-my-dead-body.exe | 109,127,680 | `4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668` |
-| builds/macos/over-my-dead-body.zip | 60,053,556 | `8a0ad6818337ab64fafe2d10bd5d3df7166c6ba2e78533ae35e0c87a4f489312` |
-| builds/windows/over-my-dead-body.zip | 38,419,380 | `60da6ae92c87264d71d9ac7932983dae07fc0a7d29be4ec282f3610a07eda52c` |
-| builds/windows/over-my-dead-body.pck | 530,108 | `68d4a8502e8cee297ed17840a6bac6641595bcf625cf4b946aa6d4bdce9f5ca9` |
+| builds/macos/over-my-dead-body.zip | 60,054,082 | `9ad9cc7105acd47398d76e30bf7c3b2618cec1adc574cbfc9463d6147cd65989` |
+| builds/windows/over-my-dead-body.zip | 38,419,906 | `7d745135c2337239a1c2a19f26e06eb4b38797c97a881c1a136c61d961609d41` |
+| builds/windows/over-my-dead-body.pck | 530,860 | `35c92bc95a0ccae7eaa4f96279f1146011f86cbbba6317a6d6ee44d698e4cf33` |
 
 The Windows distribution ZIP includes both the EXE and required PCK. Keep those together.
 The macOS ZIP includes the app bundle. Builds are ignored local outputs; exact generated
@@ -31,7 +31,10 @@ Root floor/spike/passage authoring properties avoid the observed compiled-export
 nested shape overrides; packaged metadata checks confirm actual floor/spike dimensions.
 The refreshed camera correction is recorded in CAM-02 in `validation.md`; export and
 Linux PCK smoke logs are `/tmp/omdb-isometric-export.log` and
-`/tmp/omdb-isometric-package.log`. Native acceptance remains unverified.
+`/tmp/omdb-isometric-package.log`. The subsequent jump aiming refinement (JUMP-01),
+air braking/steering and airborne footprint are included in the current hashes;
+logs are `/tmp/omdb-jump-export.log` and `/tmp/omdb-jump-package.log`.
+Native acceptance remains unverified.
 
 Reproduce from the project root:
 

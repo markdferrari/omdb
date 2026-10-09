@@ -27,7 +27,7 @@ func _refresh(snapshot: Dictionary) -> void:
 		if snapshot.body_count == 0:
 			instruction = "The spikes are too wide for one jump. A sacrifice leaves a solid body for your next clone."
 		else:
-			instruction = "Your body remains. %s: jump onto it, cross its top, then jump to the far bank." % jump
+			instruction = "Your body remains. %s: jump onto it, cross its top, then jump to the far bank. The yellow ring marks the ground beneath you; release movement to brake in the air." % jump
 	if "carry" in cues:
 		instruction = "%s: pick up a nearby body. Face a surface and press again when the placement preview is valid." % interact
 	if "weight" in cues:

@@ -889,3 +889,43 @@ Local production Windows/macOS archives were refreshed successfully in
 `/tmp/omdb-isometric-export.log`; both exported PCK smoke checks passed using Linux Godot
 in `/tmp/omdb-isometric-package.log`. Current hashes are in `release.md` and
 `builds/game-manifest.json`. These are not native platform or rendered-camera checks.
+
+## JUMP-01 — Jump aiming and surface reference — 2026-10-09
+
+Playtest finding: the user reports difficulty aiming jumps precisely after accepting
+the isometric camera correction. Improve air correction/release braking and depth cues
+under FR-003; preserve manual jumping and the authored puzzle routes.
+
+Setup: Godot 4.7.2, 60 Hz fixed-step headless physics, isolated temporary saves.
+`run_checks.py --godot /usr/local/bin/godot --suite physics --save-root
+/tmp/omdb-jump-aim`; log `/tmp/omdb-jump-aim.log`. Ten repeats per isometric view use
+real ground acceleration and queued jumps, then release or reverse input in flight.
+Expected: stop within 0.18 m after release at full speed; reverse direction within
+eight physics frames; footprint follows ground/body support, disappears on landing
+and never adds collision. Existing room solutions, support and hazard-bypass checks
+must pass. Jump speed/gravity/top speed remain 6/20/4.5 in metre/second units.
+
+Actual: 125 scripts/resources import cleanly; **9,529 physics assertions pass, zero
+failures**, including all existing authored walkthroughs, bridges/stacks and bypass
+checks. Maximum coyote-inclusive reach is 3.000000715 m (unchanged). Air acceleration
+42 m/s² and braking 60 m/s² stop within 0.133334 m in all four views. A yellow,
+unshaded, non-colliding ring supplements the ground shadow while airborne; it marks
+the current surface under the feet, not a predicted landing trajectory. Room 1 teaching
+and quickstart explain release-to-brake and the ring.
+
+Expanded focused support checks: `/tmp/omdb-jump-focused.gd` runs only the jump aiming
+regression. `/tmp/omdb-jump-focused.log` passes **320 assertions**, including ring height
+on real solid corpses and ignoring disabled corpse support. An isolated legacy-response
+comparison retains the tuning resource and sets both air rates to the prior 24 m/s²
+without modifying project files: `/tmp/omdb-jump-baseline.log` fails the 80 braking/
+reversal assertions as expected, measuring 0.36 m travel over eight frames with residual
+velocity. An initial comparison did not retain the modified resource and therefore
+measured new tuning; that run is superseded by this corrected comparison.
+
+T115 implementation/automated checks complete. The user reports that the yellow ring
+works well enough as an indicator. Device, input method and resolution were not recorded,
+so broader keyboard/controller feel, readability at all three resolutions and manual
+body-bridge landing checks remain **UNVERIFIED**. Automated response improvement and this
+single indicator confirmation do not establish full usability acceptance. Native
+acceptance remains open. Export/package evidence and current artifact hashes are recorded
+in `release.md`.

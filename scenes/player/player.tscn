@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3]
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/player/character_visual.gd" id="2"]
 [ext_resource type="PackedScene" path="res://assets/characters/cow/cow.glb" id="3"]
@@ -14,6 +14,14 @@ albedo_color = Color(0.03, 0.02, 0.05, 1)
 shading_mode = 0
 [sub_resource type="Resource" id="presentation"]
 metadata/notes = "Unmeasured cow fit"
+[sub_resource type="TorusMesh" id="jump_footprint"]
+inner_radius = 0.30
+outer_radius = 0.40
+rings = 24
+ring_segments = 8
+[sub_resource type="StandardMaterial3D" id="jump_footprint_mat"]
+albedo_color = Color(1, 0.9, 0.25, 1)
+shading_mode = 0
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
@@ -31,3 +39,8 @@ material_override = SubResource("shadow_mat")
 cast_shadow = 0
 [node name="CarryAnchor" type="Marker3D" parent="."]
 position = Vector3(0, 1.2, -0.6)
+[node name="JumpFootprint" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("jump_footprint")
+material_override = SubResource("jump_footprint_mat")
+cast_shadow = 0

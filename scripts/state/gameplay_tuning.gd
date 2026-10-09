@@ -4,6 +4,8 @@ extends Resource
 @export var measurement_status: String = "Unmeasured R8 defaults"
 @export var move_speed: float = 4.5
 @export var acceleration: float = 24.0
+@export var air_acceleration: float = 42.0
+@export var air_braking: float = 60.0
 @export var gravity: float = 20.0
 @export var jump_speed: float = 6.0
 @export var coyote_time: float = 0.10

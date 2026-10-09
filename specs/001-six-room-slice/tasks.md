@@ -59,7 +59,7 @@ false success. All story work depends on this foundation; no playable gate is pa
 
 ## Phase 3: US1 — Turn Death into a Traversable Route (P1, MVP)
 
-**Implementation checkpoint (2026-10-09):** 89/114 tasks completed. All six authored
+**Implementation checkpoint (2026-10-09):** 90/115 tasks completed. All six authored
 rooms, strict production catalogue, connected exits, contextual teaching, Completion,
 Replay, authored recovery, reusable dressing and desktop candidate archives are implemented.
 Ten fresh solutions per room and independent support trials pass within the five-body cap;
@@ -451,3 +451,4 @@ explicit evidence-backed specification amendment and consistent dependent artifa
 - [X] T112 Implement Q/C and 1–4 keyboard selection plus controller shoulder cycling, per-room camera state and camera-side decorative cutaways, visible open-door frames and current-view HUD; run ten-trial regressions in `tests/physics/test_camera_views.gd` and full checks.
 - [ ] T113 Review South-east/South-west/North-west/North-east isometric views in the authored room/greybox with keyboard and controller at all three target resolutions: exit visibility, whole puzzle framing, landing/ghost readability and movement. Record actual observations; remains unverified without display/controller.
 - [X] T114 Correct rotation to preserve the authored diagonal isometric perspective at every preset, with immediate 90° cycling from the initial view; update labels and dependent artifacts. Run ten trials per authored room for all four angles, projection/tilt/elevation/distance/zoom, direct selection, cycling, movement and puzzle/collision isolation in `tests/physics/test_camera_views.gd`; record automated evidence and keep rendered review open in T113.
+- [X] T115 Improve jump aiming with responsive airborne steering, release braking and a contrasting surface footprint in `scripts/player/player_controller.gd`, tuning and `scenes/player/player.tscn`; add repeatable stopping/reversal/footprint checks in `tests/physics/test_jump_aim.gd` for every view and recheck bridge/stack/authored routes and hazard bypasses. Update onboarding and playable review instructions; record observed measurements and keep human feel/readability unverified until reviewed.

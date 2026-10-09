@@ -4,7 +4,7 @@
 
 **Input**: Feature specification from `specs/001-six-room-slice/spec.md`
 
-**Status**: Implementation in progress: 89/114 tasks complete. All six authored rooms,
+**Status**: Implementation in progress: 90/115 tasks complete. All six authored rooms,
 connected production catalogue, contextual teaching, real exit progression, Completion,
 Replay, authored recovery and ten-trial solutions/support checks are implemented. Integrated
 regressions pass 10,796 assertions; production desktop archives and Linux PCK smoke checks
@@ -62,6 +62,18 @@ These are validation targets, not achieved benchmarks or advertised minimum requ
 
 **Tuning and Asset Budgets**: [Research R8](research.md#r8-initial-tuning-and-measurement-decisions)
 records initial movement, jump, collision, carry, camera, timing, and rendering budgets.
+Jump aiming refinement (2026-10-09 user playtest): retain ground acceleration 24 m/s²,
+top speed 4.5 m/s, jump speed 6 m/s and gravity 20 m/s²; use air steering 42 m/s² and
+release braking 60 m/s². At 60 Hz the target is at most 0.18 m drift after release at
+full speed, reversal within eight physics frames, and a non-colliding yellow footprint
+on the actual surface beneath the airborne player. Test all four views ten times,
+then recheck authored traversals/bypass protection. Human control feel remains a
+playtest judgment; automated measurements do not establish usability acceptance.
+Observed: full-speed release drift is 0.133334 m or less in all four views; legacy
+24 m/s² air response travels 0.36 m in the same eight-frame window and still has
+residual velocity. All 9,529 integrated physics assertions pass; an additional focused
+320-assertion run checks the expanded footprint coverage (including released/disabled
+corpse support). Maximum coyote-inclusive reach remains 3.000001 m. See JUMP-01.
 Room 1 authoring measures 3.000001 m maximum same-height jump reach from a real ledge
 over thirty scripted trials including delayed coyote jumps. The 3.6 m spike route also
 rejects ninety direct bypass trials. These headless measurements inform geometry;
