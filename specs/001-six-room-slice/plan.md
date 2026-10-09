@@ -4,10 +4,13 @@
 
 **Input**: Feature specification from `specs/001-six-room-slice/spec.md`
 
-**Status**: Implementation in progress: 67/109 tasks complete, including core greybox,
+**Status**: Implementation in progress: 70/110 tasks complete, including live exit
+traversal/progression, core greybox,
 recovery/menu systems, assisted placement, reusable audio/effects, and playtest protocol.
-The user reports the placement correction is better. Formal greybox/character/controller
-reviews remain open, so full room production is still gated. See [validation.md](validation.md).
+The user accepts their greybox playtest and explicitly authorizes further implementation
+(2026-10-09: "I have verified as much as I need to"). This authorizes development beyond
+the G1/G2 review boundary. Detailed unreported controller/rendered trials remain unverified
+and required for release; they are not retroactively marked passed. See [validation.md](validation.md).
 The feature is resolved through `.specify/feature.json`, independently of Git branch name;
 no extension hooks are configured.
 

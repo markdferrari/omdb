@@ -59,7 +59,9 @@ false success. All story work depends on this foundation; no playable gate is pa
 
 ## Phase 3: US1 — Turn Death into a Traversable Route (P1, MVP)
 
-**Implementation checkpoint (2026-10-08):** 68/110 tasks completed; T110 adds the
+**Implementation checkpoint (2026-10-09):** 70/110 tasks completed; T070 adds live exit
+crossing and progression; T023 adds repeatable
+US1 greybox regression evidence and T110 adds the
 stacked-plate-weight correction. Remaining tasks include authored-room production and
 rendered/controller gates.
 T025–T034, T037–T042, T045–T047, T049–T056, T058–T064, and T066–T067.
@@ -68,9 +70,10 @@ this informal feedback does not establish the full manual/controller gate.
 Carry/placement, plates/doors, FIFO, saws/anvils, isolated recovery, menus, prompts,
 and audio settings are implemented. Full regressions pass 5,976 assertions, including
 60 separate-process reopen checks. Representative Windows/macOS packages are produced;
-native execution remains unverified. The outstanding human tasks are T023–T024,
+native execution remains unverified. The outstanding human tasks are T024,
 T035–T036, T043–T044, T048, T057, and T065. The agent lacks display/controller access.
-Full room production remains gated on T044 and T065. See `validation.md` for exact
+The user's 2026-10-09 acceptance authorizes continued development beyond the T044/T065
+review boundary; detailed unreported checks remain open. See `validation.md` for exact
 results and `quickstart.md` for the new menu/recovery fixture launch.
 
 **Goal**: Move and jump from the fixed view, die once per lethal event, and use the resulting
@@ -96,7 +99,7 @@ supports ten consecutive traversals. Exercise screen directions and landings wit
 - [X] T020 [US1] Add `scripts/player/character_visual.gd` and `assets/characters/cow/presentation.tres` for movement, jump, hurt/death, and a flat corpse pose; wire `scenes/player/player.tscn` and `scenes/corpses/corpse.tscn` so all squash/pose changes affect visuals only, documenting missing imported animation coverage in `assets/characters/cow/SOURCE.md`.
 - [X] T021 [US1] Compose the actual player/corpse/spike components in `tests/scenes/greybox_validation.tscn`; provide a safe entrance, broad body-assisted crossing, cutaway foreground walls, and stationary whole-room framing, with exposed geometry that cannot be bypassed by an unaided jump or walking around it.
 - [X] T022 [US1] Implement the initial state-snapshot HUD in `scripts/ui/hud.gd` and `scenes/ui/hud.tscn`, showing body count, actual oldest body, zero-body clearing, and subject/death feedback without a failure limit; connect it through `scripts/rooms/room_controller.gd`.
-- [ ] T023 [US1] Run T012–T014 and the greybox death/support trials, recording ten repetitions per state scenario and ten fresh bridge traversals in `specs/001-six-room-slice/validation.md`; time the available death cases now and retain the full twenty-trial mixed-hazard/held-death requirement for T043 (VR-001–VR-003; SC-003–SC-005).
+- [X] T023 [US1] Run T012–T014 and the greybox death/support trials, recording ten repetitions per state scenario and ten fresh bridge traversals in `specs/001-six-room-slice/validation.md`; time the available death cases now and retain the full twenty-trial mixed-hazard/held-death requirement for T043 (VR-001–VR-003; SC-003–SC-005).
 - [ ] T024 [US1] Measure maximum unaided jump reach including forgiveness, inspect shadow/landing clarity and four-direction movement with keyboard and controller, and check 1920×1080, 1280×800, and 1024×768 framing; record observations and any revised `resources/gameplay_tuning.tres` values in `specs/001-six-room-slice/validation.md`, rerunning affected T023 checks after tuning.
 
 **Checkpoint**: US1 is the playable MVP once its checks pass. It does not establish the
@@ -227,6 +230,12 @@ each, and advance only through live-player open exits to Completion and Replay.
 US4 recovery checks must pass. Native release tests may still be outstanding. The six
 room tasks cannot be started merely because the greybox files exist.
 
+**User-authorized development continuation (2026-10-09):** The user accepts their
+playtest and asks to continue, stating "I have verified as much as I need to." Proceed
+with US5 implementation under that explicit direction. Keep detailed manual verification
+tasks unchecked where trial counts, controller checks, or measurements are unreported;
+this scheduling exception does not establish native/release acceptance.
+
 **Independent test**: From fresh room 1, learn each rule before combining it, solve each
 room within five simultaneous bodies, reach Completion, and Replay into a fresh saved
 room 1 with settings retained. Each recorded solution and support arrangement passes ten trials.
@@ -238,7 +247,7 @@ room 1 with settings retained. Each recorded solution and support arrangement pa
 
 ### Implementation and playable verification
 
-- [ ] T070 [US5] Connect `scripts/puzzle/exit_door.gd`, `scripts/rooms/room_controller.gd`, and `scripts/app/game.gd` so only a current live subject crossing an open exit can latch one transition; enforce reset/departure then death then exit then interaction priority, save only successfully activated rooms, and route the sixth exit to Completion.
+- [X] T070 [US5] Connect `scripts/puzzle/exit_door.gd`, `scripts/rooms/room_controller.gd`, and `scripts/app/game.gd` so only a current live subject crossing an open exit can latch one transition; enforce reset/departure then death then exit then interaction priority, save only successfully activated rooms, and route the sixth exit to Completion.
 - [ ] T071 [P] [US5] Author `scenes/rooms/room_01.tscn` and `resources/rooms/room_01.tres` for one sacrifice and body-assisted spike traversal without carrying; use measured unaided jump reach to prevent bypasses, a broad remaining landing, and a one-body intended solution.
 - [ ] T072 [P] [US5] Author `scenes/rooms/room_02.tscn` and `resources/rooms/room_02.tres` for pickup/preview/placement and a separated plate-held exit; teach single contribution and multi-unit requirements before later combinations, with space for direct contributors and a solution using at most two bodies.
 - [ ] T073 [P] [US5] Author `scenes/rooms/room_03.tscn` and `resources/rooms/room_03.tres` for a one-body persistent saw jam, safe retrieval to demonstrate reactivation, and re-jamming to cross; make both hazard states readable and block floor walk-arounds.

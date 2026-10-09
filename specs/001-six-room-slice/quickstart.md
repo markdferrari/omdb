@@ -130,6 +130,12 @@ godot --path . -- --save-root "$OMDB_FLOW_ROOT"
   reopen to a fresh room 6, then Replay and verify room 1 is saved with settings preserved.
 - Navigate Title, Pause, Settings, Completion and Quit using each input method alone.
   Confirm focus returns correctly and menu events do not also trigger gameplay actions.
+- Walk through an open door from its entry side to trigger progression. Closed doors,
+  reverse crossings and corpses cannot complete a room; restarting before a queued
+  crossing commits keeps the current room. The isolated greybox has no next-room
+  catalogue, so it reports completion without becoming a progression room. Use the
+  representative flow fixture for progression/Completion/Replay checks; its repeated
+  greybox rooms remain fixtures until T071–T077 author and integrate the six rooms.
 - Inspect every anvil warning/drop cycle and safe door displacement. Closing a door cannot
   become an unlisted lethal hazard or let the player pass with insufficient plate weight.
 

@@ -165,7 +165,16 @@ are not implemented. Carry/plate/saw/anvil scenarios are not silently covered by
 | TEST-002 | Bridge test inspected registry at the immediate death latch, before the deferred physical commit | Await the safe commit boundary; ten fresh routes pass |
 | DEV-002 | Imported continuous clip loop behavior was not guaranteed by clip names | Explicit Idle/Move looping and animation-integrity assertion; final check passes |
 
-### T023/T024 blocked playable checks
+### T023/T024 playable boundary
+
+T023 automated rerun (2026-10-08): Linux, Godot 4.7.2 standard, Compatibility/Jolt,
+headless fixed 60 Hz, isolated temporary roots. State completed with
+`OMDB_TEST_RESULT {"failed":0,"passed":2829,"suites":{"state":2829}}`; physics completed
+with `OMDB_TEST_RESULT {"failed":0,"passed":2859,"suites":{"physics":2859}}`. These
+passes include the ten fresh greybox bridge/support trials and the death/replacement,
+support-removal, exposed-spike, and corpse-survival repetitions described above. No
+script/import errors or failed cases were observed. This closes T023's repeatable
+automated evidence; mixed-hazard/held-body timing remains reserved for T043.
 
 Attempted an actual rendered launch of `greybox_validation.tscn` with isolated storage
 and five-iteration limit. **Actual exit 1:** `X11 Display is not available`, Wayland
@@ -173,8 +182,8 @@ connection/creation also failed, and Godot reported all display drivers failed. 
 and `/dev/input` are absent. Therefore human physics/control feel, maximum jump reach
 including forgiveness under each input method, shadows/landing judgment, camera framing
 at the three required resolutions, and actual-camera cow fit cannot be checked here.
-No graphics acceptance was inferred from headless tests. T023 remains partially verified
-and unchecked; T024 remains unverified and unchecked. The US1 phase is not fully accepted.
+No graphics acceptance was inferred from headless tests. T024 remains unverified and
+unchecked; the US1 phase is not fully accepted until the rendered/controller gate passes.
 
 The invoked implementation skill requires phase completion before moving to the next
 phase. Implementation stops at this phase validation boundary; later tasks remain open.
@@ -299,7 +308,7 @@ expected failure message. Faults were confined to disposable project copies.
   Correcting the test to assert actual subject/replacement identity restored clean
   cleanup and both suites pass. No placement tolerance or expectation was weakened.
 
-**Still UNVERIFIED:** T023–T024 human controls/jump/framing; T035 manual placement with
+**Still UNVERIFIED:** T024 human controls/jump/framing; T035 manual placement with
 both devices; T036 manual stack/bridge traversal; T043 twenty active-play mixed/held
 hazard deaths timed to restored control; T044 the integrated keyboard/controller and
 one-player/five-cow visual/performance gate; T048 human warning/jam/door checks. Tests
@@ -507,7 +516,7 @@ post-execution; no hooks are configured. Release remains NOT READY.
 
 ## Reusable presentation and playtest preparation (2026-10-08)
 
-**Scope:** T084/T085/T087/T088/T089/T094/T110 complete; total 68/110 tasks. These are independent
+**Scope:** T023/T084/T085/T087/T088/T089/T094/T110 complete; total 69/110 tasks. These are independent
 asset/system/protocol preparations allowed before room authoring. No full-room production
 or final presentation gate is claimed. T044, T065, T091 and native/release checks remain open.
 The user's “ok thats better” feedback confirms informal improvement after DEV-004; it does
@@ -605,6 +614,58 @@ Actual: `FR020.stacked_bodies_each_count` passed in all ten repetitions. The sta
 reported three units while all three bodies were released, two after removing the unrelated
 direct contributor, and two after picking up the lower stack body once the upper body settled
 onto the plate. The linked door state stayed open whenever the requirement remained met.
-The physics suite completed with no failed cases; the standalone runner emitted only the
-known Godot shutdown warning after its passing cases. No display or physical controller was
+The final standalone physics runner reported 2,859 passed, zero failed. Earlier attempts
+included corrected assertions, sandbox log/socket errors, a full-suite watchdog, and
+60 failed subprocess-reopen checks in the sandbox; those attempts were not clean full
+regression evidence. No display or physical controller was
 available, so rendered placement feel remains unverified under T109.
+
+## User acceptance and development continuation — 2026-10-09
+
+The user states "all good, carry on with implementation. I have verified as much as I
+need to." Record this as acceptance of their playtest and authorization to proceed with
+US5 implementation beyond the prior G1/G2 scheduling boundary. Earlier reported defects
+have automated corrections. The user did not report trial counts, hardware/controller
+details, measured jump reach, three-resolution framing, or performance data. Keep those
+manual verification tasks unchecked and preserve the release matrix. This supersedes
+the earlier instruction to stop development at the unavailable manual-review boundary.
+
+## Exit traversal and progression — T070 / partial T068
+
+Setup: Godot 4.7.2, Linux, Compatibility/Jolt, fixed 60 Hz headless physics, real player,
+door and room components, isolated storage. Ten trials each cover open forward crossing,
+duplicate crossing, absent crossing evidence, closed door, outside-passage motion,
+dead subject, simultaneous death, retired room, reverse travel and closure before commit.
+Ten fixture-catalogue runs cross all six room IDs, verify fresh-room activation and saved
+progress, reach Completion retaining room 6, reopen room 6, activate Replay via its button
+retaining volumes, and cancel a queued crossing with restart.
+
+Expected: one live-only transition per room, death/restart priority, no state carried into
+the next room, save only after activation, room 6 retained at Completion and room 1 saved
+on Replay. These fixtures do not prove authored-room solutions or native input behavior.
+
+Behavioral RED: `/tmp/omdb-exits-red.log` fails the new open-crossing/duplicate assertions
+before implementation. First GREEN passes 2,889 physics assertions. Subsequent full checks
+revealed a reverse-crossing fixture teleported through the doorway before testing reverse
+travel; set its initial position on the far side before observation. No runtime crossing
+rule was weakened. Sandbox editor socket errors required the strict wrapper to be run
+outside the sandbox; game saves and engine XDG directories remain disposable and isolated.
+
+Final actual result: `/tmp/omdb-exits-final.log` passes the strict import and all-suite
+wrapper: **7,016 passed, zero failed** (state 2,869; physics 2,969; recovery 1,178).
+All ten repetitions of each new scenario pass, along with earlier carry, death, FIFO,
+plate, support, hazard, settings and separate-process reopen regressions. T070 is complete;
+T068 remains open for actual authored-room coverage, since its six IDs currently reference
+the recovery fixture. No authored six-room solution is claimed.
+
+`/tmp/omdb-exits-export.log` refreshes both desktop packages and restores main-scene
+wiring. `/tmp/omdb-exits-package.log` passes both PCK smoke checks without source fallback.
+Windows executable remains 109,127,680 bytes, SHA-256
+`4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668`; its current
+PCK is 488,300 bytes, SHA-256
+`942f902cd0f0090383321615fbaf222ee6759ecd9be26cb671d34351e1a2e267`.
+macOS ZIP is 60,044,516 bytes, SHA-256
+`1dd1d330d5e32ecf0e47f749842475fe551bc71a33b4119705ce2aafe9e30f2e`.
+Native launch and release acceptance remain unverified. Requirements checklist remains
+16/16 complete; extension configuration is absent before/after implementation, so hooks
+are skipped. Existing user changes are preserved; no commit created.

@@ -83,15 +83,42 @@ func _commit_commands() -> void:
 		return
 	var commands := _commands
 	_commands = []
+	commands.sort_custom(func(a: Dictionary, b: Dictionary):
+		var priority := {"death": 0, "exit": 1, "interact": 2}
+		return priority.get(a.kind, 3) < priority.get(b.kind, 3))
 	for command in commands:
 		if int(command.epoch) != state.epoch or state.phase == RoomState.Phase.RETIRED:
 			continue
 		if command.kind == "death":
 			_commit_death(command)
+		elif command.kind == "exit":
+			_commit_exit(command)
 		elif command.kind == "interact" and state.is_live(command.epoch, command.subject_id):
 			last_interaction_result = _pickup_nearest(command.get("body_id", "")) if state.held_body_id.is_empty() else _place_held()
 	_sync_contacts()
 	_publish_snapshot()
+
+func request_exit(command_epoch: int, subject: int, exit_identity: String) -> String:
+	if command_epoch != state.epoch or subject != state.subject_id or state.phase == RoomState.Phase.RETIRED:
+		return "IGNORED_STALE"
+	if not state.is_live(command_epoch, subject) or state.exit_consumed or not is_instance_valid(player) or not player.alive:
+		return "INVALID_STATE"
+	for door in doors:
+		if door.exit_id == exit_identity and door.is_open and door.has_crossing(player):
+			return enqueue({"kind": "exit", "epoch": command_epoch, "subject_id": subject, "exit_id": exit_identity})
+	return "INVALID_STATE"
+
+func _commit_exit(command: Dictionary) -> void:
+	# Reconcile after higher-priority deaths/removals before trusting the door.
+	_sync_contacts()
+	if not is_instance_valid(player) or not player.alive:
+		return
+	for door in doors:
+		if door.exit_id == command.exit_id and door.is_open and door.has_crossing(player):
+			if state.request_exit(command.epoch, command.subject_id) == "ACCEPTED":
+				retire()
+				room_completed.emit(state.epoch, definition.room_id)
+			return
 
 func retire() -> void:
 	state.retire()

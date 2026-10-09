@@ -59,6 +59,13 @@ regression-test assertion, not an assumption about signal order.
 Consumers cannot mutate the snapshot to change game state. HUD body count and oldest
 marker are derived from the same ordered registry; no independent UI counters exist.
 
+Exit doors observe the live player's movement segment after actor motion. A crossing
+must travel from the entry side through the exit-side plane within the doorway's width
+and height while open. Subject changes reset the observation; closing clears pending
+crossing evidence. The room rechecks eligibility and open state at the mutation boundary,
+latches once, retires, and publishes completion. Reverse travel or merely standing near
+the door cannot advance. Restart cancels pending intents; accepted death outranks an exit.
+
 ## Collision and detection matrix
 
 Project layer names and numeric bit values:

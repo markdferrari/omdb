@@ -23,6 +23,14 @@ func activate() -> void:
 func is_live(command_epoch: int, actor_id: int) -> bool:
 	return command_epoch == epoch and actor_id == subject_id and phase == Phase.ACTIVE
 
+func request_exit(command_epoch: int, actor_id: int) -> String:
+	if command_epoch != epoch or actor_id != subject_id or phase == Phase.RETIRED:
+		return "IGNORED_STALE"
+	if not is_live(command_epoch, actor_id) or exit_consumed:
+		return "INVALID_STATE"
+	exit_consumed = true
+	return "ACCEPTED"
+
 func request_death(command_epoch: int, actor_id: int) -> String:
 	if command_epoch != epoch or actor_id != subject_id or phase == Phase.RETIRED:
 		return "IGNORED_STALE"
