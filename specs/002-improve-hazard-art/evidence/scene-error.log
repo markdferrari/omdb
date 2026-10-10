@@ -1,0 +1,81 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (4 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | Reopening scenes...[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | Loading central editor layout...[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | Loading plugin window layout...[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | Editor layout ready.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+OMDB_IMPORT_RESULT checked=144 failed=2
+ERROR: res://scenes/art/hazards/saw_visual.tscn:13 - Parse Error: Unknown tag 'ext_resource' in file.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:20)
+       [1] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: Failed loading resource: res://scenes/art/hazards/saw_visual.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:20)
+       [1] _initialize (res://scripts/checks/import_check.gd:8)
+SCRIPT ERROR: Parse Error: Could not preload resource file "res://scenes/art/hazards/saw_visual.tscn".
+          at: GDScript::reload (res://tests/art_validation.gd:4)
+          GDScript backtrace (most recent call first):
+              [0] _scan (res://scripts/checks/import_check.gd:20)
+              [1] _initialize (res://scripts/checks/import_check.gd:8)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "SAW" constant because the value doesn't have a set type.
+          at: GDScript::reload (res://tests/art_validation.gd:4)
+          GDScript backtrace (most recent call first):
+              [0] _scan (res://scripts/checks/import_check.gd:20)
+              [1] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: Failed to load script "res://tests/art_validation.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:20)
+       [1] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: Cannot compile/load res://tests/art_validation.gd
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:23)
+       [1] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: res://scenes/art/hazards/saw_visual.tscn:13 - Parse Error: Unknown tag 'ext_resource' in file.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:20)
+       [1] _scan (res://scripts/checks/import_check.gd:25)
+       [2] _scan (res://scripts/checks/import_check.gd:25)
+       [3] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: Failed loading resource: res://scenes/art/hazards/saw_visual.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:20)
+       [1] _scan (res://scripts/checks/import_check.gd:25)
+       [2] _scan (res://scripts/checks/import_check.gd:25)
+       [3] _initialize (res://scripts/checks/import_check.gd:8)
+ERROR: Cannot compile/load res://scenes/art/hazards/saw_visual.tscn
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _scan (res://scripts/checks/import_check.gd:23)
+       [1] _scan (res://scripts/checks/import_check.gd:25)
+       [2] _scan (res://scripts/checks/import_check.gd:25)
+       [3] _initialize (res://scripts/checks/import_check.gd:8)

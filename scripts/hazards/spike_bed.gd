@@ -1,6 +1,7 @@
 class_name SpikeBed
 extends Node3D
 @export var hazard_id: String = "spikes"
+@export var cosmetic_scene: PackedScene
 @export var bed_size: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -10,10 +11,18 @@ func _ready() -> void:
 			shape.size.x = bed_size.x
 			shape.size.z = bed_size.y
 			get_node(path).shape = shape
-		var mesh: BoxMesh = $Mesh.mesh.duplicate()
-		mesh.size.x = bed_size.x
-		mesh.size.z = bed_size.y
-		$Mesh.mesh = mesh
+		if $Mesh.mesh is BoxMesh:
+			var mesh: BoxMesh = $Mesh.mesh.duplicate()
+			mesh.size.x = bed_size.x
+			mesh.size.z = bed_size.y
+			$Mesh.mesh = mesh
+	if cosmetic_scene != null:
+		var visual := cosmetic_scene.instantiate()
+		visual.name = "Cosmetic"
+		add_child(visual)
+		var size: Vector3 = $Bed/Shape.shape.size
+		visual.configure(Vector2(size.x, size.z))
+		$Mesh.hide()
 	$Lethal.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node3D) -> void:

@@ -1,0 +1,15 @@
+21:29:47 | INFO: Data are loaded, start creating Blender stuff
+21:29:47 | INFO: Blender create Mesh node floor_tile_big_spikes
+21:29:47 | INFO: Blender create Mesh node spikes
+21:29:47 | INFO: glTF import finished in 0.05s
+/home/mark/projects/over-my-dead-body/scripts/checks/normalize_hazard_art.py:38: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  metal=bpy.data.materials.new('TrialMetal'); metal.diffuse_color=(.26,.30,.36,1); metal.use_nodes=True
+Info: Saved as "spikes.blend"
+INFO Draco is available, use library at /usr/local/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
+INFO MeshOptimizer is available, use library at /usr/local/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
+21:29:47 | INFO: Starting glTF 2.0 export
+21:29:47 | INFO: Extracting primitive: spikes.001
+21:29:47 | INFO: Primitives created: 1
+21:29:47 | INFO: Finished glTF 2.0 export in 0.007279396057128906 s
+
+OMDB_EXPORT_COMPLETE spikes

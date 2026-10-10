@@ -1,0 +1,5 @@
+platform,input,build,device,expected,actual,defects,status
+Windows,keyboard,,,"All six rooms, menus, settings/mute, restart, resume, completion and replay",,,UNVERIFIED
+Windows,physical controller,,,"All six rooms, menus, settings/mute, restart, resume, completion and replay",,,UNVERIFIED
+macOS,keyboard,,,"All six rooms, menus, settings/mute, restart, resume, completion and replay",,,UNVERIFIED
+macOS,physical controller,,,"All six rooms, menus, settings/mute, restart, resume, completion and replay",,,UNVERIFIED

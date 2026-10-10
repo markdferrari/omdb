@@ -4,14 +4,14 @@ var checked: int = 0
 var failures: int = 0
 
 func _initialize() -> void:
-	for directory in ["res://scripts", "res://tests", "res://scenes", "res://resources"]:
+	for directory in ["res://scripts", "res://tests", "res://scenes", "res://resources", "res://assets/art"]:
 		_scan(directory)
 	print("OMDB_IMPORT_RESULT checked=", checked, " failed=", failures)
 	quit(0 if failures == 0 and checked > 0 else 1)
 
 func _scan(directory: String) -> void:
 	for file in DirAccess.get_files_at(directory):
-		if file.get_extension() not in ["gd", "tscn", "tres"]:
+		if file.get_extension() not in ["gd", "tscn", "tres", "glb", "gltf"]:
 			continue
 		var path := directory.path_join(file)
 		if path == "res://scripts/checks/import_check.gd":

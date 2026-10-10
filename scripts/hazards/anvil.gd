@@ -1,6 +1,8 @@
 class_name FallingAnvil
 extends Node3D
 ## Visual drop and live-only query; never applies impulses to corpse props.
+@export var cosmetic_scene: PackedScene
+var _cosmetic: Node3D
 @export var hazard_id: String = "anvil"
 @export var warning_seconds: float = 1.0
 @export var cycle_seconds: float = 3.0
@@ -43,6 +45,13 @@ func _ready() -> void:
 	_label.font_size = 32
 	_label.outline_size = 8
 	add_child(_label)
+	if cosmetic_scene != null:
+		_cosmetic = cosmetic_scene.instantiate()
+		_cosmetic.name = "Cosmetic"
+		add_child(_cosmetic)
+		_visual.hide()
+		marker.hide()
+		_label.hide()
 	_update_visual(0)
 	if _room != null:
 		_room.presentation_cue.emit("anvil_warning")
@@ -73,5 +82,7 @@ func _physics_process(delta: float) -> void:
 func _update_visual(phase: float) -> void:
 	if _visual == null:
 		return
+	if _cosmetic != null:
+		_cosmetic.set_phase(phase, warning_seconds, cycle_seconds)
 	_visual.position.y = 3.0 if warning else lerpf(0.3, 3.0, clampf((phase - warning_seconds - 0.2) / 1.0, 0, 1))
 	_label.text = "⚠ ANVIL: %.1fs" % (warning_seconds - phase) if warning else "↑ RESETTING"

@@ -1,0 +1,160 @@
+{
+  "assets": [
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_spike_cluster",
+      "bounds": {
+        "position": [
+          -0.5,
+          0.0,
+          -0.500000059604645
+        ],
+        "size": [
+          1.0,
+          0.159999996423721,
+          1.00000011920929
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "spikes",
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/spike_cluster.glb"
+      ],
+      "runtime_sha256": "e6c10668ff73f53d7283e8c1f4886572eadd695e96ebc2928b91666a0272c0fa",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_big_spikes.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_big_spikes.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon",
+        "art/hazards/spikes/spikes.blend"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 0,
+      "triangles": 108,
+      "normalization_transform": "Baked source world transform; centered XZ; normalized 1x1m cluster, bottom Y0, tip Y.16"
+    },
+    {
+      "acquired_on": "2026-10-09",
+      "acquisition_note": "Research download retained",
+      "archive_sha256": "ca277c6420f38ac02e66cc98cbecea7dce7c41d67f9e777efc2fa2668339d691",
+      "asset_id": "iron_anvil",
+      "bounds": {
+        "position": [
+          -0.900000035762787,
+          0.0,
+          -0.488656133413315
+        ],
+        "size": [
+          1.80000007152557,
+          0.850167095661163,
+          0.97731226682663
+        ]
+      },
+      "creator": "Lucian Pavel",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "anvil",
+      "free_edition": true,
+      "licence_evidence": "assets/art/iron_anvil/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "pack_version": "2016-11-11 publication",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/iron_anvil/anvil.glb"
+      ],
+      "runtime_sha256": "be9b1dd4c672a4dd3918e4fd4a683211ac61338922aee91d114381396f049748",
+      "source_members": [
+        "Iron Anvil.fbx",
+        "Iron Anvil.png",
+        "Iron Anvil Preview.png",
+        "Iron Anvil SPEC.png"
+      ],
+      "source_paths": [
+        "art/hazards/iron_anvil",
+        "art/hazards/iron_anvil/anvil.blend"
+      ],
+      "source_url": "https://opengameart.org/content/low-poly-iron-anvil",
+      "surfaces": 1,
+      "textures": 0,
+      "triangles": 258,
+      "normalization_transform": "Baked source world transform; centered XZ; bottom Y0; uniform scale to long axis1.8m"
+    },
+    {
+      "acquired_on": "2026-10-09",
+      "acquisition_note": "Research download retained",
+      "archive_sha256": "cda4a17891df5727d512dcfbb0485deddf0a76e25fabbfb045addce678b709c1",
+      "asset_id": "sawblade",
+      "bounds": {
+        "position": [
+          -0.0599999986588955,
+          -0.849999904632568,
+          -0.850000023841858
+        ],
+        "size": [
+          0.119999997317791,
+          1.69999980926514,
+          1.70000004768372
+        ]
+      },
+      "creator": "Sam Jessup (Fluxcapacimator)",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "saw",
+      "free_edition": true,
+      "licence_evidence": "assets/art/sawblade/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "pack_version": "Version 1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/sawblade/sawblade.glb"
+      ],
+      "runtime_sha256": "e9534fb5743dd46b967b73fa1a17cac599513b8777a91f630da30921c6e13ddd",
+      "source_members": [
+        "readme.txt",
+        "sawdisc.blend",
+        "sawdiscao.png"
+      ],
+      "source_paths": [
+        "art/hazards/sawblade",
+        "art/hazards/sawblade/sawblade.blend"
+      ],
+      "source_url": "https://opengameart.org/content/sawblade",
+      "surfaces": 1,
+      "textures": 0,
+      "triangles": 140,
+      "normalization_transform": "Baked evaluated mesh; source XY disc rotated to Godot YZ disc; centered pivot; diameter1.7m thickness.12m"
+    }
+  ],
+  "schema_version": 1.0
+}

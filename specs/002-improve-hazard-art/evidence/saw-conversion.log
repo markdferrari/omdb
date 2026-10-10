@@ -1,0 +1,13 @@
+00:00.312  blend            | Read blend: "/home/mark/projects/over-my-dead-body/art/hazards/sawblade/sawdisc.blend"
+00:00.314  blend.doversion  | WARNING Region type 4 missing in space type "Info" (id: 7) - removing region
+/home/mark/projects/over-my-dead-body/scripts/checks/normalize_hazard_art.py:38: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  metal=bpy.data.materials.new('TrialMetal'); metal.diffuse_color=(.26,.30,.36,1); metal.use_nodes=True
+Info: Saved as "sawblade.blend"
+INFO Draco is available, use library at /usr/local/blender-5.2.2-linux-x64/lib/libbf_intern_draco_bridge.so
+INFO MeshOptimizer is available, use library at /usr/local/blender-5.2.2-linux-x64/lib/libbf_intern_meshopt_bridge.so
+21:30:22 | INFO: Starting glTF 2.0 export
+21:30:22 | INFO: Extracting primitive: Mesh.001
+21:30:22 | INFO: Primitives created: 1
+21:30:22 | INFO: Finished glTF 2.0 export in 0.005867958068847656 s
+
+OMDB_EXPORT_COMPLETE saw

@@ -2,6 +2,8 @@ class_name Buzzsaw
 extends Node3D
 ## No solid rotor collider: the stopped route remains traversable.
 @export var hazard_id: String = "saw"
+@export var cosmetic_scene: PackedScene
+var _cosmetic: Node3D
 var contributors: Dictionary = {}
 var _material: StandardMaterial3D
 
@@ -25,6 +27,12 @@ func _ready() -> void:
 	$Lethal.body_entered.connect(_on_body_entered)
 	if get_parent() is RoomController:
 		get_parent().saws.append(self)
+	if cosmetic_scene != null:
+		_cosmetic = cosmetic_scene.instantiate()
+		_cosmetic.name = "Cosmetic"
+		add_child(_cosmetic)
+		$Rotor.hide()
+		$State.hide()
 	_update_visual()
 
 func reconcile(room: RoomController) -> void:
@@ -51,12 +59,18 @@ func _on_body_entered(body: Node3D) -> void:
 		body.report_lethal(hazard_id)
 
 func _physics_process(delta: float) -> void:
-	if not jammed():
+	if get_parent() is RoomController and get_parent().state.phase == RoomState.Phase.RETIRED:
+		return
+	if _cosmetic != null:
+		_cosmetic.advance(delta)
+	elif not jammed():
 		$Rotor.rotate_z(delta * 9.0)
 
 func _update_visual() -> void:
 	if not is_inside_tree() or _material == null:
 		return
+	if _cosmetic != null:
+		_cosmetic.set_jammed(jammed(), contributors.size())
 	var color := Color(0.15, 0.95, 0.65) if jammed() else Color(1, 0.1, 0.3)
 	_material.albedo_color = color
 	_material.emission = color * 0.3

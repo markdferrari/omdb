@@ -1,0 +1,13 @@
+platform,scene,art,resolution,warmup_s,capture_s,population,build,device,frame_p95_ms,physics_p95_ms,triangles,draw_calls,status
+Linux development reference,representative,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Linux development reference,representative,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Linux development reference,densest room,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Linux development reference,densest room,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Windows 740M-class/16GiB,representative,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Windows 740M-class/16GiB,representative,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Windows 740M-class/16GiB,densest room,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+Windows 740M-class/16GiB,densest room,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+macOS M1/8GiB,representative,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+macOS M1/8GiB,representative,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+macOS M1/8GiB,densest room,baseline,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED
+macOS M1/8GiB,densest room,candidate,1920x1080,30,120,1 player + 5 corpses + active traps/effects,,,,,,,UNVERIFIED

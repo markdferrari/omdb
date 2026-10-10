@@ -1,0 +1,401 @@
+case,input,trial,setup,expected,actual,view,window,build,defects,status
+spike_death,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+spike_death,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Exactly one corpse and replacement,,,,,,UNVERIFIED
+bridge_traverse,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+bridge_traverse,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Body support covers danger; repeatable crossing,,,,,,UNVERIFIED
+stack_remove_support,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+stack_remove_support,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Remaining bodies settle without visual/solid mismatch,,,,,,UNVERIFIED
+place_floor,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_floor,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release,,,,,,UNVERIFIED
+place_body,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_body,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on body,,,,,,UNVERIFIED
+place_spikes,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+place_spikes,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Valid stable release on spike bed,,,,,,UNVERIFIED
+invalid_overlap,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_overlap,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+invalid_reach,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Body remains held; invalid cue,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_jam_traverse,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Stops indefinitely; designated passage traversable,,,,,,UNVERIFIED
+saw_pickup,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_pickup,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Reactivates immediately,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+saw_multi_contributor,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Remains jammed until last contributor leaves,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_warning_impact,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Muted warning footprint and strike pose match death moment,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+anvil_corpse_immunity,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Corpse persists without anvil impulse,,,,,,UNVERIFIED
+oldest_held,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_held,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal clears carry,,,,,,UNVERIFIED
+oldest_support,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_support,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,FIFO removal permits settling,,,,,,UNVERIFIED
+oldest_plate,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_plate,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Weight and linked door update immediately,,,,,,UNVERIFIED
+oldest_saw,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+oldest_saw,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Contributor removal immediately reactivates saw,,,,,,UNVERIFIED
+carrying_death,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+carrying_death,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Held body releases; one new corpse under cap,,,,,,UNVERIFIED
+rapid_death,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+rapid_death,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,One body and replacement per committed death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,1,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,2,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,3,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,4,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,5,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,6,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,7,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,8,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,9,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,keyboard,10,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,1,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,2,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,3,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,4,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,5,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,6,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,7,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,8,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,9,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED
+simultaneous_death,physical controller,10,Fresh art fixture; arrange named role using hazard-created bodies,Overlapping contacts commit one death,,,,,,UNVERIFIED

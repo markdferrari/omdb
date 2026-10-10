@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3]
+[ext_resource type="Script" path="res://scripts/art/saw_visual.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/art/sawblade/sawblade.glb" id="2"]
+[ext_resource type="Material" path="res://resources/materials/hazard_metal.tres" id="3"]
+[sub_resource type="StandardMaterial3D" id="boundary"]
+albedo_color = Color(0.9, 0.55, 0.06, 1)
+roughness = 0.8
+[sub_resource type="BoxMesh" id="long"]
+size = Vector3(0.035, 0.015, 2.4)
+[sub_resource type="BoxMesh" id="short"]
+size = Vector3(0.7, 0.015, 0.035)
+[sub_resource type="BoxMesh" id="jam"]
+size = Vector3(0.09, 0.55, 0.55)
+[sub_resource type="CylinderMesh" id="hub"]
+top_radius = 0.19
+bottom_radius = 0.19
+height = 0.14
+[node name="SawVisual" type="Node3D"]
+script = ExtResource("1")
+[node name="Rotor" type="Node3D" parent="."]
+position = Vector3(0, 0.9, 0)
+[node name="Blade" parent="Rotor" instance=ExtResource("2")]
+[node name="Hub" type="MeshInstance3D" parent="Rotor"]
+rotation = Vector3(0, 0, 1.5707963)
+mesh = SubResource("hub")
+material_override = ExtResource("3")
+[node name="JamIndicator" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.9, 0)
+rotation = Vector3(0.785398, 0, 0)
+mesh = SubResource("jam")
+material_override = SubResource("boundary")
+visible = false
+[node name="State" type="Label3D" parent="."]
+position = Vector3(0, 2.15, 0)
+billboard = 1
+font_size = 32
+outline_size = 8
+[node name="Left" type="MeshInstance3D" parent="."]
+position = Vector3(-0.3325, 0.022, 0)
+mesh = SubResource("long")
+material_override = SubResource("boundary")
+[node name="Right" type="MeshInstance3D" parent="."]
+position = Vector3(0.3325, 0.022, 0)
+mesh = SubResource("long")
+material_override = SubResource("boundary")
+[node name="Near" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.022, 1.1825)
+mesh = SubResource("short")
+material_override = SubResource("boundary")
+[node name="Far" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.022, -1.1825)
+mesh = SubResource("short")
+material_override = SubResource("boundary")
