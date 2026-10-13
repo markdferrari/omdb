@@ -66,6 +66,7 @@ A shared scene with authored configuration per room:
 - entrance and exit decorative anchors matching existing geometry;
 - repeated module transforms and batches, excluding routes/trap markings;
 - north/south/east/west cosmetic roots and persistent low boundary trim;
+- sparse authored wall/perimeter prop clusters and their cutaway-side memberships;
 - internal gate decoration with state cues retained;
 - lighting/background settings and source asset references.
 

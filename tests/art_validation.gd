@@ -3,6 +3,8 @@ extends ValidationContext
 const SPIKES := preload("res://scenes/art/hazards/spikes_visual.tscn")
 const SAW := preload("res://scenes/art/hazards/saw_visual.tscn")
 const ANVIL := preload("res://scenes/art/hazards/anvil_visual.tscn")
+const PLATE := preload("res://scenes/art/props/plate_skin.tscn")
+const EXIT := preload("res://scenes/art/props/exit_skin.tscn")
 var candidate: bool = true
 var names_visible: bool = true
 var _comparison: Button
@@ -52,8 +54,19 @@ func restart() -> void:
 			node.cosmetic_scene = SAW if candidate else null
 		elif node is FallingAnvil:
 			node.cosmetic_scene = ANVIL if candidate else null
+		elif node is PressurePlate:
+			node.cosmetic_scene = PLATE if candidate else null
+		elif node is ExitDoor:
+			node.cosmetic_scene = EXIT if candidate else null
 	room.presentation_cue.connect(audio.play_cue)
 	add_child(room)
+	if candidate:
+		var dressing: Node3D = load("res://scenes/art/gothic_chamber.tscn").instantiate()
+		room.add_child(dressing)
+		dressing.configure(room,Vector2(16,12))
+		var environment := WorldEnvironment.new()
+		environment.environment = load("res://resources/art/chamber_environment.tres")
+		room.add_child(environment)
 	room.restart_requested.connect(func(command_epoch: int):
 		if room != null and room.state.epoch == command_epoch:
 			restart.call_deferred())

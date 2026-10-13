@@ -1,0 +1,29 @@
+extends SceneTree
+const HELP := preload("res://tests/physics/test_placement.gd")
+const INV := preload("res://scripts/checks/art_inventory.gd")
+func _initialize() -> void: _run.call_deferred()
+func _run() -> void:
+	var context = load("res://tests/scenes/art_validation.tscn").instantiate()
+	root.add_child(context)
+	for candidate in [false,true]:
+		context.candidate = candidate
+		context.restart()
+		var helper = HELP.new()
+		for point in [Vector3(-.9,.245,0),Vector3(.9,.245,0),Vector3(-.9,.70,0),Vector3(-4.4,.245,-3.5),Vector3(3.5,.245,-4.1)]: helper.add_body(context.room,point)
+		context.room._publish_snapshot()
+		for frame in range(30): await process_frame
+		for view in range(4):
+			context.room.camera_views.select_view(view)
+			for frame in range(10): await process_frame
+			await RenderingServer.frame_post_draw
+			print("DUNGEON_RENDER_INVENTORY ",JSON.stringify({"candidate":candidate,"view":view,"viewport":[root.size.x,root.size.y],"bodies":context.room.state.registry.count(),"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),"primitives":Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME),"render_objects":Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME),"performance_acceptance":false}))
+		if candidate:
+			var inventory: Dictionary = INV.inspect(context.room.get_node("GothicChamber"))
+			print("DUNGEON_CHAMBER_INVENTORY ",JSON.stringify({"triangles":inventory.triangles,"surfaces":inventory.surfaces,"materials":inventory.materials.size(),"textures":inventory.textures.size(),"forbidden":inventory.forbidden}))
+	context.room.retire()
+	context.audio._exit_tree()
+	await create_timer(.25).timeout
+	context.queue_free()
+	await create_timer(.25).timeout
+	for frame in range(3): await process_frame
+	quit.call_deferred()

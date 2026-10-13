@@ -5,7 +5,7 @@
 script = ExtResource("1")
 room_id = "room_01"
 title = "A valuable contribution"
-teaching_goal = "Death leaves a body that supports the next clone."
+teaching_goal = "Death leaves a body that supports your next resurrection."
 scene = ExtResource("2")
 next_room_id = "room_02"
 camera_size = 21.0

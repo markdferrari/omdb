@@ -37,7 +37,7 @@ func _snapshot(snapshot: Dictionary) -> void:
 	var room := get_parent() as RoomController
 	var view := room.camera_views.view_name() if room.camera_views != null else "Default"
 	$CameraView.text = "View: %s — %s" % [view, "LB / RB to rotate" if controller else "Q / C to rotate; 1 SE, 2 SW, 3 NW, 4 NE"]
-	$Panel/Status.text = "Bodies: %d/5   Oldest: %s   Subject #%d\n%s\n%s: pick up or place   Carrying: %s" % [
+	$Panel/Status.text = "Bodies: %d/5   Oldest: %s   Prisoner #%d\n%s\n%s: pick up or place   Carrying: %s" % [
 		snapshot.body_count, "—" if snapshot.oldest_id.is_empty() else snapshot.oldest_id,
 		snapshot.subject_id, controls, interact, "none" if snapshot.held_body_id.is_empty() else snapshot.held_body_id + (" (NEXT TO GO)" if snapshot.held_body_id == snapshot.oldest_id else "")]
 
@@ -47,7 +47,7 @@ func _snapshot(snapshot: Dictionary) -> void:
 func _death(event: Dictionary) -> void:
 	_deaths += 1
 	var quip: String = {"spikes": "A pointed argument.", "saw": "A cutting remark.", "anvil": "An uplifting career, briefly."}.get(event.get("hazard_kind", event.hazard_id), "Another valuable contribution.")
-	$Caption.text = "Subject #%d: %s  Deaths: %d" % [event.subject_id, quip, _deaths]
+	$Caption.text = "Prisoner #%d: %s  Deaths: %d" % [event.subject_id, quip, _deaths]
 
 func _preview(result: Dictionary) -> void:
 	var reasons := {"OUT_OF_REACH": "Too far away", "BLOCKED_PATH": "Move around the obstacle",

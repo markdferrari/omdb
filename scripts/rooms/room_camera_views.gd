@@ -6,6 +6,7 @@ const ACTIONS := ["camera_north", "camera_east", "camera_south", "camera_west"]
 var camera: Camera3D
 var view_index: int = 0
 var authored_transform: Transform3D
+var _cosmetic_roots: Array[Dictionary] = []
 
 func _ready() -> void:
 	camera = get_parent().get_node_or_null("Camera")
@@ -33,7 +34,10 @@ func select_view(index: int) -> void:
 		if wall != null:
 			for child in wall.get_children():
 				if child is MeshInstance3D:
-					child.visible = wall.position.dot(near_side) <= 0
+					child.visible = not child.get_meta("cosmetic_replaced",false) and wall.position.dot(near_side) <= 0
+	for item in _cosmetic_roots:
+		if is_instance_valid(item.root):
+			item.root.visible = item.side.dot(near_side) <= 0
 	view_changed.emit(view_name())
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -50,3 +54,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("camera_previous"):
 		select_view(view_index - 1)
 		get_viewport().set_input_as_handled()
+
+func register_cosmetic_root(root: Node3D, side: Vector3) -> void:
+	_cosmetic_roots.append({"root":root,"side":side})
+	if camera != null:
+		var near := Vector3(camera.position.x,0,camera.position.z).normalized()
+		root.visible = side.dot(near) <= 0

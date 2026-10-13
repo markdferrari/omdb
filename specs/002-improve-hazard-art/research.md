@@ -193,3 +193,17 @@ explicit implementation gates, not unresolved scope decisions. The real Git bran
 `main`; setup-plan's `BRANCH=002-improve-hazard-art` is its feature-directory fallback.
 Before-research constitution review passed: the spec bounds the slice, preserves state,
 requires four-view/input/recovery checks and gates rollout on representative proof.
+
+## R8. User-selected dungeon direction — 2026-10-10
+
+The user explicitly chose the full cursed-dungeon premise and colourful dark comedy.
+Local archive inspection confirms doorway/gated walls, red heraldry, lit torches/candles,
+mounted shields and rubble. No new online sourcing or purchase is required. Prefer original
+atlas materials over the previous flat slate overrides. Retain the anvil and saw adaptations
+because this archive supplies neither model. Primitive cue strips/sign plaque fill state
+and instructional-backing gaps rather than recreate available architecture.
+
+Rendered review rejected uncompressed doorway wings/header because they screened adjacent
+traps; the cosmetic wrapper narrows those portions while retaining/padding the opening.
+This follow-up supersedes earlier experiment-signage/flat-ink art preferences, preserving
+historical sourcing observations and all acceptance targets.

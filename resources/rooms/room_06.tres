@@ -4,7 +4,7 @@
 [resource]
 script = ExtResource("1")
 room_id = "room_06"
-title = "The final experiment"
+title = "The final trial"
 teaching_goal = "Use the familiar five-body allocation, then reach the final exit."
 scene = ExtResource("2")
 next_room_id = ""

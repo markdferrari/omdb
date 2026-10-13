@@ -8,7 +8,7 @@
 
 **Status**: Draft — quality validated; implementation plan and tasks complete
 
-**Input**: User description: "I want to improve the artwork - I want real anvils, spikes, bladed wheels, and a proper atmosphere. Help me spec this out." Follow-up: "if a suitable free asset pack already exists for the godot enginer I think we should consider it, there's no point reinventing the wheel"
+**Input**: Dungeon follow-up: replace the industrial theme with a colourful cursed dungeon using the downloaded KayKit pack, including prisoner/resurrection wording. User description: "I want to improve the artwork - I want real anvils, spikes, bladed wheels, and a proper atmosphere. Help me spec this out." Follow-up: "if a suitable free asset pack already exists for the godot enginer I think we should consider it, there's no point reinventing the wheel"
 
 **Governing documents**: [PRD](../../PRD.md) and
 [constitution v1.1.1](../../.specify/memory/constitution.md).
@@ -18,12 +18,13 @@ Existing gameplay requirements remain defined by [the six-room feature](../001-s
 
 **Slice contribution:** Deliver the PRD's presentation polish: replace unfinished hazard
 forms and sparse chamber dressing with recognizable traps inside stylised gothic miniature
-testing chambers. Players should understand danger through the objects themselves and feel
-that all six rooms belong to the same macabre, comic facility.
+dungeon chambers. Players should understand danger through the objects themselves and feel
+that all six rooms belong to the same macabre, comic dungeon.
 
 **Included:** Recognizable 3D anvils, pointed spike beds and toothed bladed wheels; warning,
 impact, active and jammed presentation; a shared stone-and-iron chamber style; floor/wall
-treatment, cutaway architecture, selective testing-facility props, restrained backgrounds,
+decoration with patterned floor tiles, varied masonry/arches/trim, cutaway architecture,
+sparse authored clusters of wall-mounted shelves, candles, bottles and banners, restrained backgrounds,
 simple lighting and readable shadows; consistent visual treatment of existing plates, doors
 and entrance hatches. Evaluate suitable free packs before custom work, adapt reusable assets,
 prove one representative chamber, then apply the accepted treatment across the six rooms.
@@ -90,9 +91,9 @@ This can be evaluated before all room dressing is complete.
 
 ---
 
-### User Story 2 - Explore a Cohesive Gothic Testing Chamber (Priority: P2)
+### User Story 2 - Explore a Cohesive Gothic Dungeon Chamber (Priority: P2)
 
-As a player, I want rooms to feel like a deliberately built, darkly comic testing facility
+As a player, I want rooms to feel like a deliberately built, darkly comic cursed dungeon
 so that the traps, character and puzzle objects share a believable setting.
 
 **Why this priority**: Recognizable props need a consistent surrounding direction to deliver
@@ -104,9 +105,10 @@ corpses. Review architecture, surfaces, lighting and prop hierarchy without comp
 **Acceptance Scenarios**:
 
 1. **Given** a fresh dressed chamber, **When** I survey it, **Then** stone floor divisions,
-   ink-like edge/wash treatment, iron machinery and gothic arch or buttress motifs establish
+   textured stone, warm torch accents, forged-iron traps and gothic arch or buttress motifs establish
    a consistent miniature chamber. An identifiable entrance hatch, framed exit and testing
-   signage connect the architecture to the experiment premise.
+   signage reinforce the cursed-dungeon premise. Patterned tiles, varied masonry
+   and sparse decorative object clusters make the walls and floors visibly finished.
 2. **Given** props and a restrained background, **When** I assess a route, **Then** walkable
    floors and landing surfaces are distinguishable from background dressing, neon accents
    emphasize gameplay/effects, and background detail remains subordinate to the player,
@@ -168,7 +170,8 @@ solved arrangement, and resume saved progress using either input method.
   landing/placement cues or imply that an existing body was destroyed by a trap.
 - **EC-06 — Views and windows:** Arches, posts, machinery housings and exit trim remain
   readable after view selection or supported aspect-ratio changes; cutaways must not remove
-  collision or hide the open exit frame.
+  collision or hide the open exit frame. Foreground decorative prop clusters cut away with
+  their wall; near-side boundaries retain low visible trim.
 - **EC-07 — Lifecycle:** Restart during warning, drop, jam or death feedback; leave during
   effects; reopen saved progress. Fresh puzzle state produces matching fresh visuals,
   and earlier presentation must not reappear.
@@ -196,8 +199,12 @@ solved arrangement, and resume saved progress using either input method.
   impact moment and established repeat cycle, including with sound muted (US1/AS4).
 - **FR-006**: Hazard artwork MUST communicate exposed danger and body-protected routes
   without changing established contact, timing, support or jam rules (EC-01–EC-02).
-- **FR-007**: Chambers MUST share stone/ink surfaces, iron machinery, gothic architectural
-  motifs, identifiable entrance/exit and selective experiment signage (US2/AS1).
+- **FR-007**: Chambers MUST share textured stone surfaces, forged-iron traps, gothic architectural
+  motifs, identifiable entrance/exit and selective dungeon trial signage (US2/AS1). Decoration
+  MUST include patterned/tiled floors, varied wall masonry/arches/trim and sparse authored
+  prop clusters. Props are non-interactive and kept away from routes, hazard boundaries
+  and placement/landing cues; prefer wall-mounted or perimeter decoration over loose objects
+  that imply extra puzzle mechanics.
 - **FR-008**: Lighting and backgrounds MUST retain readable silhouettes, clear ground
   shadows and visible floor height/edges; neon accents MUST prioritize existing effects
   and gameplay states over decoration (US2/AS2–AS4).
@@ -279,6 +286,26 @@ solved arrangement, and resume saved progress using either input method.
   time against the existing 20–30 minute target, help requests, misunderstood rules,
   jump judgment and placement frustration.
 
+## Dungeon theme clarification — 2026-10-10
+
+The user selected a full dungeon theme and colourful dark comedy. Use KayKit Dungeon
+Free 1.1 original textured stone, warm torch/candle accents, red heraldic banners and
+wooden furnishings. The reused cow is an unlucky prisoner who repeatedly resurrects;
+HUD/tutorials use prisoner/resurrection language rather than science/clone framing.
+Existing trap families, six-room solutions, controls and save identities remain unchanged.
+The pack has no direct anvil or bladed-wheel replacements, so retain the adapted external
+iron models with a muted forged-iron treatment. All decorations remain cosmetic.
+
+- **FR-019**: Presentation MUST consistently establish this colourful cursed dungeon,
+  including room furnishings, entrances, stone weight plates, iron exit gates and visible
+  prisoner/resurrection wording, while preserving existing state counts and controls.
+- **Verification**: Review the dungeon fixture in all four views at all three existing
+  window sizes, fresh and with five bodies. Repeat plate/gate visual-state and support
+  alignment checks ten times, including independent-instance state, open-exit framing,
+  camera cutaways, restart and baseline/candidate reconstruction. Run existing regression
+  suites and remeasure rendering inventory/performance for the changed treatment.
+  Player recognition/coherence and native checks remain required for adoption.
+
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
@@ -292,7 +319,7 @@ solved arrangement, and resume saved progress using either input method.
   player/body/placement/landing/weight/door cues without decoration/effect obstruction;
   all requested hazard instances use accepted recognizable forms (VR-004).
 - **SC-004**: At least four of five reviewers describe the representative chamber as a
-  gothic or macabre testing setting and rate its visual coherence at least 4 out of 5
+  colourful, macabre dungeon setting and rate its visual coherence at least 4 out of 5
   after a five-minute playable session; record descriptions and remaining presentation gaps.
 - **SC-005**: Representative interaction trials and ten fresh solutions per room finish
   with zero artwork-induced support, placement, hazard-state, timing or recovery failures
@@ -323,3 +350,10 @@ solved arrangement, and resume saved progress using either input method.
 - Exact asset choices, engine version, budgets, visual tuning and performance measurements
   belong to planning. Recognition thresholds here are acceptance targets, not claims about
   current artwork or player behavior.
+
+## Follow-up — 2026-10-10
+
+The user requested decorated walls/floors and additional objects around rooms. This refines
+US2/FR-007 and authorizes the non-adopting decorated fixture work while T022 human testing
+remains pending. It does not mark any human/reviewer gate passed; six-room production
+adoption still depends on FR-018 and Stage B.

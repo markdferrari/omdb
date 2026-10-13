@@ -1,5 +1,9 @@
 # Feature Specification: Six-Room Puzzle Slice
 
+> Presentation update (2026-10-10): feature 002 and constitution 1.1.2 supersede earlier
+> clone/testing-chamber art language with a colourful cursed dungeon and prisoner
+> resurrection. Technical subject IDs, existing gameplay tasks and historical evidence remain valid.
+
 Camera amendment (2026-10-09, user clarification): provide four selectable South-east/
 South-west/North-west/North-east diagonal isometric orthographic views via Q/C or
 controller shoulders, with direct keys 1/2/3/4. Begin at the authored South-east view;

@@ -2,7 +2,9 @@
 
 **Date:** 2026-10-09 | **Plan:** [plan.md](plan.md)
 
-This is the implementation validation guide. The Phase 3 hazard wrappers and art-validation scene are implemented.
+This is the implementation validation guide. The hazard wrappers and decorated art-validation scene are implemented.
+The candidate preview now includes patterned floors, varied gothic walls and sparse
+wall-mounted props; B compares it with the undecorated baseline.
 T022 human keyboard/controller acceptance remains unverified. Existing baseline commands work now; commands
 marked post-implementation require the named scene/checks to have been delivered.
 
@@ -153,3 +155,18 @@ repeats, device/view/window/platform, status, capture/log and outstanding defect
 Use the [ValidationCase model](data-model.md#validationcase-and-observation). Preserve failed
 results and link their fixes/retests. Unrun checks are UNVERIFIED. Planning inspected source
 files and one temporary resource load only; none of the new playable/native checks is passed.
+
+## Dungeon preview update
+
+Candidate mode now shows original textured dungeon stone, red heraldry, warm lit meshes,
+stone pressure plates and arch-framed iron gates. The visible premise uses prisoner
+resurrection. B still rebuilds baseline/candidate; N/M/P still control review names/audio/pause.
+Launch the representative scene with an isolated save root:
+
+```sh
+/usr/local/bin/godot --path . --resolution 1280x720 --scene res://tests/scenes/art_validation.tscn -- --save-root /tmp/omdb-dungeon-preview
+```
+
+Repeat at 1920×1200 and 1024×768, select all four camera views, and compare plate/gate states.
+The three-dimensional theme remains fixture-only until T037; existing production room
+wording and 2D UI are updated, with no actor/save migration.

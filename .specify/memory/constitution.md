@@ -1,4 +1,14 @@
 <!--
+Sync Impact Report — 2026-10-10
+Version: 1.1.1 → 1.1.2 (user-approved presentation clarification).
+Presentation now explicitly uses a colourful cursed dungeon, KayKit Dungeon Free 1.1
+architecture/materials, warm torch accents and prisoner/resurrection wording. The reused
+character, puzzles, physics, inputs, recovery, verification and rollout obligations remain.
+Updated PRD and feature 002 design/tasks/contracts; reviewed feature 001 and templates,
+AGENTS.md, preserving technical subject identities and historical validation outcomes.
+Production 3D adoption remains deferred until the representative art gate passes.
+-->
+<!--
 Sync Impact Report — 2026-10-09
 Version: 1.1.0 → 1.1.1 (user clarification: preserve isometric perspective).
 Principle III clarifies that all four stationary orthographic presets remain diagonal
@@ -125,9 +135,10 @@ difficulty judging jumps, and placement frustration, with findings used to revis
 - Asset work MUST prioritise reuse from
   `/home/mark/projects/streets-of-rock/assets/characters`. Retain Blender sources and bring
   the selected GLB/glTF runtime assets into this repository. Record missing jump, carry,
-  movement, or death animation work after inspecting the selected character. Clones MUST
+  movement, or death animation work after inspecting the selected character. Each resurrection MUST
   reuse that character; corpse visuals may reuse its mesh in a collapsed pose.
-- Presentation MUST follow the PRD's stylised gothic chambers, clear silhouettes, neon
+- Presentation MUST follow the PRD's colourful stylised gothic dungeon chambers using the downloaded KayKit Dungeon Free 1.1
+  pack, warm torch accents, clear silhouettes, neon
   gore, simple lighting, and cheerful music contrasted with cartoon trap sounds. Effects
   for oldest-body removal MUST be non-colliding.
 - Jointed ragdolls, aimed throwing, simulated dragging, hanging ropes, crates, projectile
@@ -181,4 +192,4 @@ guidance; PATCH for clarifications without changed obligations. Preserve the ori
 ratification date and set the last-amended date to the amendment date in ISO format.
 Compliance MUST be checked during specification, planning, change review, and release.
 
-**Version**: 1.1.1 | **Ratified**: 2026-10-07 | **Last Amended**: 2026-10-09
+**Version**: 1.1.2 | **Ratified**: 2026-10-07 | **Last Amended**: 2026-10-10

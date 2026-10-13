@@ -1,0 +1,13 @@
+{
+  "scripts/art/chamber_dressing.gd": "096737f75c1f2820958527c315b62b58121ab3cb5a1ae8efc6eaacb365c065c0",
+  "scripts/rooms/room_camera_views.gd": "641dc2c40c331e6dc1fcbd9ec6a3bc45952a3da87a578d6bbd05ebc295c99163",
+  "tests/art_validation.gd": "c3c142cf3d591d9239f2715beee7c6b39071701e89992b24e061929887515cdb",
+  "scenes/art/gothic_chamber.tscn": "6c5fbd88f99ea98064f861a80b73db65538012284d5b53f123ccfee6ceca6d3a",
+  "tests/physics/test_chamber_art.gd": "8c81d75152ed65f2743a6e770f0ab075cd8cfa805c93a87077b1e95dac3baf65",
+  "tests/physics/test_art_cutaways.gd": "e892094de32c73c532617eb8174758a0a65981848c437f4a736b18a8d53efb46",
+  "tests/physics/test_art_assets.gd": "986177fe3c02a60e111c4b60d49fba1f344df90a3eb8a6e989d60d1394d1d3c7",
+  "assets/art/manifest.json": "89fae6c8e664334dc42c3196f4216220417dcc8994285fdf9cc7d4558977920b",
+  "resources/art/chamber_environment.tres": "43a0b79ac3af7f3315a7095dcb087bc0cce202b37e62287a45e9b6a0681af7d3",
+  "resources/materials/art_stone.tres": "1190bd0156325640a8bdbee5e844f533a5a657d2913060314a843f9b16f33306",
+  "resources/materials/art_ink.tres": "d24fb16113f043a48b2b6b52f4f01f4532d142a253f8058d831d2197a7d9c1de"
+}

@@ -2,12 +2,19 @@ extends RefCounted
 const INVENTORY := preload("res://scripts/checks/art_inventory.gd")
 func run(h: SceneTree) -> void:
 	var manifest = JSON.parse_string(FileAccess.get_file_as_string("res://assets/art/manifest.json"))
-	h.check(manifest is Dictionary and manifest.assets.size() == 3, "ART.manifest_three_trial_assets")
+	h.check(manifest is Dictionary and manifest.assets.size() >= 3, "ART.manifest_includes_trial_assets")
 	if not manifest is Dictionary:
 		return
+	var ids: Array = manifest.assets.map(func(record: Dictionary): return record.asset_id)
+	h.check("kaykit_spike_cluster" in ids and "iron_anvil" in ids and "sawblade" in ids,"ART.manifest_core_traps_retained")
 	for record in manifest.assets:
 		h.check(not record.creator.is_empty() and record.licence_id == "CC0-1.0" and record.archive_sha256.length() == 64 and record.free_edition and FileAccess.file_exists("res://" + record.licence_evidence), "ART.provenance.%s" % record.asset_id)
 		for path in record.runtime_paths:
+			if path.get_extension() not in ["glb","gltf"]:
+				h.check(FileAccess.file_exists("res://"+path),"ART.runtime_file.%s" % path)
+				if record.has("file_sha256"):
+					h.check(FileAccess.get_sha256("res://"+path) == record.file_sha256[path],"ART.runtime_dependency_hash.%s" % path)
+				continue
 			h.check(ResourceLoader.exists("res://" + path), "ART.dependency.%s" % path)
 			if not ResourceLoader.exists("res://" + path):
 				continue
@@ -45,11 +52,20 @@ func fixture_checks(h: SceneTree) -> void:
 	context.toggle_mute()
 	h.check(context.audio.sfx_volume == 0 and context.audio.music_volume == 0, "ART.fixture_muted_review")
 	context.toggle_mute()
+	var anvil: FallingAnvil = context.room.get_node("AnvilStation")
+	anvil.elapsed = .5
+	anvil._update_visual(.5)
 	context.toggle_pause()
 	var frozen := rotor.transform
 	for frame in range(3):
 		await h.process_frame
 	h.check(rotor.transform == frozen and context.room.state.registry.ordered_ids() == order, "ART.fixture_pause_isolated")
+	context.toggle_names()
+	for frame in range(2):
+		await h.process_frame
+	h.check(not str(saw.get_node("Cosmetic/State").text).contains("SAW"), "ART.fixture_paused_saw_label_free")
+	h.check(not str(context.room.get_node("AnvilStation/Cosmetic/State").text).contains("ANVIL"), "ART.fixture_paused_anvil_label_free")
+	context.toggle_names()
 	context.toggle_pause()
 	context.toggle_names()
 	await h.frames(3)

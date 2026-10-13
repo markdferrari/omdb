@@ -24,7 +24,7 @@ position = Vector3(-8, 0.1, 5)
 billboard = 1
 font_size = 26
 outline_size = 8
-text = "06 — The final experiment\nUse the familiar five-body allocation, then reach the final exit."
+text = "06 — The final trial\nUse the familiar five-body allocation, then reach the final exit."
 [node name="ExitPlate" parent="." instance=ExtResource("plate")]
 position = Vector3(-7, 0, -3.5)
 plate_id = "exit_plate"

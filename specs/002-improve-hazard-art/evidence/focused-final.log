@@ -392,6 +392,8 @@ ART.fixture_candidate_hookup PASS
 ART.fixture_candidate_hookup PASS
 ART.fixture_muted_review PASS
 ART.fixture_pause_isolated PASS
+ART.fixture_paused_saw_label_free PASS
+ART.fixture_paused_anvil_label_free PASS
 ART.fixture_label_free PASS
 ART.fixture_fresh_baseline PASS
 ART.fixture_fresh_candidate PASS

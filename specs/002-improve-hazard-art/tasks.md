@@ -86,9 +86,9 @@ and controller. Formal five-reviewer scoring uses the finished chamber in US2.
 **Checkpoint:** US1 is a useful hazard-art MVP in the fixture. It does not authorize
 six-room art rollout; US2 completes the representative atmosphere/recognition gate.
 
-## Phase 4: User Story 2 — Explore a Cohesive Gothic Testing Chamber (P2)
+## Phase 4: User Story 2 — Explore a Cohesive Gothic Dungeon Chamber (P2)
 
-**Goal:** A coherent stone-and-iron testing chamber with readable controls, bodies and
+**Goal:** A coherent colourful stone-and-iron dungeon chamber with readable controls, bodies and
 hazards from every view, using the reused cow.
 
 **Independent test:** Play one dressed chamber with all three traps and up to five
@@ -103,13 +103,13 @@ reviewers must meet SC-001/002/004. This story needs US1's ready traps, not six 
 
 ### Environment and integration
 
-- [ ] T026 [P] [US2] Curate the researched floor, wall, arch, pillar, doorway, closed-grate and sign-backing files into `assets/art/kaykit_dungeon/` with their required buffers/atlas; update `assets/art/kaykit_dungeon/SOURCE.md` with exact source members, free-edition evidence and adaptations, retaining available originals under `art/environment/kaykit_dungeon/` (FR-007, FR-014–FR-017; VR-001; C6).
-- [ ] T027 [P] [US2] Define the candidate slate/ink palette in new `resources/materials/art_stone.tres` and `resources/materials/art_ink.tres`, using existing materials as read-only references, and simple background/ambient treatment in `resources/art/chamber_environment.tres`; retain one shadowed key light and contrast for neon/amber/yellow gameplay cues, with candidate resources selected only by the fixture until adoption (FR-008, FR-010; C5).
-- [ ] T028 [US2] Build the candidate `scenes/art/gothic_chamber.tscn` and `scripts/art/chamber_dressing.gd` for both floor widths, aligned floor skins, bounded repeat batches, gothic trim and explicit per-side nested visual groups; exclude gameplay routes/danger markings and keep persistent low boundary trim, with no production dressing replacement yet (FR-007–FR-009, FR-011; C5).
+- [ ] T026 [P] [US2] Curate the researched floor, wall, arch, pillar, doorway, closed-grate, sign-backing and sparse wall-prop files (shelves/candles, labelled bottles, banners and lit mounted torch meshes) into `assets/art/kaykit_dungeon/` with their required buffers/atlas; update `assets/art/kaykit_dungeon/SOURCE.md` with exact source members, free-edition evidence and adaptations, retaining available originals under `art/environment/kaykit_dungeon/` (FR-007, FR-014–FR-017; VR-001; C6).
+- [X] T027 [P] [US2] Define the candidate slate/ink palette in new `resources/materials/art_stone.tres` and `resources/materials/art_ink.tres`, using existing materials as read-only references, and simple background/ambient treatment in `resources/art/chamber_environment.tres`; retain one shadowed key light and contrast for neon/amber/yellow gameplay cues, with candidate resources selected only by the fixture until adoption (FR-008, FR-010; C5).
+- [ ] T028 [US2] Build the candidate `scenes/art/gothic_chamber.tscn` and `scripts/art/chamber_dressing.gd` for both floor widths, aligned floor skins, bounded repeat batches, patterned tiles, varied masonry/gothic trim, sparse authored wall/perimeter prop clusters and explicit per-side nested visual groups; exclude gameplay routes/danger markings and keep persistent low boundary trim, with no production dressing replacement yet (FR-007–FR-009, FR-011; C5).
 - [ ] T029 [US2] Extend `scripts/rooms/room_camera_views.gd` and `scripts/art/chamber_dressing.gd` with registration/current-view application for nested cosmetic roots; hide only camera-facing visual groups, preserve internal gate cues, and keep existing camera, input and solid-wall behavior passing T023 (FR-009–FR-010; EC-06; C5).
-- [ ] T030 [US2] Create `scenes/art/props/entrance_hatch.tscn`, `scenes/art/props/plate_skin.tscn`, `scenes/art/props/exit_skin.tscn` and `scenes/art/props/experiment_sign.tscn`; add optional cosmetic hookups in `scripts/puzzle/pressure_plate.gd` and `scripts/puzzle/exit_door.gd` where needed, retaining original labels, weights, opening/retreat geometry and persistent open-exit frame (FR-007, FR-010–FR-011; C1, C5).
-- [ ] T031 [US2] Integrate the candidate chamber, skins and lighting only into `tests/scenes/art_room.tscn` and `tests/art_validation.gd`, maintain baseline/candidate comparison, and update `assets/art/manifest.json` with the curated environment dependency closure and measured inventory (FR-016, FR-018; VR-001–VR-002; C5, C6).
-- [ ] T032 [US2] Run T023–T024, visual isolation and affected existing camera/placement/support/state checks using `scripts/checks/run_checks.py`; fix discovered chamber/cutaway integration defects and record results in `specs/002-improve-hazard-art/validation.md` (VR-003; SC-005).
+- [X] T030 [US2] Create `scenes/art/props/entrance_hatch.tscn`, `scenes/art/props/plate_skin.tscn`, `scenes/art/props/exit_skin.tscn` and `scenes/art/props/trial_sign.tscn`; add optional cosmetic hookups in `scripts/puzzle/pressure_plate.gd` and `scripts/puzzle/exit_door.gd` where needed, retaining original labels, weights, opening/retreat geometry and persistent open-exit frame (FR-007, FR-010–FR-011; C1, C5).
+- [X] T031 [US2] Integrate the candidate chamber, skins and lighting only into `tests/scenes/art_room.tscn` and `tests/art_validation.gd`, maintain baseline/candidate comparison, and update `assets/art/manifest.json` with the curated environment dependency closure and measured inventory (FR-016, FR-018; VR-001–VR-002; C5, C6).
+- [X] T032 [US2] Run T023–T024, visual isolation and affected existing camera/placement/support/state checks using `scripts/checks/run_checks.py`; fix discovered chamber/cutaway integration defects and record results in `specs/002-improve-hazard-art/validation.md` (VR-003; SC-005).
 - [ ] T033 [US2] Review the dressed fixture at 1280×720, 1920×1200 and 1024×768 in all four views with keyboard/controller and ten fresh physical trials; assess one live cow plus five corpses, poses/materials/support agreement, muted hazards and all required cues, correcting observed art/pose fit in `scenes/art/`, `assets/characters/cow/presentation.tres` and `scripts/player/character_visual.gd` as needed; record defects, fixes and affected retests in `specs/002-improve-hazard-art/validation.md` (US2/AS1–AS4; VR-002, VR-004; FR-010–FR-011, FR-018).
 - [ ] T034 [US2] Add development-only rendered capture support in `tests/art_benchmark.gd` and `tests/scenes/art_benchmark.tscn` for matched baseline/candidate scenes, recording actual viewport/build/hardware, frame/physics samples and render inventory; require a real renderer for performance results and document its launch/capture command in `specs/002-improve-hazard-art/quickstart.md` (VR-007).
 - [ ] T035 [US2] Measure the populated representative chamber with `tests/scenes/art_benchmark.tscn` at 1920×1080, 30 s warmup and 120 s capture; compare before/after counts/timing, optimize density/batches/materials within the plan's budgets, and record measured results or unverified hardware outcomes in `specs/002-improve-hazard-art/validation.md`; justify any revised allocation in `specs/002-improve-hazard-art/plan.md` before acceptance (VR-007; SC-006).
@@ -138,7 +138,7 @@ flows. Then check all 72 view/window cases and four native input/platform combin
 ### Rollout and validation
 
 - [ ] T041 [US3] After T037, adopt accepted visual defaults in `scenes/hazards/spike_bed.tscn`, `scenes/hazards/buzzsaw.tscn` and `scenes/hazards/anvil.tscn`, expose the accepted chamber via `scenes/art/room_dressing.tscn`, and adopt optional puzzle skins in `scenes/puzzle/pressure_plate.tscn` and `scenes/puzzle/exit_door.tscn`; preserve root identities, labels, shapes and owner state (FR-012–FR-013; C1–C5).
-- [ ] T042 [P] [US3] Fit accepted dressing, safe hatch and experiment signage to `scenes/rooms/room_01.tscn`, `scenes/rooms/room_02.tscn` and `scenes/rooms/room_03.tscn`, adapting only cosmetic transforms/exclusions for their actual authored dimensions and hazards; preserve teaching/solutions and all four camera views (FR-007–FR-012; VR-004).
+- [ ] T042 [P] [US3] Fit accepted dressing, safe hatch and dungeon trial signage to `scenes/rooms/room_01.tscn`, `scenes/rooms/room_02.tscn` and `scenes/rooms/room_03.tscn`, adapting only cosmetic transforms/exclusions for their actual authored dimensions and hazards; preserve teaching/solutions and all four camera views (FR-007–FR-012; VR-004).
 - [ ] T043 [P] [US3] Fit accepted dressing, hatches, signs and internal-gate garnish to `scenes/rooms/room_04.tscn`, `scenes/rooms/room_05.tscn` and `scenes/rooms/room_06.tscn`, including wide footprints, offset passages, large spike beds and multiple interacting cues; preserve their existing five-body allocations (FR-007–FR-012; VR-004).
 - [ ] T044 [US3] Run the complete strict regression suite via `scripts/checks/run_checks.py`, including ten fresh intended solutions for each room and existing bypass, jump/support, FIFO, contact, carrying and recovery cases; record exact new-build results and solution references in `specs/002-improve-hazard-art/validation.md`, correcting artwork-induced failures before proceeding (VR-003, VR-006; SC-005).
 - [ ] T045 [US3] Execute and record all 72 room/view/window reviews in `specs/002-improve-hazard-art/validation.md`, covering fresh/five-body states, effects, muted hazards, internal gates, floor boundaries and every required cue; correct occlusion or danger-interpretation defects in the affected `scenes/rooms/room_01.tscn` through `scenes/rooms/room_06.tscn` or shared art and rerun affected checks (VR-004; SC-003).
@@ -262,3 +262,43 @@ ID, checkbox and file path; all story tasks have the correct story label. Covera
 accounts for all requirements, verification requests, contracts and logical entities.
 No extension configuration exists, so before/after task-generation hooks are skipped.
 Tasks are checked only when supported by implementation evidence in validation.md.
+
+## Decoration follow-up progress — 2026-10-10
+
+The user authorized wall/floor decoration and sparse cosmetic objects. Candidate fixture
+work proceeds as independent, non-adopting presentation work while T022 remains UNVERIFIED.
+T027 is complete. T023–T026 and T028–T032 have partial implementation/evidence: free source
+curation, two footprint checks, nested cutaways, persistent trim, floor batch and mounted
+prop clusters. Their complete task criteria (including remaining skins/integration and
+independent-state coverage) are not claimed complete. T033–T037 human/performance gates
+remain pending; no production default or six-room adoption has occurred.
+
+## Dungeon theme follow-up — 2026-10-10
+
+User-approved scope: colourful dark-comedy cursed dungeon, original KayKit materials,
+prisoner/resurrection wording, stone plates and iron gates. This is independent candidate
+work while T022/T037 are unverified, not a production 3D rollout authorization.
+
+- [X] T056 [US2] Align PRD, constitution 1.1.2 and current feature design/contracts with
+  FR-019; curate additional doorway/gate, lit torch/candle, heraldry and rubble models into
+  assets/art/kaykit_dungeon with dependency hashes and measured manifest inventory.
+- [X] T057 [US2] Implement dungeon chamber atlas treatment and optional owner-fed stone
+  plate/iron gate skins in scripts/art/ and scenes/art/props; select only in tests/art_validation.gd,
+  preserve labels/physics, and compress the doorway's wings/header after occlusion review.
+- [X] T058 [US2] Apply prisoner/resurrection visible copy in scripts/ui, resources/rooms and
+  scenes/rooms; add resources/art/dungeon_ui.tres with clear keyboard/controller focus,
+  retaining internal actor IDs, save schemas and existing input behaviour.
+- [ ] T059 [US2] Verify tests/physics/test_dungeon_skins.gd and affected chamber/cutaway/assets
+  checks plus the full strict suite; record all-view/window screenshots, measured inventory,
+  reference performance, defects and remaining human/native gaps in validation.md.
+
+The existing T033–T037 acceptance and T041–T052 rollout/native tasks remain applicable.
+Original T027 is historical slate/ink preparation; the atlas theme supersedes that palette
+for the candidate architecture. Existing task IDs and their evidence are retained.
+
+Dungeon implementation evidence: T030–T032 now complete for the candidate fixture and
+optional hookups, supported by dungeon-contracts-final.log and dungeon-integrated.log.
+T059 remains unchecked: the timed profile produced no valid completion record and the
+whole-room draw ceiling is still exceeded. The 24 rendered matrix captures and measured
+inventory are complete; human/native review and further budget work remain unverified.
+Final mesh batching passed 613 focused assertions after the 15,339-assertion full run.

@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf" id="1"]
+[node name="DungeonEntrance" type="Node3D"]
+[node name="ClosedGrate" parent="." instance=ExtResource("1")]

@@ -1,0 +1,30 @@
+extends SceneTree
+const HELP := preload("res://tests/physics/test_placement.gd")
+func _initialize() -> void: _run.call_deferred()
+func _run() -> void:
+	var context = load("res://tests/scenes/art_validation.tscn").instantiate()
+	root.add_child(context)
+	DirAccess.make_dir_recursive_absolute("/tmp/omdb-dungeon-matrix")
+	for window in [Vector2i(1280,720),Vector2i(1920,1200),Vector2i(1024,768)]:
+		root.size = window
+		for populated in [false,true]:
+			context.restart()
+			if populated:
+				var helper = HELP.new()
+				for point in [Vector3(-.9,.245,0),Vector3(.9,.245,0),Vector3(-.9,.70,0),Vector3(-4.4,.245,-3.5),Vector3(3.5,.245,-4.1)]: helper.add_body(context.room,point)
+				context.room._publish_snapshot()
+			for frame in range(60): await process_frame
+			for view in range(4):
+				context.room.camera_views.select_view(view)
+				for frame in range(3): await process_frame
+				await RenderingServer.frame_post_draw
+				var path := "/tmp/omdb-dungeon-matrix/%dx%d-%s-view-%d.png" % [window.x,window.y,"five" if populated else "fresh",view]
+				root.get_texture().get_image().save_png(path)
+				print("DUNGEON_MATRIX ",JSON.stringify({"path":path,"actual_viewport":[root.size.x,root.size.y],"view":view,"bodies":context.room.state.registry.count(),"jammed":context.room.get_node("SawStation").jammed(),"synthetic_arrangement":populated}))
+	context.room.retire()
+	context.audio._exit_tree()
+	await create_timer(.25).timeout
+	context.queue_free()
+	await create_timer(.25).timeout
+	for frame in range(3): await process_frame
+	quit.call_deferred()

@@ -1,0 +1,13 @@
+extends SceneTree
+var failures := 0
+func _initialize() -> void:
+	_run.call_deferred()
+func check(ok: bool, id: String) -> void:
+	print(id, " PASS" if ok else " FAIL")
+	if not ok: failures += 1
+func frames(count: int) -> void:
+	for i in range(count): await physics_frame
+func _run() -> void:
+	for path in ["spike_art", "saw_art", "anvil_art", "art_assets"]:
+		await load("res://tests/physics/test_"+path+".gd").new().run(self)
+	quit(1 if failures else 0)

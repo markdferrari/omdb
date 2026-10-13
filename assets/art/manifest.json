@@ -30,6 +30,7 @@
       "licence_id": "CC0-1.0",
       "materials": 1,
       "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "normalization_transform": "Baked source world transform; centered XZ; normalized 1x1m cluster, bottom Y0, tip Y.16",
       "pack_version": "Free 1.1",
       "required_credits": [],
       "runtime_paths": [
@@ -49,8 +50,7 @@
       "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
       "surfaces": 1,
       "textures": 0,
-      "triangles": 108,
-      "normalization_transform": "Baked source world transform; centered XZ; normalized 1x1m cluster, bottom Y0, tip Y.16"
+      "triangles": 108
     },
     {
       "acquired_on": "2026-10-09",
@@ -82,6 +82,7 @@
       "licence_id": "CC0-1.0",
       "materials": 1,
       "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "normalization_transform": "Baked source world transform; centered XZ; bottom Y0; uniform scale to long axis1.8m",
       "pack_version": "2016-11-11 publication",
       "required_credits": [],
       "runtime_paths": [
@@ -101,8 +102,7 @@
       "source_url": "https://opengameart.org/content/low-poly-iron-anvil",
       "surfaces": 1,
       "textures": 0,
-      "triangles": 258,
-      "normalization_transform": "Baked source world transform; centered XZ; bottom Y0; uniform scale to long axis1.8m"
+      "triangles": 258
     },
     {
       "acquired_on": "2026-10-09",
@@ -134,6 +134,7 @@
       "licence_id": "CC0-1.0",
       "materials": 1,
       "modifications": "Blender 5.2.2 LTS; baked transforms/modifiers; normalized pivot/scale/axes; vendor materials replaced with non-emissive shared metal. No animation, collision, camera, light, script or external texture dependency.",
+      "normalization_transform": "Baked evaluated mesh; source XY disc rotated to Godot YZ disc; centered pivot; diameter1.7m thickness.12m",
       "pack_version": "Version 1",
       "required_credits": [],
       "runtime_paths": [
@@ -152,9 +153,1025 @@
       "source_url": "https://opengameart.org/content/sawblade",
       "surfaces": 1,
       "textures": 0,
-      "triangles": 140,
-      "normalization_transform": "Baked evaluated mesh; source XY disc rotated to Godot YZ disc; centered pivot; diameter1.7m thickness.12m"
+      "triangles": 140
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_floor_tile_large",
+      "bounds": {
+        "position": [
+          -2.0,
+          -0.100000008940697,
+          -2.0
+        ],
+        "size": [
+          4.0,
+          0.150000020861626,
+          4.0
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/floor_tile_large.bin": "d4649c85286ff59fbf4b3fc8e5b228dc63ee2bb6914dbe716ca88acc9937ab23",
+        "assets/art/kaykit_dungeon/floor_tile_large.gltf": "c9c8807b44e18ecf1cb058b45f237008a23503e95e2d2282498730c87a734af1"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/floor_tile_large.gltf",
+        "assets/art/kaykit_dungeon/floor_tile_large.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "c9c8807b44e18ecf1cb058b45f237008a23503e95e2d2282498730c87a734af1",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_large.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_large.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/floor_tile_large.gltf",
+        "art/environment/kaykit_dungeon/floor_tile_large.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 188
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_floor_tile_big_grate",
+      "bounds": {
+        "position": [
+          -2.0,
+          -1.0,
+          -2.0
+        ],
+        "size": [
+          4.0,
+          1.04999995231628,
+          4.0
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/floor_tile_big_grate.bin": "4639f2612b0040f32f624894321540a3a3e4b7f5337706b91d5fc11403b42d77",
+        "assets/art/kaykit_dungeon/floor_tile_big_grate.gltf": "696ba811077244d19bb1bcc37b419e84e5ca6c2d16e5ea75cd49cedbd7498442"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/floor_tile_big_grate.gltf",
+        "assets/art/kaykit_dungeon/floor_tile_big_grate.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "696ba811077244d19bb1bcc37b419e84e5ca6c2d16e5ea75cd49cedbd7498442",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_big_grate.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/floor_tile_big_grate.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/floor_tile_big_grate.gltf",
+        "art/environment/kaykit_dungeon/floor_tile_big_grate.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 292
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall",
+      "bounds": {
+        "position": [
+          -2.0,
+          0.0,
+          -0.5
+        ],
+        "size": [
+          4.0,
+          4.0,
+          1.0
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall.bin": "cb081f98e2abd7f857d812534fe40c8b151b628a5b15f1c1c532fd93b46c29b2",
+        "assets/art/kaykit_dungeon/wall.gltf": "e7262d242545816fde7ab138be802a50e5e4af0a5a392682a32c5657184d4de1"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall.gltf",
+        "assets/art/kaykit_dungeon/wall.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "e7262d242545816fde7ab138be802a50e5e4af0a5a392682a32c5657184d4de1",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall.gltf",
+        "art/environment/kaykit_dungeon/wall.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 494
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall_arched",
+      "bounds": {
+        "position": [
+          -2.00000023841858,
+          0.0,
+          -0.499999970197678
+        ],
+        "size": [
+          4.0,
+          4.0,
+          1.00000059604645
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall_arched.bin": "dc5518624c9e43dfe394d91adaab7785345f93d3649d768c1c1a0848ef31a7dd",
+        "assets/art/kaykit_dungeon/wall_arched.gltf": "81ff13faf26cab5dafa68263a016e86d3eb77d234aba8440c252761e84ccf9ca"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall_arched.gltf",
+        "assets/art/kaykit_dungeon/wall_arched.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "81ff13faf26cab5dafa68263a016e86d3eb77d234aba8440c252761e84ccf9ca",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_arched.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_arched.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall_arched.gltf",
+        "art/environment/kaykit_dungeon/wall_arched.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 724
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall_cracked",
+      "bounds": {
+        "position": [
+          -2.0,
+          0.0,
+          -0.629694819450378
+        ],
+        "size": [
+          4.0,
+          4.0,
+          1.25938963890076
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall_cracked.bin": "74e9ee48e0c44cd3ab53573ccc8008cf1eefac99ec5d6cf9c1a828b2223dd2b3",
+        "assets/art/kaykit_dungeon/wall_cracked.gltf": "4eb34d05e4bc5f38d7e1ba1adb9ce8cb6e73ddcf15daaec433a838c2f0bec38b"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall_cracked.gltf",
+        "assets/art/kaykit_dungeon/wall_cracked.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "4eb34d05e4bc5f38d7e1ba1adb9ce8cb6e73ddcf15daaec433a838c2f0bec38b",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_cracked.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_cracked.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall_cracked.gltf",
+        "art/environment/kaykit_dungeon/wall_cracked.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 2010
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall_pillar",
+      "bounds": {
+        "position": [
+          -2.0,
+          0.0,
+          -0.75
+        ],
+        "size": [
+          4.0,
+          4.0,
+          1.5
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall_pillar.bin": "43a306ddb657a430993ddd39d44d1e4bf0ce1c2d9c69af6d8054ebbed4658ca2",
+        "assets/art/kaykit_dungeon/wall_pillar.gltf": "b12c23273629b4a1fbe866a2daac1e1ebbb377b10927e1c4c10c3add1b724a5a"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall_pillar.gltf",
+        "assets/art/kaykit_dungeon/wall_pillar.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "b12c23273629b4a1fbe866a2daac1e1ebbb377b10927e1c4c10c3add1b724a5a",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_pillar.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_pillar.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall_pillar.gltf",
+        "art/environment/kaykit_dungeon/wall_pillar.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 540
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_shelf_small_candles",
+      "bounds": {
+        "position": [
+          -0.5,
+          -0.300000011920929,
+          -1.49011611938477e-08
+        ],
+        "size": [
+          1.0,
+          0.994198620319366,
+          0.5
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/shelf_small_candles.bin": "6ae1f23a37c4d437d6e5408a4cc705f438a8c0896a697d082553a08d4101c627",
+        "assets/art/kaykit_dungeon/shelf_small_candles.gltf": "b7b373d0c18b4b5d46a9f027cfd3c83bad2bfc4c087d5fc8a05918826be66cc5"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/shelf_small_candles.gltf",
+        "assets/art/kaykit_dungeon/shelf_small_candles.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "b7b373d0c18b4b5d46a9f027cfd3c83bad2bfc4c087d5fc8a05918826be66cc5",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/shelf_small_candles.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/shelf_small_candles.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/shelf_small_candles.gltf",
+        "art/environment/kaykit_dungeon/shelf_small_candles.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 231
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_bottle_A_labeled_brown",
+      "bounds": {
+        "position": [
+          -0.184205040335655,
+          1.36345624923706e-06,
+          -0.184204757213593
+        ],
+        "size": [
+          0.368410050868988,
+          0.885713219642639,
+          0.368410110473633
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/bottle_A_labeled_brown.bin": "8a60c81de9657b3f4b8a3b2c37e61f38c1770e6941035b2436a70adaec098a1c",
+        "assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf": "1f19ed3972c8797e58f4bc17be12a16fdadc5cc5510e6ace7231d554ebecbc72",
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf",
+        "assets/art/kaykit_dungeon/bottle_A_labeled_brown.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "1f19ed3972c8797e58f4bc17be12a16fdadc5cc5510e6ace7231d554ebecbc72",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/bottle_A_labeled_brown.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/bottle_A_labeled_brown.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/bottle_A_labeled_brown.gltf",
+        "art/environment/kaykit_dungeon/bottle_A_labeled_brown.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 144
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_torch_mounted",
+      "bounds": {
+        "position": [
+          -0.275136500597,
+          -0.380807042121887,
+          -4.09344202978446e-09
+        ],
+        "size": [
+          0.550283312797546,
+          1.06246674060822,
+          0.615840494632721
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/torch_mounted.bin": "c627d80fa8b6256a887726d81880dbe88f0542eb740acada4cd6a9cbaa660ac8",
+        "assets/art/kaykit_dungeon/torch_mounted.gltf": "29f1cb66f59d63b8076ca412e83de474a01aa38f27ae974846ee993caf97e16d"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/torch_mounted.gltf",
+        "assets/art/kaykit_dungeon/torch_mounted.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "29f1cb66f59d63b8076ca412e83de474a01aa38f27ae974846ee993caf97e16d",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/torch_mounted.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/torch_mounted.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/torch_mounted.gltf",
+        "art/environment/kaykit_dungeon/torch_mounted.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 278
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_banner_white",
+      "bounds": {
+        "position": [
+          -0.749992847442627,
+          0.531393051147461,
+          0.377638101577759
+        ],
+        "size": [
+          1.50000047683716,
+          3.1960768699646,
+          0.311889469623566
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/banner_white.bin": "ad8cd15c1906e66911ade4772ebc54abf32d10c4105759af9cc7ae8b6dfc13cd",
+        "assets/art/kaykit_dungeon/banner_white.gltf": "e288471ca30ae782876eb2e5a0e1e61873e92b1f5c0926fbf2a18b9258fb6c22",
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original free-edition glTF/buffer/shared atlas retained; cosmetic wrapper scales bounds and optionally applies project stone/ink materials. No Blender conversion or geometry edits; no imported gameplay dependencies.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/banner_white.gltf",
+        "assets/art/kaykit_dungeon/banner_white.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "e288471ca30ae782876eb2e5a0e1e61873e92b1f5c0926fbf2a18b9258fb6c22",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/banner_white.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/banner_white.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/banner_white.gltf",
+        "art/environment/kaykit_dungeon/banner_white.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 97
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall_doorway",
+      "bounds": {
+        "position": [
+          -2.0,
+          0.0,
+          -0.499999970197678
+        ],
+        "size": [
+          4.0,
+          4.0,
+          0.999999940395355
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall_doorway.bin": "e6fb2825c6f4d86f61aab8c7aab773826add3bc9be727dcdfe7510ab2792e785",
+        "assets/art/kaykit_dungeon/wall_doorway.gltf": "0c3a76c0a92b541e103de3244468c2f22cf75d97242f4572a32119738b3e9427"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall_doorway.gltf",
+        "assets/art/kaykit_dungeon/wall_doorway.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "0c3a76c0a92b541e103de3244468c2f22cf75d97242f4572a32119738b3e9427",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_doorway.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_doorway.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall_doorway.gltf",
+        "art/environment/kaykit_dungeon/wall_doorway.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 2,
+      "textures": 1,
+      "triangles": 1068
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_wall_gated",
+      "bounds": {
+        "position": [
+          -2.0,
+          0.0,
+          -0.499999970197678
+        ],
+        "size": [
+          4.0,
+          4.0,
+          0.999999940395355
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/wall_gated.bin": "dc87322bfae02870f067c868e5937112ef9b09c27bc0b15de817eafa27770c94",
+        "assets/art/kaykit_dungeon/wall_gated.gltf": "c345dd99a0ff5ee7a44fd9d4b5fe371c70cb719666156371f417c9ce8619efcf"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/wall_gated.gltf",
+        "assets/art/kaykit_dungeon/wall_gated.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "c345dd99a0ff5ee7a44fd9d4b5fe371c70cb719666156371f417c9ce8619efcf",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_gated.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/wall_gated.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/wall_gated.gltf",
+        "art/environment/kaykit_dungeon/wall_gated.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 449
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_torch_lit",
+      "bounds": {
+        "position": [
+          -0.275141656398773,
+          -0.395045667886734,
+          -0.275141686201096
+        ],
+        "size": [
+          0.550283312797546,
+          1.12579262256622,
+          0.550283312797546
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/torch_lit.bin": "1ac41275544c951d7db724b78452b5a27399718691b83de3c1ba727d8b9e5944",
+        "assets/art/kaykit_dungeon/torch_lit.gltf": "2962691576e45f5b80debe2ce35f99d9f929f9d013ad9f7bc8e96341beef48e5"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/torch_lit.gltf",
+        "assets/art/kaykit_dungeon/torch_lit.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "2962691576e45f5b80debe2ce35f99d9f929f9d013ad9f7bc8e96341beef48e5",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/torch_lit.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/torch_lit.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/torch_lit.gltf",
+        "art/environment/kaykit_dungeon/torch_lit.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 270
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_candle_lit",
+      "bounds": {
+        "position": [
+          -0.167185559868813,
+          0.0,
+          -0.169764652848244
+        ],
+        "size": [
+          0.334371089935303,
+          1.05108106136322,
+          0.329291224479675
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/candle_lit.bin": "d58b93ba54ac2dc41c5e69f96a1419c4276718a1a46112f47b79a927c8d60b41",
+        "assets/art/kaykit_dungeon/candle_lit.gltf": "32cc99f79d823f146e9afd139e68df274cb815749723d094289889874464183f",
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/candle_lit.gltf",
+        "assets/art/kaykit_dungeon/candle_lit.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "32cc99f79d823f146e9afd139e68df274cb815749723d094289889874464183f",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/candle_lit.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/candle_lit.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/candle_lit.gltf",
+        "art/environment/kaykit_dungeon/candle_lit.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 120
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_rubble_half",
+      "bounds": {
+        "position": [
+          -1.18127729820117e-12,
+          -6.05627237248996e-09,
+          -1.51630365848541
+        ],
+        "size": [
+          3.99965357780457,
+          3.5,
+          3.0
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/rubble_half.bin": "b7bd410520c16c0bf0407ae562be28d44e8de84146363e13d5c2bd99edf0f9d1",
+        "assets/art/kaykit_dungeon/rubble_half.gltf": "6afe02e2962410d95cd07dfdaea78c6dafd95eefeab3fdabe03d28b8f0200e68"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/rubble_half.gltf",
+        "assets/art/kaykit_dungeon/rubble_half.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "6afe02e2962410d95cd07dfdaea78c6dafd95eefeab3fdabe03d28b8f0200e68",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/rubble_half.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/rubble_half.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/rubble_half.gltf",
+        "art/environment/kaykit_dungeon/rubble_half.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 390
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_sword_shield",
+      "bounds": {
+        "position": [
+          -1.11599934101105,
+          -0.815011382102966,
+          -0.0845735967159271
+        ],
+        "size": [
+          2.23200249671936,
+          1.66744661331177,
+          0.335742354393005
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03",
+        "assets/art/kaykit_dungeon/sword_shield.bin": "9f53f0db78579301a63474cd303a610a3ed9c9e4c841722907221fd99e790d4f",
+        "assets/art/kaykit_dungeon/sword_shield.gltf": "5b852f28b851953b6e10d6ee3f882104cdef32ccc53bdfaaedc75a212c9cbffc"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/sword_shield.gltf",
+        "assets/art/kaykit_dungeon/sword_shield.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "5b852f28b851953b6e10d6ee3f882104cdef32ccc53bdfaaedc75a212c9cbffc",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/sword_shield.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/sword_shield.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/sword_shield.gltf",
+        "art/environment/kaykit_dungeon/sword_shield.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 542
+    },
+    {
+      "acquired_on": null,
+      "acquisition_note": "Workspace supplied archive; original download date unknown",
+      "archive_sha256": "6acb859d1aefae074f937d1e6f13656a7312b2bdb6d9f1232ebdade8d93d6a1c",
+      "asset_id": "kaykit_banner_patternA_red",
+      "bounds": {
+        "position": [
+          -0.749992847442627,
+          0.531393051147461,
+          0.377638101577759
+        ],
+        "size": [
+          1.50000047683716,
+          3.1960768699646,
+          0.311889469623566
+        ]
+      },
+      "creator": "Kay Lousberg",
+      "custom_gap": null,
+      "decision": "trial_selected",
+      "evidence_refs": [
+        "specs/002-improve-hazard-art/research.md",
+        "specs/002-improve-hazard-art/validation.md"
+      ],
+      "family": "environment",
+      "file_sha256": {
+        "assets/art/kaykit_dungeon/banner_patternA_red.bin": "529ee144114cef8046da3226aa0aa1b12437c7654309dc038620b06c42444998",
+        "assets/art/kaykit_dungeon/banner_patternA_red.gltf": "42c2caad0d644ddccbc901db086ef439788275bef92e24e66e006fe06572b362",
+        "assets/art/kaykit_dungeon/dungeon_texture.png": "ceb331d6ed53273da5e26808560bca8496f8f6ebc12d83b570c0e317560f1d03"
+      },
+      "free_edition": true,
+      "licence_evidence": "assets/art/kaykit_dungeon/LICENSE.txt",
+      "licence_id": "CC0-1.0",
+      "materials": 1,
+      "modifications": "Original Free 1.1 glTF, buffers and atlas retained unchanged. Cosmetic wrappers fit existing geometry; original atlas materials retained. No vendor scripts, colliders, lights or cameras.",
+      "pack_version": "Free 1.1",
+      "required_credits": [],
+      "runtime_paths": [
+        "assets/art/kaykit_dungeon/banner_patternA_red.gltf",
+        "assets/art/kaykit_dungeon/banner_patternA_red.bin",
+        "assets/art/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "runtime_sha256": "42c2caad0d644ddccbc901db086ef439788275bef92e24e66e006fe06572b362",
+      "source_members": [
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/banner_patternA_red.gltf",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/banner_patternA_red.bin",
+        "KayKit_Dungeon_Pack_1.1_FREE/Assets/gltf/dungeon_texture.png",
+        "KayKit_Dungeon_Pack_1.1_FREE/License.txt"
+      ],
+      "source_paths": [
+        "art/environment/kaykit_dungeon/banner_patternA_red.gltf",
+        "art/environment/kaykit_dungeon/banner_patternA_red.bin",
+        "art/environment/kaykit_dungeon/dungeon_texture.png"
+      ],
+      "source_url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "surfaces": 1,
+      "textures": 1,
+      "triangles": 110
     }
   ],
-  "schema_version": 1.0
+  "schema_version": 1.0,
+  "custom_adaptations": [
+    {
+      "name": "Plate state outline",
+      "source_asset": "kaykit_floor_tile_large",
+      "gap": "The free dungeon tile has no weight-state indicator. Thin amber/green strips supplement the retained owner label without changing support.",
+      "implementation": "scripts/art/dungeon_plate.gd"
+    },
+    {
+      "name": "Dungeon trial plaque",
+      "gap": "The free kit supplies banners and architecture but no readable tutorial sign backing. A thin stone plaque retains legible game-authored text.",
+      "implementation": "scenes/art/props/trial_sign.tscn"
+    },
+    {
+      "name": "Doorway fit",
+      "source_asset": "kaykit_wall_doorway",
+      "gap": "Rendered uncompressed source wings/header screened adjacent traps. Retain the arch opening and atlas; compress outer wings/header and remove the wooden door mesh.",
+      "implementation": "scripts/art/dungeon_exit.gd"
+    },
+    {
+      "name": "Cutaway boundary trim",
+      "gap": "Source walls do not supply persistent boundary markers when foreground wall visuals hide. Four low dark cosmetic strips preserve the room outline.",
+      "implementation": "scripts/art/chamber_dressing.gd"
+    }
+  ]
 }

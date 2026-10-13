@@ -56,3 +56,12 @@
   implementation. No implementation or playable acceptance is implied.
 - Planning inspected additional source files and a temporary resource load. Trial assets
   are selected in research; production artwork implementation/playable validation have not run.
+
+- Phase 3 implementation: T001–T021 complete with recorded regression evidence;
+  T022 human keyboard/controller acceptance remains UNVERIFIED. See [validation](../validation.md).
+
+- Decoration follow-up: FR-007/US2 now explicitly require patterned floors, varied walls
+  and sparse cosmetic prop clusters; plan, contract, tasks and validation agree.
+
+- Dungeon follow-up: FR-019 and C8 capture the user-selected full cursed-dungeon premise,
+  atlas colours, state-fed skins and explicit affected verification. Adoption gates remain.

@@ -1,0 +1,53 @@
+extends SceneTree
+const HELP := preload("res://tests/physics/test_placement.gd")
+const INV := preload("res://scripts/checks/art_inventory.gd")
+var samples: Array[float] = []
+var physics: Array[float] = []
+var calls: float = 0
+var primitives: float = 0
+var instances: float = 0
+func _initialize() -> void: _run.call_deferred()
+func _run() -> void:
+	var context = load("res://tests/scenes/art_validation.tscn").instantiate()
+	root.add_child(context)
+	for candidate in [false,true]:
+		context.candidate = candidate
+		context.restart()
+		var helper = HELP.new()
+		for point in [Vector3(-.9,.245,0),Vector3(.9,.245,0),Vector3(-.9,.70,0),Vector3(-4.4,.245,-3.5),Vector3(3.5,.245,-4.1)]: helper.add_body(context.room,point)
+		context.room._publish_snapshot()
+		samples.clear()
+		physics.clear()
+		calls = 0
+		primitives = 0
+		instances = 0
+		print("DUNGEON_PROFILE_START candidate=",candidate," viewport=",root.size," renderer=",RenderingServer.get_current_rendering_method()," gpu=",RenderingServer.get_video_adapter_name())
+		var began := Time.get_ticks_usec()
+		var previous := began
+		var view := -1
+		while Time.get_ticks_usec()-began < 150000000:
+			await process_frame
+			var now := Time.get_ticks_usec()
+			var elapsed := float(now-began)/1000000
+			if elapsed >= 30:
+				var next_view := mini(3,int((elapsed-30)/30))
+				if next_view != view:
+					context.room.camera_views.select_view(next_view)
+					view = next_view
+				samples.append(float(now-previous)/1000)
+				physics.append(Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000)
+				calls = maxf(calls,Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
+				primitives = maxf(primitives,Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME))
+				instances = maxf(instances,Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME))
+			previous = now
+		samples.sort()
+		physics.sort()
+		var result := {"candidate":candidate,"viewport":[root.size.x,root.size.y],"renderer":RenderingServer.get_current_rendering_method(),"gpu":RenderingServer.get_video_adapter_name(),"warmup_seconds":30,"capture_seconds":120,"samples":samples.size(),"p95_frame_ms":samples[int((samples.size()-1)*.95)],"p95_physics_ms":physics[int((physics.size()-1)*.95)],"max_draw_calls":calls,"max_primitives":primitives,"max_render_objects":instances,"bodies":context.room.state.registry.count(),"jammed":context.room.get_node("SawStation").jammed(),"four_views":true,"synthetic_arrangement":true,"native_acceptance":false}
+		print("DUNGEON_PROFILE_RESULT ",JSON.stringify(result))
+		if candidate:
+			var inventory: Dictionary = INV.inspect(context.room.get_node("GothicChamber"))
+			print("DUNGEON_CHAMBER_INVENTORY ",JSON.stringify({"triangles":inventory.triangles,"surfaces":inventory.surfaces,"materials":inventory.materials.size(),"textures":inventory.textures.size(),"forbidden":inventory.forbidden}))
+	context.room.retire()
+	context.queue_free()
+	for i in range(3): await process_frame
+	quit()

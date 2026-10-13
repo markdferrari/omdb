@@ -7,7 +7,8 @@
 
 **Status:** Phase 0 research, Phase 1 design and [task generation](tasks.md) complete.
 Phases 1–3 implementation through T021 has passed automated checks; T022 human playable
-acceptance remains unverified. Phases 4–6 have not run. Setup returned the feature identifier
+acceptance remains unverified. Phase 4 candidate decoration work has begun; its human/performance acceptance remains
+pending. Six-room rollout and native acceptance have not run. Setup returned the feature identifier
 as `BRANCH`; actual Git branch is `main`. No branch hook is configured.
 
 ## Summary
@@ -18,8 +19,8 @@ into cosmetic scenes that consume existing hazard state. Fit artwork to establis
 collision and authored room footprints. Prove one chamber with the reused cow and five
 corpses, then apply its accepted treatment to the six-room sequence.
 
-The intended atmosphere is chunky gothic stone, dark iron machinery, ink-like surface
-accents, subdued violet surroundings and selective experiment signage. Existing neon
+The intended atmosphere is colourful gothic dungeon stone with the kit’s original atlas materials, forged-iron
+traps, warm torch accents, red heraldic banners, wooden furnishings and dungeon trial signage. Existing neon
 feedback remains prominent. [Research](research.md) records free-pack comparisons, exact
 archive identities, measured source geometry and alternatives.
 
@@ -93,7 +94,8 @@ playable acceptance. Outstanding historical human checks remain explicitly unver
 The earlier user authorization to continue development beyond the original greybox
 scheduling boundary remains recorded in feature 001. It is not retrospective test evidence.
 This plan's representative art gate protects the new rollout and does not invalidate the
-already authored rooms. No constitutional amendment or exception is required.
+already authored rooms. The user-approved dungeon clarification is recorded in constitution 1.1.2; no mechanics
+or rollout-gate exception is required.
 
 ### Verification and Evidence
 
@@ -129,7 +131,7 @@ specs/002-improve-hazard-art/
 └── checklists/requirements.md
 ```
 
-`tasks.md` contains 55 dependency-ordered actions. `validation.md` and asset acceptance records are
+`tasks.md` contains the original 55 dependency-ordered actions plus four dungeon follow-up actions. `validation.md` and asset acceptance records are
 created during implementation. Their absence now does not imply completed checks.
 
 ### Source Code (repository root)
@@ -189,6 +191,14 @@ The chamber layer fits the actual 16×12 or 24×12 floor, with skins aligned to 
 walkable height and cutouts/contrasting boundaries at trap regions. Preserve current floor,
 wall, gate, plate and door solids. Use closed grate artwork for the entrance hatch without
 implying an unsupported hole. Preserve plate requirement text and door-open cues.
+
+**Decoration preview:** The user follow-up authorizes candidate decoration work while
+T022 human verification remains pending. Use KayKit's patterned floor tiles and alternating
+wall/arched/cracked/pillar modules. Batch repeated floor tiles and omit whole tiles at
+trap footprints and the entrance grate. Sparse fixed wall clusters use shelves/candles,
+labelled bottles, lit mounted torches and banners; no crates, pickup objects or extra lights.
+The preview remains fixture-only. Maintain a persistent low boundary strip on all four sides.
+`specs/.gdignore` prevents evidence CSVs from becoming Godot translation resources.
 
 Perimeter visual groups are registered by side; hide the full nested cosmetic root for
 camera-facing sides while retaining low boundary trim. Internal gates keep their state
@@ -257,3 +267,19 @@ No constitution conflict or exception. Integration risks have compliant resoluti
 shallow adapted spikes preserve support; explicit danger tracks describe rectangular saw
 contacts; phase-driven anvils preserve timing; nested visual groups preserve cutaways.
 No new physics framework, state persistence or renderer dependency is proposed.
+
+## Dungeon theme follow-up — 2026-10-10
+
+Use original KayKit atlas materials for architecture and props rather than flat stone/ink
+overrides. Keep dark boundary trim for cutaway readability. Torch meshes use restrained
+emission, with no added light nodes. Plate skins expose configure(size) and set_active(value);
+exit skins expose configure(passage_size) and set_open(value). Their owners have optional
+cosmetic_scene assignments, defaulting to null until Stage B. The stone arch remains while
+the gate opens. UI/prisoner wording retains internal subject IDs and save compatibility.
+Rubble is fixed within wall margins, excluded from trap footprints and traversable routes.
+
+**Current dungeon evidence:** 15,339 full regression assertions passed, followed by 613
+focused assertions after wall/plate mesh batching. The 24 fixture captures cover all four
+views and three windows in fresh/five-body states. Sampled rendering peaks at 498 calls
+versus 441 baseline (+57 within the added-art allocation); the whole-room ceiling of 450
+is still exceeded. Timed and human/native acceptance remain unverified, so Stage B remains open.

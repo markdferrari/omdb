@@ -25,7 +25,7 @@ func _refresh(snapshot: Dictionary) -> void:
 	var instruction := _room.definition.teaching_goal
 	if "body_support" in cues and "carry" not in cues:
 		if snapshot.body_count == 0:
-			instruction = "The spikes are too wide for one jump. A sacrifice leaves a solid body for your next clone."
+			instruction = "The spikes are too wide for one jump. A sacrifice leaves a solid body for your next resurrection."
 		else:
 			instruction = "Your body remains. %s: jump onto it, cross its top, then jump to the far bank. The yellow ring marks the ground beneath you; release movement to brake in the air." % jump
 	if "carry" in cues:

@@ -1,0 +1,520 @@
+WorkerThreadPool: 12 threads, 3 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Accessibility: AccessKit driver loaded.
+Xshape 1.1 detected.
+Xinerama 1.1 detected.
+Xrandr 1.6 detected.
+Xrender 0.11 detected.
+Xinput 2.2 detected.
+XInput: Refreshing devices.
+XInput: No touch devices found.
+Input method started.
+Detecting GPUs, set DRI_PRIME in the environment to override GPU detection logic.
+Only one GPU found, using default.
+Accessibility: window 0 adapter created.
+XcursorGetTheme could not get cursor theme
+DBus 1.14.10 detected.
+FreeDesktopScreenSaver: Acquired screensaver inhibition cookie: 160709263
+Using "default" pen tablet driver...
+Shader 'CanvasSdfShaderGLES3' SHA256: d213d7e3bf740b4f38c05684f1e5f0dc78ba9dbd78ee5f18867fb2705c3a6fe1
+Shader 'SkeletonShaderGLES3' SHA256: a95d2dc4a9396881a7ee75c5e1cd254ce39bf93604dabad92aa813b2c8928633
+Shader 'ParticlesShaderGLES3' SHA256: 8374c2a9cd050e5de602e8972473adcf9c3a6a5f0e4b4f1e616134dc365f3d8f
+Shader 'ParticlesCopyShaderGLES3' SHA256: 6a8f0b2782949a99ee1df2f33b7a0fdb02de2f7e5af7b8b63d18990a004945f7
+Shader 'CopyShaderGLES3' SHA256: d0589f1c4d6e3205562977688a4b063813b2bda24eb9fb90391ee52c0908675e
+Shader 'CubemapFilterShaderGLES3' SHA256: 9092223b5385ca216c49e0a6de9b74baeaa4d6181843fecd094b2fb5bfad2863
+Shader 'GlowShaderGLES3' SHA256: 0aa9611584a9c60c6e86371e89165da635a6a204b57a7cfeb7883d6d3ba5e9f0
+Shader 'PostShaderGLES3' SHA256: 4ca24cb9b039d828bfa747350409a0a3887af416062d53cab6d05e140a813eb4
+Shader 'FeedShaderGLES3' SHA256: d74dc08ce6061991e7e5f724e3bc5c513ceccd2d21989c7483c9ad44058ad61f
+Shader 'CanvasShaderGLES3' SHA256: 54827565c8f0df7b4aebda75a9fdbfec74a475b283d08ddc0c85fdab7a497a62
+Shader 'CanvasOcclusionShaderGLES3' SHA256: 5754b75dd5540409f2d9a9ba2a7d7c280f2f46ddd6a09a93902541260470870e
+Shader 'SceneShaderGLES3' SHA256: a035699965c511740b2fef0db1305ac950c0dc2d5f2951b233cb6e23e6db2e45
+Shader 'SkyShaderGLES3' SHA256: 0d6ba1d0028d51a408f41708d395b52e066d015de4230ff2b5bebd7850ea30dc
+Shader 'TexBlitShaderGLES3' SHA256: 97c19cd3c19c933b8d7f8f6ef138cf9c9c1b282a855149f3ec3eba338aef523a
+OpenGL API 4.6 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: AMD - AMD Radeon 740M Graphics (radeonsi, phoenix2, LLVM 20.1.2, DRM 3.64, 7.0.0-31-generic)
+PulseAudio 16.1.0 detected.
+PulseAudio: context other
+PulseAudio: context other
+PulseAudio: context other
+PulseAudio: context ready
+PulseAudio: Detecting channels for device: alsa_output.pci-0000_64_00.6.HiFi__hw_Generic_1__sink
+PulseAudio: detected 2 output channels
+PulseAudio: audio buffer frames: 512 calculated output latency: 11ms
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+Loading resource: res://resources/art/dungeon_ui.tres remapped: res://resources/art/dungeon_ui.tres
+Completed load for: 'res://resources/art/dungeon_ui.tres' remapped 'res://resources/art/dungeon_ui.tres' at thread -1
+Loading resource: res://default_bus_layout.tres remapped: res://default_bus_layout.tres
+Completed load for: 'res://default_bus_layout.tres' remapped 'res://default_bus_layout.tres' at thread -1
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+Loading resource: /tmp/omdb-dungeon-inventory.gd remapped: /tmp/omdb-dungeon-inventory.gd
+Loading resource: res://scenes/corpses/corpse.tscn remapped: res://scenes/corpses/corpse.tscn
+Loading resource: res://scripts/corpses/corpse.gd remapped: res://scripts/corpses/corpse.gd
+Loading resource: res://resources/gameplay_tuning.tres remapped: res://resources/gameplay_tuning.tres
+Loading resource: res://scripts/state/gameplay_tuning.gd remapped: res://scripts/state/gameplay_tuning.gd
+Completed load for: 'res://scripts/state/gameplay_tuning.gd' remapped 'res://scripts/state/gameplay_tuning.gd' at thread -1
+Completed load for: 'res://resources/gameplay_tuning.tres' remapped 'res://resources/gameplay_tuning.tres' at thread -1
+Completed load for: 'res://scripts/corpses/corpse.gd' remapped 'res://scripts/corpses/corpse.gd' at thread -1
+Loading resource: res://scripts/player/character_visual.gd remapped: res://scripts/player/character_visual.gd
+Loading resource: res://assets/characters/cow/presentation.tres remapped: res://assets/characters/cow/presentation.tres
+Completed load for: 'res://assets/characters/cow/presentation.tres' remapped 'res://assets/characters/cow/presentation.tres' at thread -1
+Completed load for: 'res://scripts/player/character_visual.gd' remapped 'res://scripts/player/character_visual.gd' at thread -1
+Loading resource: res://assets/characters/cow/cow.glb remapped: res://assets/characters/cow/cow.glb
+Loading resource: res://.godot/imported/cow.glb-6120b6b8d554c9d542a642de90b1fa78.scn remapped: res://.godot/imported/cow.glb-6120b6b8d554c9d542a642de90b1fa78.scn
+Completed load for: 'res://assets/characters/cow/cow.glb' remapped 'res://assets/characters/cow/cow.glb' at thread -1
+Completed load for: 'res://scenes/corpses/corpse.tscn' remapped 'res://scenes/corpses/corpse.tscn' at thread -1
+Loading resource: res://scenes/player/player.tscn remapped: res://scenes/player/player.tscn
+Completed load for: 'res://scenes/player/player.tscn' remapped 'res://scenes/player/player.tscn' at thread -1
+Loading resource: res://scenes/effects/death_feedback.tscn remapped: res://scenes/effects/death_feedback.tscn
+Loading resource: res://scripts/effects/death_feedback.gd remapped: res://scripts/effects/death_feedback.gd
+Completed load for: 'res://scripts/effects/death_feedback.gd' remapped 'res://scripts/effects/death_feedback.gd' at thread -1
+Completed load for: 'res://scenes/effects/death_feedback.tscn' remapped 'res://scenes/effects/death_feedback.tscn' at thread -1
+Loading resource: res://scenes/effects/eviction_burst.tscn remapped: res://scenes/effects/eviction_burst.tscn
+Loading resource: res://scripts/effects/eviction_burst.gd remapped: res://scripts/effects/eviction_burst.gd
+Completed load for: 'res://scripts/effects/eviction_burst.gd' remapped 'res://scripts/effects/eviction_burst.gd' at thread -1
+Completed load for: 'res://scenes/effects/eviction_burst.tscn' remapped 'res://scenes/effects/eviction_burst.tscn' at thread -1
+Completed load for: '/tmp/omdb-dungeon-inventory.gd' remapped '/tmp/omdb-dungeon-inventory.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://tests/scenes/art_validation.tscn remapped: res://tests/scenes/art_validation.tscn
+Loading resource: res://tests/art_validation.gd remapped: res://tests/art_validation.gd
+Loading resource: res://tests/scenes/physics_fixture.tscn remapped: res://tests/scenes/physics_fixture.tscn
+Completed load for: 'res://tests/scenes/physics_fixture.tscn' remapped 'res://tests/scenes/physics_fixture.tscn' at thread -1
+Loading resource: res://scenes/art/hazards/spikes_visual.tscn remapped: res://scenes/art/hazards/spikes_visual.tscn
+Loading resource: res://scripts/art/spikes_visual.gd remapped: res://scripts/art/spikes_visual.gd
+Loading resource: res://assets/art/kaykit_dungeon/spike_cluster.glb remapped: res://assets/art/kaykit_dungeon/spike_cluster.glb
+Loading resource: res://.godot/imported/spike_cluster.glb-6105e470e07811c73d439cce21b279be.scn remapped: res://.godot/imported/spike_cluster.glb-6105e470e07811c73d439cce21b279be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/spike_cluster.glb' remapped 'res://assets/art/kaykit_dungeon/spike_cluster.glb' at thread -1
+Loading resource: res://resources/materials/hazard_metal.tres remapped: res://resources/materials/hazard_metal.tres
+Completed load for: 'res://resources/materials/hazard_metal.tres' remapped 'res://resources/materials/hazard_metal.tres' at thread -1
+Loading resource: res://resources/materials/hazard_ink.tres remapped: res://resources/materials/hazard_ink.tres
+Completed load for: 'res://resources/materials/hazard_ink.tres' remapped 'res://resources/materials/hazard_ink.tres' at thread -1
+Completed load for: 'res://scripts/art/spikes_visual.gd' remapped 'res://scripts/art/spikes_visual.gd' at thread -1
+Completed load for: 'res://scenes/art/hazards/spikes_visual.tscn' remapped 'res://scenes/art/hazards/spikes_visual.tscn' at thread -1
+Loading resource: res://scenes/art/hazards/saw_visual.tscn remapped: res://scenes/art/hazards/saw_visual.tscn
+Loading resource: res://scripts/art/saw_visual.gd remapped: res://scripts/art/saw_visual.gd
+Completed load for: 'res://scripts/art/saw_visual.gd' remapped 'res://scripts/art/saw_visual.gd' at thread -1
+Loading resource: res://assets/art/sawblade/sawblade.glb remapped: res://assets/art/sawblade/sawblade.glb
+Loading resource: res://.godot/imported/sawblade.glb-ccf2b14dc658cfdeb987732a00f93232.scn remapped: res://.godot/imported/sawblade.glb-ccf2b14dc658cfdeb987732a00f93232.scn
+Completed load for: 'res://assets/art/sawblade/sawblade.glb' remapped 'res://assets/art/sawblade/sawblade.glb' at thread -1
+Completed load for: 'res://scenes/art/hazards/saw_visual.tscn' remapped 'res://scenes/art/hazards/saw_visual.tscn' at thread -1
+Loading resource: res://scenes/art/hazards/anvil_visual.tscn remapped: res://scenes/art/hazards/anvil_visual.tscn
+Loading resource: res://scripts/art/anvil_visual.gd remapped: res://scripts/art/anvil_visual.gd
+Completed load for: 'res://scripts/art/anvil_visual.gd' remapped 'res://scripts/art/anvil_visual.gd' at thread -1
+Loading resource: res://assets/art/iron_anvil/anvil.glb remapped: res://assets/art/iron_anvil/anvil.glb
+Loading resource: res://.godot/imported/anvil.glb-32818e15c3cd54fecbe7e948f7cd42aa.scn remapped: res://.godot/imported/anvil.glb-32818e15c3cd54fecbe7e948f7cd42aa.scn
+Completed load for: 'res://assets/art/iron_anvil/anvil.glb' remapped 'res://assets/art/iron_anvil/anvil.glb' at thread -1
+Completed load for: 'res://scenes/art/hazards/anvil_visual.tscn' remapped 'res://scenes/art/hazards/anvil_visual.tscn' at thread -1
+Loading resource: res://scenes/art/props/plate_skin.tscn remapped: res://scenes/art/props/plate_skin.tscn
+Loading resource: res://scripts/art/dungeon_plate.gd remapped: res://scripts/art/dungeon_plate.gd
+Loading resource: res://assets/art/kaykit_dungeon/floor_tile_large.gltf remapped: res://assets/art/kaykit_dungeon/floor_tile_large.gltf
+Loading resource: res://.godot/imported/floor_tile_large.gltf-69c243dc333dda72a16d28b005181f0d.scn remapped: res://.godot/imported/floor_tile_large.gltf-69c243dc333dda72a16d28b005181f0d.scn
+Loading resource: res://assets/art/kaykit_dungeon/dungeon_texture.png remapped: res://assets/art/kaykit_dungeon/dungeon_texture.png
+Loading resource: res://.godot/imported/dungeon_texture.png-6df8ee09e9169314cb3085e217c21e75.ctex remapped: res://.godot/imported/dungeon_texture.png-6df8ee09e9169314cb3085e217c21e75.ctex
+Completed load for: 'res://assets/art/kaykit_dungeon/dungeon_texture.png' remapped 'res://assets/art/kaykit_dungeon/dungeon_texture.png' at thread -1
+Completed load for: 'res://assets/art/kaykit_dungeon/floor_tile_large.gltf' remapped 'res://assets/art/kaykit_dungeon/floor_tile_large.gltf' at thread -1
+Completed load for: 'res://scripts/art/dungeon_plate.gd' remapped 'res://scripts/art/dungeon_plate.gd' at thread -1
+Completed load for: 'res://scenes/art/props/plate_skin.tscn' remapped 'res://scenes/art/props/plate_skin.tscn' at thread -1
+Loading resource: res://scenes/art/props/exit_skin.tscn remapped: res://scenes/art/props/exit_skin.tscn
+Loading resource: res://scripts/art/dungeon_exit.gd remapped: res://scripts/art/dungeon_exit.gd
+Loading resource: res://assets/art/kaykit_dungeon/wall_doorway.gltf remapped: res://assets/art/kaykit_dungeon/wall_doorway.gltf
+Loading resource: res://.godot/imported/wall_doorway.gltf-e7589bebb9a4692e8cdc0df260bd4de8.scn remapped: res://.godot/imported/wall_doorway.gltf-e7589bebb9a4692e8cdc0df260bd4de8.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_doorway.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_doorway.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_gated.gltf remapped: res://assets/art/kaykit_dungeon/wall_gated.gltf
+Loading resource: res://.godot/imported/wall_gated.gltf-6c97e9731c93a75bca3e174197fc58cf.scn remapped: res://.godot/imported/wall_gated.gltf-6c97e9731c93a75bca3e174197fc58cf.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_gated.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_gated.gltf' at thread -1
+Completed load for: 'res://scripts/art/dungeon_exit.gd' remapped 'res://scripts/art/dungeon_exit.gd' at thread -1
+Completed load for: 'res://scenes/art/props/exit_skin.tscn' remapped 'res://scenes/art/props/exit_skin.tscn' at thread -1
+Loading resource: res://resources/audio_cues.tres remapped: res://resources/audio_cues.tres
+Loading resource: res://scripts/app/audio_cues.gd remapped: res://scripts/app/audio_cues.gd
+Completed load for: 'res://scripts/app/audio_cues.gd' remapped 'res://scripts/app/audio_cues.gd' at thread -1
+Loading resource: res://assets/audio/music/cheerful_loop.wav remapped: res://assets/audio/music/cheerful_loop.wav
+Loading resource: res://.godot/imported/cheerful_loop.wav-8495f3d4a1df8cdf315d8eb903815d49.sample remapped: res://.godot/imported/cheerful_loop.wav-8495f3d4a1df8cdf315d8eb903815d49.sample
+Completed load for: 'res://assets/audio/music/cheerful_loop.wav' remapped 'res://assets/audio/music/cheerful_loop.wav' at thread -1
+Loading resource: res://assets/audio/sfx/spike_hit.wav remapped: res://assets/audio/sfx/spike_hit.wav
+Loading resource: res://.godot/imported/spike_hit.wav-bf24c0e8f717905188cef2c5ae1eff37.sample remapped: res://.godot/imported/spike_hit.wav-bf24c0e8f717905188cef2c5ae1eff37.sample
+Completed load for: 'res://assets/audio/sfx/spike_hit.wav' remapped 'res://assets/audio/sfx/spike_hit.wav' at thread -1
+Loading resource: res://assets/audio/sfx/saw_hit.wav remapped: res://assets/audio/sfx/saw_hit.wav
+Loading resource: res://.godot/imported/saw_hit.wav-74fa245f420bb1cb0dc30b1b7438a26e.sample remapped: res://.godot/imported/saw_hit.wav-74fa245f420bb1cb0dc30b1b7438a26e.sample
+Completed load for: 'res://assets/audio/sfx/saw_hit.wav' remapped 'res://assets/audio/sfx/saw_hit.wav' at thread -1
+Loading resource: res://assets/audio/sfx/saw_jam.wav remapped: res://assets/audio/sfx/saw_jam.wav
+Loading resource: res://.godot/imported/saw_jam.wav-6f01f8c4b554ec47f1d1fe38e4d0e909.sample remapped: res://.godot/imported/saw_jam.wav-6f01f8c4b554ec47f1d1fe38e4d0e909.sample
+Completed load for: 'res://assets/audio/sfx/saw_jam.wav' remapped 'res://assets/audio/sfx/saw_jam.wav' at thread -1
+Loading resource: res://assets/audio/sfx/anvil_warning.wav remapped: res://assets/audio/sfx/anvil_warning.wav
+Loading resource: res://.godot/imported/anvil_warning.wav-279d200bf5b2f68f518bcbe950737515.sample remapped: res://.godot/imported/anvil_warning.wav-279d200bf5b2f68f518bcbe950737515.sample
+Completed load for: 'res://assets/audio/sfx/anvil_warning.wav' remapped 'res://assets/audio/sfx/anvil_warning.wav' at thread -1
+Loading resource: res://assets/audio/sfx/anvil_drop.wav remapped: res://assets/audio/sfx/anvil_drop.wav
+Loading resource: res://.godot/imported/anvil_drop.wav-6ea54e2f29b07db4b097f4e02e56318e.sample remapped: res://.godot/imported/anvil_drop.wav-6ea54e2f29b07db4b097f4e02e56318e.sample
+Completed load for: 'res://assets/audio/sfx/anvil_drop.wav' remapped 'res://assets/audio/sfx/anvil_drop.wav' at thread -1
+Loading resource: res://assets/audio/sfx/body_pop.wav remapped: res://assets/audio/sfx/body_pop.wav
+Loading resource: res://.godot/imported/body_pop.wav-af54aaee973925c78dfb0b5b079ce782.sample remapped: res://.godot/imported/body_pop.wav-af54aaee973925c78dfb0b5b079ce782.sample
+Completed load for: 'res://assets/audio/sfx/body_pop.wav' remapped 'res://assets/audio/sfx/body_pop.wav' at thread -1
+Completed load for: 'res://resources/audio_cues.tres' remapped 'res://resources/audio_cues.tres' at thread -1
+Completed load for: 'res://tests/art_validation.gd' remapped 'res://tests/art_validation.gd' at thread -1
+Loading resource: res://tests/scenes/art_room.tscn remapped: res://tests/scenes/art_room.tscn
+Loading resource: res://scenes/hazards/spike_bed.tscn remapped: res://scenes/hazards/spike_bed.tscn
+Completed load for: 'res://scenes/hazards/spike_bed.tscn' remapped 'res://scenes/hazards/spike_bed.tscn' at thread -1
+Loading resource: res://scenes/ui/hud.tscn remapped: res://scenes/ui/hud.tscn
+Loading resource: res://scripts/ui/hud.gd remapped: res://scripts/ui/hud.gd
+Completed load for: 'res://scripts/ui/hud.gd' remapped 'res://scripts/ui/hud.gd' at thread -1
+Loading resource: res://scripts/ui/onboarding.gd remapped: res://scripts/ui/onboarding.gd
+Completed load for: 'res://scripts/ui/onboarding.gd' remapped 'res://scripts/ui/onboarding.gd' at thread -1
+Completed load for: 'res://scenes/ui/hud.tscn' remapped 'res://scenes/ui/hud.tscn' at thread -1
+Loading resource: res://scenes/puzzle/pressure_plate.tscn remapped: res://scenes/puzzle/pressure_plate.tscn
+Completed load for: 'res://scenes/puzzle/pressure_plate.tscn' remapped 'res://scenes/puzzle/pressure_plate.tscn' at thread -1
+Loading resource: res://scenes/puzzle/exit_door.tscn remapped: res://scenes/puzzle/exit_door.tscn
+Completed load for: 'res://scenes/puzzle/exit_door.tscn' remapped 'res://scenes/puzzle/exit_door.tscn' at thread -1
+Loading resource: res://scenes/hazards/buzzsaw.tscn remapped: res://scenes/hazards/buzzsaw.tscn
+Completed load for: 'res://scenes/hazards/buzzsaw.tscn' remapped 'res://scenes/hazards/buzzsaw.tscn' at thread -1
+Loading resource: res://scenes/hazards/anvil.tscn remapped: res://scenes/hazards/anvil.tscn
+Completed load for: 'res://scenes/hazards/anvil.tscn' remapped 'res://scenes/hazards/anvil.tscn' at thread -1
+Completed load for: 'res://tests/scenes/art_room.tscn' remapped 'res://tests/scenes/art_room.tscn' at thread -1
+Completed load for: 'res://tests/scenes/art_validation.tscn' remapped 'res://tests/scenes/art_validation.tscn' at thread -1
+Loading resource: res://scenes/art/gothic_chamber.tscn remapped: res://scenes/art/gothic_chamber.tscn
+Loading resource: res://scripts/art/chamber_dressing.gd remapped: res://scripts/art/chamber_dressing.gd
+Loading resource: res://resources/materials/art_ink.tres remapped: res://resources/materials/art_ink.tres
+Completed load for: 'res://resources/materials/art_ink.tres' remapped 'res://resources/materials/art_ink.tres' at thread -1
+Completed load for: 'res://scripts/art/chamber_dressing.gd' remapped 'res://scripts/art/chamber_dressing.gd' at thread -1
+Completed load for: 'res://scenes/art/gothic_chamber.tscn' remapped 'res://scenes/art/gothic_chamber.tscn' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://scenes/art/props/trial_sign.tscn remapped: res://scenes/art/props/trial_sign.tscn
+Loading resource: res://resources/materials/art_stone.tres remapped: res://resources/materials/art_stone.tres
+Completed load for: 'res://resources/materials/art_stone.tres' remapped 'res://resources/materials/art_stone.tres' at thread -1
+Completed load for: 'res://scenes/art/props/trial_sign.tscn' remapped 'res://scenes/art/props/trial_sign.tscn' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://scenes/art/props/entrance_hatch.tscn remapped: res://scenes/art/props/entrance_hatch.tscn
+Loading resource: res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf remapped: res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf
+Loading resource: res://.godot/imported/floor_tile_big_grate.gltf-919b21981942847e585a5b12d4999fe5.scn remapped: res://.godot/imported/floor_tile_big_grate.gltf-919b21981942847e585a5b12d4999fe5.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf' remapped 'res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf' at thread -1
+Completed load for: 'res://scenes/art/props/entrance_hatch.tscn' remapped 'res://scenes/art/props/entrance_hatch.tscn' at thread -1
+Loading resource: res://resources/art/chamber_environment.tres remapped: res://resources/art/chamber_environment.tres
+Completed load for: 'res://resources/art/chamber_environment.tres' remapped 'res://resources/art/chamber_environment.tres' at thread -1
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":435.0,"performance_acceptance":false,"primitives":28756.0,"render_objects":883.0,"view":0,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":435.0,"performance_acceptance":false,"primitives":28788.0,"render_objects":883.0,"view":1,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":435.0,"performance_acceptance":false,"primitives":28798.0,"render_objects":883.0,"view":2,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":435.0,"performance_acceptance":false,"primitives":28766.0,"render_objects":883.0,"view":3,"viewport":[1280,720]}
+Loading resource: res://scenes/art/gothic_chamber.tscn remapped: res://scenes/art/gothic_chamber.tscn
+Completed load for: 'res://scenes/art/gothic_chamber.tscn' remapped 'res://scenes/art/gothic_chamber.tscn' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://scenes/art/props/trial_sign.tscn remapped: res://scenes/art/props/trial_sign.tscn
+Loading resource: res://resources/materials/art_stone.tres remapped: res://resources/materials/art_stone.tres
+Completed load for: 'res://resources/materials/art_stone.tres' remapped 'res://resources/materials/art_stone.tres' at thread -1
+Completed load for: 'res://scenes/art/props/trial_sign.tscn' remapped 'res://scenes/art/props/trial_sign.tscn' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall.gltf remapped: res://assets/art/kaykit_dungeon/wall.gltf
+Loading resource: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn remapped: res://.godot/imported/wall.gltf-0ff9decb6b29bdec8c2478c3d2c83d46.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall.gltf' remapped 'res://assets/art/kaykit_dungeon/wall.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_arched.gltf remapped: res://assets/art/kaykit_dungeon/wall_arched.gltf
+Loading resource: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn remapped: res://.godot/imported/wall_arched.gltf-edb45f35cf5db71c9f1e72c82f9a866a.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_arched.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_arched.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_pillar.gltf remapped: res://assets/art/kaykit_dungeon/wall_pillar.gltf
+Loading resource: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn remapped: res://.godot/imported/wall_pillar.gltf-1673fa3db2a10dbabf078a74ed7d2b30.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_pillar.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/wall_cracked.gltf remapped: res://assets/art/kaykit_dungeon/wall_cracked.gltf
+Loading resource: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn remapped: res://.godot/imported/wall_cracked.gltf-a90d145652482c8c8fa835d593a065fa.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' remapped 'res://assets/art/kaykit_dungeon/wall_cracked.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf remapped: res://assets/art/kaykit_dungeon/shelf_small_candles.gltf
+Loading resource: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn remapped: res://.godot/imported/shelf_small_candles.gltf-0cb174f1c3adc8e4edf6698bf421c33b.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' remapped 'res://assets/art/kaykit_dungeon/shelf_small_candles.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf remapped: res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf
+Loading resource: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn remapped: res://.godot/imported/bottle_A_labeled_brown.gltf-5de6e4f0207992889e09ec1302c42726.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' remapped 'res://assets/art/kaykit_dungeon/bottle_A_labeled_brown.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/candle_lit.gltf remapped: res://assets/art/kaykit_dungeon/candle_lit.gltf
+Loading resource: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn remapped: res://.godot/imported/candle_lit.gltf-b8b8db80bf12304e4bdbd2330aac52be.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/candle_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/candle_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf remapped: res://assets/art/kaykit_dungeon/banner_patternA_red.gltf
+Loading resource: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn remapped: res://.godot/imported/banner_patternA_red.gltf-8fcb3c5c20d10123b3f16fef4d091ce0.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' remapped 'res://assets/art/kaykit_dungeon/banner_patternA_red.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_mounted.gltf remapped: res://assets/art/kaykit_dungeon/torch_mounted.gltf
+Loading resource: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn remapped: res://.godot/imported/torch_mounted.gltf-f89b454beafb258f5ff43a9799d6ef10.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_mounted.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/torch_lit.gltf remapped: res://assets/art/kaykit_dungeon/torch_lit.gltf
+Loading resource: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn remapped: res://.godot/imported/torch_lit.gltf-054d4fd810854ad3cf32d20f50c9e803.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/torch_lit.gltf' remapped 'res://assets/art/kaykit_dungeon/torch_lit.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/sword_shield.gltf remapped: res://assets/art/kaykit_dungeon/sword_shield.gltf
+Loading resource: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn remapped: res://.godot/imported/sword_shield.gltf-67c1052d3ac4d18001b85ec00618f917.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/sword_shield.gltf' remapped 'res://assets/art/kaykit_dungeon/sword_shield.gltf' at thread -1
+Loading resource: res://assets/art/kaykit_dungeon/rubble_half.gltf remapped: res://assets/art/kaykit_dungeon/rubble_half.gltf
+Loading resource: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn remapped: res://.godot/imported/rubble_half.gltf-6e7fab17568319d14e215d641c080bde.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/rubble_half.gltf' remapped 'res://assets/art/kaykit_dungeon/rubble_half.gltf' at thread -1
+Loading resource: res://scenes/art/props/entrance_hatch.tscn remapped: res://scenes/art/props/entrance_hatch.tscn
+Loading resource: res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf remapped: res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf
+Loading resource: res://.godot/imported/floor_tile_big_grate.gltf-919b21981942847e585a5b12d4999fe5.scn remapped: res://.godot/imported/floor_tile_big_grate.gltf-919b21981942847e585a5b12d4999fe5.scn
+Completed load for: 'res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf' remapped 'res://assets/art/kaykit_dungeon/floor_tile_big_grate.gltf' at thread -1
+Completed load for: 'res://scenes/art/props/entrance_hatch.tscn' remapped 'res://scenes/art/props/entrance_hatch.tscn' at thread -1
+Loading resource: res://resources/art/chamber_environment.tres remapped: res://resources/art/chamber_environment.tres
+Completed load for: 'res://resources/art/chamber_environment.tres' remapped 'res://resources/art/chamber_environment.tres' at thread -1
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":492.0,"performance_acceptance":false,"primitives":57930.0,"render_objects":940.0,"view":0,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":492.0,"performance_acceptance":false,"primitives":57942.0,"render_objects":940.0,"view":1,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":481.0,"performance_acceptance":false,"primitives":57780.0,"render_objects":929.0,"view":2,"viewport":[1280,720]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":481.0,"performance_acceptance":false,"primitives":57700.0,"render_objects":929.0,"view":3,"viewport":[1280,720]}
+DUNGEON_CHAMBER_INVENTORY {"forbidden":[],"materials":22,"surfaces":94,"textures":1,"triangles":35968}
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit.
+   at: clear (core/io/resource.cpp:817)
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
+PulseAudio: context terminated
+Accessibility: window 0 adapter destroyed.
+Leaked instance: AudioStreamWAV:9223372087102539374 - Reference count: 1
+Leaked instance: AudioStreamWAV:9223372082790794961 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372087253534449 - Reference count: 1
+Leaked instance: AudioStreamPlaybackWAV:9223372171659708147 - Reference count: 1
+Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
+Resource still in use: res://assets/audio/sfx/anvil_drop.wav (AudioStreamWAV)
+Orphan StringName: SFX (static: 0, total: 2)
+Orphan StringName: Music (static: 0, total: 2)
+StringName: 2 unclaimed string names at exit.

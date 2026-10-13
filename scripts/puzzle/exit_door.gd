@@ -3,6 +3,8 @@ extends Node3D
 @export var exit_id: String = "exit"
 @export var linked_plate_id: String = "plate"
 @export var passage_size: Vector3 = Vector3(0.5, 2.4, 2.2)
+@export var cosmetic_scene: PackedScene
+var _cosmetic: Node3D
 var is_open: bool = false
 var _observed_subject: int = -1
 var _previous_position: Vector3
@@ -47,9 +49,21 @@ func set_open(value: bool, player: PlayerController = null) -> void:
 		$Blocker/Shape.disabled = value
 		$Blocker.visible = not value
 		$Label.text = "EXIT OPEN" if value else "EXIT LOCKED"
+		if _cosmetic != null:
+			_cosmetic.set_open(value)
 	is_open = value
 
 func _ready() -> void:
 	process_physics_priority = 200
+	if cosmetic_scene != null:
+		_cosmetic = cosmetic_scene.instantiate()
+		_cosmetic.name = "Cosmetic"
+		add_child(_cosmetic)
+		_cosmetic.configure(passage_size)
+		_cosmetic.set_open(is_open)
+		$Blocker/Mesh.hide()
+		$FrameLeft.hide()
+		$FrameRight.hide()
+		$FrameTop.hide()
 	if get_parent() is RoomController:
 		get_parent().doors.append(self)

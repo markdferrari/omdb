@@ -1,4 +1,8 @@
 ---
+
+> Presentation update (2026-10-10): feature 002 and constitution 1.1.2 supersede earlier
+> clone/testing-chamber art language with a colourful cursed dungeon and prisoner
+> resurrection. Technical subject IDs, existing gameplay tasks and historical evidence remain valid.
 description: "Dependency-ordered implementation and validation tasks for the six-room slice"
 ---
 

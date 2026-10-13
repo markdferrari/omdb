@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Material" path="res://resources/materials/art_stone.tres" id="1"]
+[sub_resource type="BoxMesh" id="plaque"]
+size = Vector3(1.5, 0.5, 0.08)
+[node name="DungeonTrialSign" type="Node3D"]
+[node name="Plaque" type="MeshInstance3D" parent="."]
+mesh = SubResource("plaque")
+material_override = ExtResource("1")
+cast_shadow = 0
+[node name="Caption" type="Label3D" parent="."]
+position = Vector3(0, 0, 0.055)
+font_size = 30
+outline_size = 5
+modulate = Color(0.96, 0.9, 0.76, 1)
+text = "THE DUNGEON TRIALS"

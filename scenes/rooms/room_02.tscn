@@ -22,7 +22,7 @@ position = Vector3(-4, 0.1, 5)
 billboard = 1
 font_size = 26
 outline_size = 8
-text = "02 — Dead weight\nLeave two bodies on the remote plate; the live clone is only one unit."
+text = "02 — Dead weight\nLeave two bodies on the remote plate; the living prisoner is only one unit."
 [node name="SupplySpikes" parent="." instance=ExtResource("spikes")]
 position = Vector3(-5, 0, -3.5)
 hazard_id = "supply_spikes"

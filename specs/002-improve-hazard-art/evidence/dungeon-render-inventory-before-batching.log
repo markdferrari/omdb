@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.6 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: AMD - AMD Radeon 740M Graphics (radeonsi, phoenix2, LLVM 20.1.2, DRM 3.64, 7.0.0-31-generic)
+
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":441.0,"performance_acceptance":false,"primitives":35608.0,"render_objects":883.0,"view":0,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":441.0,"performance_acceptance":false,"primitives":35716.0,"render_objects":883.0,"view":1,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":441.0,"performance_acceptance":false,"primitives":35792.0,"render_objects":883.0,"view":2,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":false,"draw_calls":441.0,"performance_acceptance":false,"primitives":35660.0,"render_objects":883.0,"view":3,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":516.0,"performance_acceptance":false,"primitives":68660.0,"render_objects":958.0,"view":0,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":516.0,"performance_acceptance":false,"primitives":68768.0,"render_objects":958.0,"view":1,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":505.0,"performance_acceptance":false,"primitives":68672.0,"render_objects":947.0,"view":2,"viewport":[1920,1080]}
+DUNGEON_RENDER_INVENTORY {"bodies":5,"candidate":true,"draw_calls":505.0,"performance_acceptance":false,"primitives":68540.0,"render_objects":947.0,"view":3,"viewport":[1920,1080]}
+DUNGEON_CHAMBER_INVENTORY {"forbidden":[],"materials":22,"surfaces":94,"textures":1,"triangles":35968}
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

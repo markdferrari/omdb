@@ -127,6 +127,14 @@ shadow, yellow airborne surface ring, body count/oldest marker, plate requiremen
 state, saw state, anvil warning and open exit. Neon accents and signage must not compete
 with these. No new player input is required.
 
+Floor/wall decoration uses the free kit's patterned tiles and varied masonry/arches/trim.
+Sparse fixed wall-mounted shelves, candles, bottles, banners and lit torch meshes reinforce
+atmosphere without suggesting movable props. These clusters register with their wall side
+for cutaways; low boundary strips remain visible. Do not scatter objects across solution,
+placement or landing routes. Patterns omit trap boundaries and the flush closed entrance
+hatch rather than drawing safe-looking floor tiles over danger. Authored placement is
+repeatable after restart; decorative objects do not enter the registry or save schema.
+
 ## C6. Asset adoption and delivery
 
 Before production adoption, every runtime file has an AssetRecord with archive/file
@@ -152,3 +160,24 @@ or headless geometry test as a recognition or playable-frame acceptance result.
 Player reviews use the exact spec thresholds and window matrix. Native builds must retain
 all selected assets/credits and complete existing flows on both input methods. Unrun checks
 remain UNVERIFIED; acceptance defects require correction and affected retests.
+
+## C8. Dungeon theme and puzzle skins
+
+Use the free kit's original atlas on architecture and props; retain dark low boundary
+trim. Warm flame meshes use per-instance duplicated emissive materials, without extra
+light nodes or modification of shared vendor materials. Fixed rubble remains in wall
+margins and outside hazard/support/placement routes. No movable furniture is introduced.
+
+PressurePlate and ExitDoor expose optional cosmetic_scene: PackedScene, default null.
+The plate skin receives configure(size: Vector3) and set_active(value: bool); the exit
+receives configure(passage: Vector3) and set_open(value: bool). Owners feed current state
+at initialization and reconciliation. The stone slab matches the existing supporting top;
+its amber/green outline supplements the retained weight/state label. The door's stone arch
+remains visible while the gate disappears; passage, blocker and retreat remain authoritative.
+Doorway wall wings/header are compressed cosmetically to avoid screening nearby traps;
+the source opening is retained and padded. The kit's separate wooden door mesh is removed.
+
+Prisoner/resurrection wording changes only visible copy; technical subject IDs, epochs and
+save formats remain compatible. UI uses warm parchment text, stone-dark panels and visible
+keyboard/controller focus. Default three-dimensional production assignments remain null
+until Stage B; global copy/UI styling is independent presentation work.

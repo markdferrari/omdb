@@ -1,5 +1,9 @@
 # Implementation Plan: Six-Room Puzzle Slice
 
+> Presentation update (2026-10-10): feature 002 and constitution 1.1.2 supersede earlier
+> clone/testing-chamber art language with a colourful cursed dungeon and prisoner
+> resurrection. Technical subject IDs, existing gameplay tasks and historical evidence remain valid.
+
 **Branch**: `main` (existing Git branch) | **Feature**: `001-six-room-slice` | **Date**: 2026-10-08 | **Spec**: [spec.md](spec.md)
 
 **Input**: Feature specification from `specs/001-six-room-slice/spec.md`

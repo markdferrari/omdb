@@ -2,7 +2,7 @@
 
 ## 1. Product Overview
 
-**Elevator pitch:** A macabre, dark-comedy 3D puzzle-platformer where death is the primary puzzle-solving mechanic. Players control a relentlessly unlucky test subject navigating a sadistic facility, intentionally sacrificing themselves to create bodies they can carry, stack over spike pits, use to jam buzzsaws, and place on pressure plates.
+**Elevator pitch:** A macabre, dark-comedy 3D puzzle-platformer where death is the primary puzzle-solving mechanic. Players control a relentlessly unlucky prisoner escaping a cursed dungeon, intentionally sacrificing themselves to create bodies they can carry, stack over spike pits, use to jam buzzsaws, and place on pressure plates.
 
 **Objective:** Deliver a tightly scoped, six-room vertical slice that proves reliable corpse placement and stacking, readable puzzles, and dark slapstick humor. Target 20–30 minutes for a first playthrough, validated through playtesting.
 
@@ -20,13 +20,13 @@
 ## 3. Core Gameplay Loop
 
 1. **Assess the room:** Identify the exit, hazards, pressure plates, and potential uses for bodies from the selected camera view.
-2. **Sacrifice for science:** Intentionally enter a lethal hazard to leave a persistent corpse at the death location.
-3. **Return as a fresh clone:** Respawn at the room's entrance hatch while existing corpses and puzzle state persist.
+2. **Sacrifice to survive:** Intentionally enter a lethal hazard to leave a persistent corpse at the death location.
+3. **Rise again:** Respawn at the room's entrance hatch while existing corpses and puzzle state persist.
 4. **Arrange the remains:** Carry and place bodies to create a traversable surface, provide weight, or stop a buzzsaw.
 5. **Manage the five-body limit:** Plan around the oldest corpse disappearing when another body is created.
 6. **Reach the exit:** Traverse the resulting route and enter the open exit door to advance.
 
-Deaths allow unlimited retries. Death counts and subject numbers provide humor rather than a failure condition. Corpses are created through hazard deaths; a separate body-generation button is outside the slice.
+Deaths allow unlimited retries. Death counts and prisoner numbers provide humor rather than a failure condition. Corpses are created through hazard deaths; a separate body-generation button is outside the slice.
 
 ## 4. Movement, Camera & Corpse Rules
 
@@ -88,10 +88,10 @@ Deaths allow unlimited retries. Death counts and subject numbers provide humor r
 
 1. **Sacrifice and traversal:** Teach dying, respawning, and using corpses to cross spikes.
 2. **Carry and weigh:** Teach picking up bodies, assisted placement, and pressure plates.
-3. **Jam the machinery:** Teach persistent buzzsaw jams and the consequences of retrieving a jammed body.
+3. **Jam the blade:** Teach persistent buzzsaw jams and the consequences of retrieving a jammed body.
 4. **Combine and replace:** Introduce falling anvils and demonstrate how creating another corpse removes the oldest when the cap is reached.
 5. **Plan the route:** Combine established hazards and weight requirements with deliberate body allocation.
-6. **Final experiment:** Combine previously taught mechanics into a final puzzle, followed by the completion screen.
+6. **Final trial:** Combine previously taught mechanics into a final puzzle, followed by the completion screen.
 
 Each room must have a repeatable intended solution within the five-body limit. Room layouts should make hazards block meaningful routes across the 3D floor and prevent simply walking around the intended obstacle. Reliable alternative solutions are welcome.
 
@@ -105,17 +105,17 @@ Each room must have a repeatable intended solution within the five-body limit. R
 
 ## 7. Visual, Animation & Audio Direction
 
-**Art direction:** Stylised gothic miniature testing chambers with high-contrast silhouettes, ink-and-wash-inspired surfaces, and cartoonish neon blood splatters in hot pink or glowing green. Prioritise readable geometry and hazard states from the selected camera distance.
+**Art direction:** Colourful stylised gothic dungeon chambers using the downloaded KayKit Dungeon Free 1.1 pack, with textured stone, warm torch accents, red heraldic banners and high-contrast silhouettes, and cartoonish neon blood splatters in hot pink or glowing green. Prioritise readable geometry and hazard states from the selected camera distance.
 
 **Lighting:** Simple lighting and clear ground shadows that support depth perception and landing judgment. Avoid elaborate lighting systems in the slice.
 
-**Character assets:** Prioritise reuse of the existing Blender characters from `/home/mark/projects/streets-of-rock/assets/characters`. Available candidates are cow, crow, lion, and plates, with Blender sources, rigged Blender files, and runtime GLB exports in their subdirectories. Select one character for the slice after checking its visual fit and readability at the intended camera distance; clones reuse that character.
+**Character assets:** Prioritise reuse of the existing Blender characters from `/home/mark/projects/streets-of-rock/assets/characters`. Available candidates are cow, crow, lion, and plates, with Blender sources, rigged Blender files, and runtime GLB exports in their subdirectories. Select one character for the slice after checking its visual fit and readability at the intended camera distance; each resurrection reuses that character.
 
 **Confirmed asset metadata:** All four existing GLB exports contain a skin and animation clips named `Idle`, `Move`, `Hurt`, and `KnockedOut`. Metadata inspection confirms these resources exist, but visual quality, animation suitability, materials, scale, and in-game performance still require validation. Jump and carry animations need to be assessed or added.
 
 **Asset workflow:** Retain Blender source models and use exported glTF/GLB assets in Godot. Bring the selected runtime assets into this project. Validate one representative character in the first greybox room. Reuse its mesh in a collapsed pose for corpse visuals where practical, with a separate simple physics shape. Identify any missing movement, jump, carry, and death animation work during the asset check.
 
-**Animation and effects:** Exaggerated stretching, spinning, squashing, neon splatters, and pop-in death captions such as "Subject #402: Flattened". These effects must preserve the readability of the puzzle and the underlying solid corpse behavior.
+**Animation and effects:** Exaggerated stretching, spinning, squashing, neon splatters, and pop-in death captions such as "Prisoner #402: Flattened". These effects must preserve the readability of the puzzle and the underlying solid corpse behavior.
 
 **Audio:** Incongruously cheerful elevator jazz or 1950s-style muzak, contrasted with cartoonish trap sounds, slide whistles, squelchy thuds, wet splats, and occasional canned applause. Include settings for music and sound-effect volume.
 

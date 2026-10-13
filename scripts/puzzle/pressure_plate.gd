@@ -3,6 +3,8 @@ extends StaticBody3D
 @export var plate_id: String = "plate"
 @export var caption: String = "WEIGHT"
 @export_range(1, 5) var required_weight: int = 1
+@export var cosmetic_scene: PackedScene
+var _cosmetic: Node3D
 var contributors: Dictionary = {}
 var _material: StandardMaterial3D
 
@@ -23,6 +25,8 @@ func apply_observations(observations: Array[Dictionary]) -> void:
 			_material = StandardMaterial3D.new()
 			$Mesh.material_override = _material
 		_material.albedo_color = Color(0.2, 0.9, 0.6) if active() else Color(0.8, 0.55, 0.15)
+		if _cosmetic != null:
+			_cosmetic.set_active(active())
 
 func reconcile(room: RoomController) -> void:
 	var observations: Array[Dictionary] = []
@@ -86,5 +90,12 @@ func _rests_on_plate_chain(body: Corpse, room: RoomController, direct_ids: Dicti
 	return false
 
 func _ready() -> void:
+	if cosmetic_scene != null:
+		_cosmetic = cosmetic_scene.instantiate()
+		_cosmetic.name = "Cosmetic"
+		add_child(_cosmetic)
+		_cosmetic.configure($Shape.shape.size)
+		_cosmetic.set_active(active())
+		$Mesh.hide()
 	if get_parent() is RoomController:
 		get_parent().plates.append(self)
